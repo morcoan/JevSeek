@@ -5,6 +5,15 @@ A native **pywebview + React/TypeScript + CSS** workspace following
 identity, bundled DM Sans / IBM Plex Mono, neutral reading surfaces and compact
 retro activity windows. Light, dark and system appearance are supported.
 
+## Long-session context update (v0.2.2)
+
+The repeatable “Context accounting reserve exhausted” error is fixed. After
+updating the EXE, reopen the saved conversation and use **Resume** for a blocked
+run, or send a follow-up. Interrupted tool effects still require explicit review;
+this update never replays them automatically. Activity may show **Searching saved
+history** when Jev recalls original archived records. No model window is literally
+infinite; [research and remaining limits](../research/context_memory/README.md).
+
 ## Standalone Windows app
 
 Open `release/JevSeek.exe`. It includes Python, the frontend/fonts and Microsoft

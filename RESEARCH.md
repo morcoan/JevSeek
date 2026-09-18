@@ -14,7 +14,23 @@ in the record.
 > That is the reason for the current runtime, not proof that planning or reasoning
 > is generally unnecessary.
 
-## The research in four steps
+## New investigation: intent-relevant archival memory (v0.2.2)
+
+A real long-session failure exposed an accounting bug: an archive-count field was
+added after fitting context. The fix sizes it first and preserves original records
+outside the working window. A local SQLite archive plus Jev-selected `recall` now
+supports relevant search and exact-record paging.
+
+In a deliberately old-evidence synthetic fixture, recent-8 retrieved 0/10 facts,
+lexical top-4 retrieved 9/10, and Jev selected the correct original record or
+abstained on 12/12 questions from a bounded lexical/diversity pool. These are
+**different metrics on a tiny constructed study**, not a general accuracy gain or
+an infinite-memory guarantee. The semantic reranker remains research, not an
+extra always-on production call. No broad test suite or task benchmark was run.
+
+[Full investigation, original papers, timing/token counts, limitations and source →](research/context_memory/README.md)
+
+## The original research in four steps
 
 | Stage | Question | Outcome |
 | :-- | :-- | :-- |

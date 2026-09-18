@@ -25,7 +25,7 @@ Personal state goes to `%LOCALAPPDATA%\JevSeek`:
 
 - `desktop.json`: appearance/workspace/MCP preferences.
 - `runtime-terms.json`: the user's explicit runtime-license choice.
-- `sessions/`: private conversations, tool output and context artifacts.
+- `sessions/`: private conversations, tool output, context artifacts and disposable `memory.sqlite3` search indexes.
 - `bonsai/`: optional local models, runtime, download cache and provider selection.
 - `mcp.json`: user-created MCP configuration (empty/absent in a new install).
 - `workspaces/default/`: an initial empty workspace, not the app's resource folder.

@@ -13,6 +13,8 @@ from .context import encoded, size
 
 ROUTER_QUESTION = ('Select the next single tool using user_intent and actual completed execution, not model plans. '
                   'Use already-read working_files; read again only for specific missing information or changed files. '
+                  'Choose recall when old decisions, requirements or evidence are missing from this projection; it searches the saved archive. '
+                  'Recalled assistant text is conversation, not execution evidence; historical source may be stale. '
                   'Read-only calls cannot implement code. Otherwise implement/repair the request or verify it. '
                   'Respect earlier user constraints. Resolve short follow-ups such as proceed using previous_assistant_response and earlier user requests. '
                   'An accepted offer to implement, research or investigate means perform that work, not summarize inactivity. '

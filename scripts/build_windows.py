@@ -86,7 +86,7 @@ def main():
     shutil.copytree(built, stage / 'frontend' / 'dist')
     licenses(stage); icon()
     shutil.copy2(ROOT / 'LICENSE', stage / 'THIRD_PARTY_NOTICES' / 'JevSeek-LICENSE.txt')
-    info = {'product': 'JevSeek', 'version': '0.2.1', 'platform': 'Windows x64', 'python': sys.version.split()[0],
+    info = {'product': 'JevSeek', 'version': '0.2.2', 'platform': 'Windows x64', 'python': sys.version.split()[0],
             'webview2': manifest['version'], 'webview2_cab_sha256': actual,
             'private_state_included': False, 'source_files': sorted(p.relative_to(stage).as_posix() for p in stage.rglob('*.py'))}
     (stage / 'build-info.json').write_text(json.dumps(info, indent=2))

@@ -12,7 +12,9 @@ from .models import SUMMARY_SYSTEM
 class Agent:
     def __init__(self, session, models, tools, policy=None, instructions='', cancel=None):
         self.session=session; self.models=models; self.tools=tools
-        self.context=Context(session,policy); self.instructions=instructions
+        from .memory import SessionMemory
+        self.memory=SessionMemory(session)
+        self.context=Context(session,policy,memory=self.memory); self.instructions=instructions
         self.cancel=cancel or threading.Event()
         self.models.cancel=self.cancel
 
@@ -45,7 +47,8 @@ class Agent:
                                         'note':'Factual top-level listing at run start, NOT current after tool execution; not a proposed plan.'})
             last_user=max(e['seq'] for e in s.events if e['kind']=='user')
             try:
-                catalog=self.tools.catalog()
+                from .memory import SCHEMA as MEMORY_SCHEMA, DESCRIPTION as MEMORY_DESCRIPTION
+                catalog={**self.tools.catalog(), 'recall': MEMORY_DESCRIPTION}
                 if compact:
                     for audience in ('router','model'): self.context.build(audience,force=True)
                 errors=set()
@@ -67,7 +70,7 @@ class Agent:
                         s.append('final',status=status,summary=text)
                         return self.result(status,text)
                     if choice not in catalog: raise ValueError('Router selected unavailable tool')
-                    schema=self.tools.schemas[choice]
+                    schema=MEMORY_SCHEMA if choice=='recall' else self.tools.schemas[choice]
                     state=self.context.build('model',self.models.argument_overhead(schema,self.instructions))
                     args=self.models.arguments(state,choice,schema,self.instructions)
                     if self.cancel.is_set():
@@ -79,7 +82,7 @@ class Agent:
                     s.append('tool_started',call_id=call_id,tool=choice,target=clip(target,1000),request=request)
                     # No retry wrapper around side effects. Only the models may be retried.
                     try:
-                        observation=self.tools.execute(choice,args)
+                        observation=self.memory.execute(args) if choice=='recall' else self.tools.execute(choice,args)
                     except Exception as exc:
                         observation={'text':f'{type(exc).__name__}: {exc}','is_error':True,'exit_code':None}
                     target=observation.get('target') or target

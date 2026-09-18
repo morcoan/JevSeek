@@ -41,7 +41,7 @@ export function Markdown({ text, onError }: { text: string; onError: (message: s
   }}>{text}</ReactMarkdown></div>;
 }
 
-const toolNames: Record<string, string> = { read: 'Reading a file', write: 'Writing a file', edit: 'Editing a file', bash: 'Running a command' };
+const toolNames: Record<string, string> = { read: 'Reading a file', write: 'Writing a file', edit: 'Editing a file', bash: 'Running a command', recall: 'Searching saved history' };
 function ActionRow({ action, active }: { action: ToolAction; active: boolean }) {
   const [open, setOpen] = useState(false);
   const uncertain = action.status === 'uncertain' || (action.status === 'running' && !active);

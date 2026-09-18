@@ -35,7 +35,7 @@ sessions and inspectable artifacts—with a CLI using the same backend.
 | **Work on real projects** | Read, write and edit files; run commands through OpenHands' native terminal. The `bash` tool uses PowerShell on Windows. |
 | **See the work happen** | Actual tool calls, expandable output, errors and compaction notices—not fabricated progress. |
 | **Continue a conversation** | Persistent history, follow-up tasks and offline viewing. Opening a completed session never replays its effects. |
-| **Keep context grounded** | Pinned user requests, recent source snapshots, deterministic compaction and links to full local output. |
+| **Keep context grounded** | Pinned user requests, bounded context, recent source snapshots and searchable, paged original history. Jev can recall missing evidence. |
 | **Connect MCP tools** | Register trusted HTTP/SSE/stdio servers, inspect the connection and enable them for a new run. |
 | **Choose local generation** | One-click Prism Bonsai 2 or community CRACK setup, resumable download progress, integrity checks and automatic NVIDIA/CPU runtime selection. |
 | **Manage your keys** | First-run setup and Settings controls backed by Windows Credential Manager. No keys bundled in the app. |
@@ -63,6 +63,11 @@ flowchart LR
 **The boundary is deliberate:** Jev chooses the action; the generation model cannot silently
 switch to another tool. Arguments are validated before effects. Incomplete calls
 do not execute. Interrupted effects require review rather than automatic replay.
+
+**v0.2.2 context fix:** corrects the repeatable context-accounting overflow and adds
+intent-relevant archival search with a Jev-selectable `recall` tool.
+[Research, results and honest limits →](research/context_memory/README.md)
+This is a bounded working window over saved history—not literal infinite context.
 
 **v0.2.1 hotfix:** follow-ups retain the previous assistant response as conversation,
 not execution evidence. A separate Jev completion review catches premature `done`

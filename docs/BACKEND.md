@@ -163,6 +163,26 @@ The response generator must not infer that tools are unavailable merely because
 none ran. This changes the earlier frozen routing policy; historical benchmark
 results describe the older policy, not this hotfix.
 
+### Archive retrieval and accounting (v0.2.2)
+
+Every context field, including archive counts, is sized **before** fitting. Optional
+history/source duplicates can leave the working set without deleting their saved
+originals. Latest execution and verification status remain protected.
+
+A session-local SQLite FTS5 cache indexes original user/final/tool records and full
+saved outputs in overlapping pages. Up to two intent-relevant older effect pages
+can join the working set if space permits. Jev can choose the read-only `recall`
+tool to search or page an exact event sequence; no extra provider is used by the
+index. Typed provenance distinguishes user instructions, assistant conversation
+and historical effects. Old source is not assumed current. An unavailable optional
+index does not stop ordinary context construction; explicit recall errors are
+reported normally. `memory.sqlite3` is private, disposable cache data.
+
+This does not remove model limits or discard old user constraints. Oversized
+mandatory intent/metadata can still pause safely. See the
+[intent-memory investigation](../research/context_memory/README.md) for the exact
+failure, measured retrieval study, limitations and reproduction commands.
+
 ## Tools and MCP
 
 `read/write/edit` are schema slices of OpenHands FileEditorAction executed by
@@ -173,7 +193,7 @@ Jev alone selects the tool. Arguments are validated before execution.
 
 MCP tools use OpenHands create_mcp_tools and the server's authoritative input
 schema, NOT SDK-injected OpenAI agent metadata. Names are prefixed `mcp.` to avoid
-collisions. Configuration is read once at startup. More than 250 advertised tools
+collisions. Configuration is read once at startup. More than 250 advertised tools (including built-in archive recall)
 is rejected explicitly; use a smaller configuration or progressive MCP gateway.
 Config URLs, credentials and trust remain the user's responsibility. No sandbox,
 OAuth installer, transactional rollback, multi-agent orchestration or silent
