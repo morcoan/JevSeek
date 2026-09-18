@@ -38,7 +38,7 @@ Microsoft. Maintainers should review current upstream terms when refreshing the
 runtime or distributing a binary, preserve all notices and required SmartScreen
 privacy disclosures, and not distribute the runtime as a separate product.
 
-An overall license for JevSeek's own source has not been chosen by its owner.
-Public visibility does not itself grant reuse rights. Third-party notices do not
-select or replace that project license, and do not constitute a legal compliance
+JevSeek's own source is licensed under the [MIT License](../LICENSE).
+Third-party components retain their respective licenses; the project license does
+not replace those terms. These notices do not constitute a legal compliance
 certification for every possible distribution/use.

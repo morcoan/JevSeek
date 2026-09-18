@@ -205,7 +205,7 @@ Before contributing, run the relevant tests and
 configuration, agent memory, sessions or build outputs. Keep runtime changes
 separate from research experiments and label billable tests explicitly.
 
-**License:** an overall license for JevSeek's own source has not yet been selected.
-Public visibility is not an open-source reuse license. Dependencies retain their
+**License:** JevSeek's own source is licensed under the [MIT License](LICENSE).
+Dependencies retain their
 [respective licenses](docs/THIRD_PARTY.md). JevSeek is an independent project, not
 an official DeepSeek, TypeSafe or OpenHands product.

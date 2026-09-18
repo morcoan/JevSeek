@@ -67,9 +67,9 @@ review terms, rebuild and test. Do not redistribute the runtime CAB on its own.
 existing checksum mismatch. The package retains Microsoft's component notices;
 Python/JS/OFL notices are included in `THIRD_PARTY_NOTICES` and the frontend.
 
-The source code's overall license has not been selected by the owner. Public Git
-visibility alone is not an open-source reuse license. Choose an appropriate project
-license before inviting reuse/contributions; third-party licenses remain in force.
+JevSeek's own source is licensed under the [MIT License](../LICENSE). Preserve
+its copyright and license notice when redistributing copies or substantial portions.
+Third-party licenses remain in force.
 Microsoft terms/distribution requirements also apply to binary redistribution.
 See [THIRD_PARTY.md](THIRD_PARTY.md) for notice provenance and references.
 
