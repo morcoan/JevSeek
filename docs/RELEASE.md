@@ -16,14 +16,17 @@ a Python project, Node for a Node project, Blender/MCP servers, etc.) are **not*
 bundled. JevSeek runs with the signed-in user's permissions; do not run as admin.
 
 On first launch, review the Microsoft runtime terms and privacy notice, then add
-DeepSeek and TypeSafe/Jev keys in the UI. Save does not contact providers or spend
-credits. Pick a workspace and send a task when ready.
+a TypeSafe/Jev key and either a DeepSeek key or [one-click local Bonsai](LOCAL_MODELS.md).
+Key saving does not contact providers or spend credits. Bonsai setup downloads
+its model/runtime separately and replaces DeepSeek generation, not Jev routing.
+Pick a workspace and send a task when ready.
 
 Personal state goes to `%LOCALAPPDATA%\JevSeek`:
 
 - `desktop.json`: appearance/workspace/MCP preferences.
 - `runtime-terms.json`: the user's explicit runtime-license choice.
 - `sessions/`: private conversations, tool output and context artifacts.
+- `bonsai/`: optional local models, runtime, download cache and provider selection.
 - `mcp.json`: user-created MCP configuration (empty/absent in a new install).
 - `workspaces/default/`: an initial empty workspace, not the app's resource folder.
 

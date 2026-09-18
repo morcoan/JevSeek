@@ -47,7 +47,7 @@ export default function App() {
   const workspace = app.meta?.workspace || boot?.preferences.workspace || '';
   const turns = useMemo(() => turnsFrom(app.events), [app.events]);
   const welcome = !app.selected;
-  const needsKeys = Boolean(boot?.desktop && (!boot.providers.deepseek || !boot.providers.jev));
+  const needsKeys = Boolean(boot?.desktop && (((!boot.local_model || boot.local_model.selected === 'deepseek') && !boot.providers.deepseek) || !boot.providers.jev));
   const needsTerms = Boolean(boot?.runtime_terms?.required && !boot.runtime_terms.accepted);
 
   useEffect(() => {
@@ -210,16 +210,16 @@ export default function App() {
           </div>)}
           {view === 'activity' && <ActivityView sessions={app.sessions} selected={activityDetail ? app.selected : null} events={app.events} meta={app.meta} active={isRunning} onSelect={id => { void app.load(id); setActivityDetail(true); }} onBack={() => setActivityDetail(false)} onChat={() => setView('chat')} onError={app.showError} />}
           {view === 'files' && <FilesView selected={app.selected} sessions={app.sessions} onSelect={id => void app.load(id)} events={app.events} onError={app.showError} />}
-          {view === 'settings' && boot && <SettingsView boot={boot} onSave={app.save} onError={app.showError} onKeys={() => setKeySetupOpen(true)} onTerms={() => setTermsOpen(true)} />}
+          {view === 'settings' && boot && <SettingsView boot={boot} active={Boolean(app.active)} onSave={app.save} onError={app.showError} onKeys={() => setKeySetupOpen(true)} onTerms={() => setTermsOpen(true)} />}
         </div>
         {view === 'chat' && !welcome && <div className="composer-dock">{showJump && <button className="jump-button button" onClick={() => { const el = scrollRef.current; if (el) el.scrollTop = el.scrollHeight; atBottom.current = true; setShowJump(false); }}><ArrowDown size={14} />Latest activity</button>}{composer}</div>}
       </main>
-      <footer className="statusbar"><span><ShieldCheck size={12} />{boot?.desktop ? 'Saved on this computer' : 'Preview only · no backend connected'}</span><span className="engine-label">DeepSeek Flash<span>×</span>Jev JIT</span></footer>
+      <footer className="statusbar"><span><ShieldCheck size={12} />{boot?.desktop ? 'Saved on this computer' : 'Preview only · no backend connected'}</span><span className="engine-label">{boot?.local_model && boot.local_model.selected !== 'deepseek' ? 'Bonsai · local' : 'DeepSeek Flash'}<span>×</span>Jev JIT</span></footer>
     </div>
     {app.notice && <div className="toast" role="status"><Check size={16} /><span>{app.notice}</span><button className="icon-button" onClick={() => app.setNotice('')} aria-label="Dismiss notification"><X size={15} /></button></div>}
     {review && <Dialog title="Continue after interruption?" onClose={() => setReview(false)}><div className="dialog-body"><div className="review-icon"><TriangleAlert size={24} /></div><p>The last tool may have changed files or a connected application before it stopped. Acknowledging does not undo or verify those effects.</p><label className="check-row"><input type="checkbox" checked={acknowledged} onChange={e => setAcknowledged(e.target.checked)} />I inspected the activity and current workspace, and understand the outcome may be uncertain.</label><p className="caption">Your follow-up will be sent with this acknowledgement. The backend will decide the next action from the saved facts.</p><div className="dialog-actions"><button className="button" onClick={() => setReview(false)}>Go back</button><button className="button primary-button" disabled={!acknowledged || sending || !!app.active} onClick={() => void submit(true)}>Acknowledge & send<ArrowRight size={15} /></button></div></div></Dialog>}
     {(termsOpen || needsTerms) && <Dialog title="Microsoft runtime terms" onClose={() => { if (needsTerms) void call('close_app').catch(e => app.showError(String(e))); else setTermsOpen(false); }} wide><RuntimeTerms required={needsTerms} onAccept={terms => { app.updateRuntimeTerms(terms); setTermsOpen(false); }} onClose={() => { if (needsTerms) void call('close_app').catch(e => app.showError(String(e))); else setTermsOpen(false); }} /></Dialog>}
-    {keySetupOpen && boot && <Dialog title="Connect your providers" onClose={() => setKeySetupOpen(false)}><KeySetup status={boot} active={Boolean(app.active)} onChange={app.updateKeyStatus} onDone={() => setKeySetupOpen(false)} /></Dialog>}
+    {keySetupOpen && boot && <Dialog title="Connect your providers" onClose={() => setKeySetupOpen(false)}><KeySetup status={boot} active={Boolean(app.active)} onChange={app.updateKeyStatus} onDone={() => setKeySetupOpen(false)} onLocal={() => { setKeySetupOpen(false); navigate('settings'); }} /></Dialog>}
     {helpOpen && <Dialog title="A quieter way to work" onClose={() => setHelpOpen(false)}><div className="dialog-body"><p>Choose a workspace, describe what you need, and follow the actual tool activity. JevSeek can read, edit, and run code with your account’s permissions.</p><div className="shortcut-list"><span>New conversation<kbd>Ctrl / ⌘ N</kbd></span><span>Find a conversation<kbd>Ctrl / ⌘ K</kbd></span><span>Settings<kbd>Ctrl / ⌘ ,</kbd></span><span>Send a message<kbd>Enter</kbd></span><span>New line<kbd>Shift Enter</kbd></span></div><p className="caption">Stop is cooperative. Native calls may take time to finish. Closing during a run requests a safe stop; close again once it has stopped. Drafts stay in memory while you navigate and are cleared when the app closes.</p><div className="local-note"><ShieldCheck size={17} /><p>No thinking mode or hidden planning layer. Model progress shows stages, not private reasoning or incomplete tool arguments.</p></div></div></Dialog>}
   </div>;
 }

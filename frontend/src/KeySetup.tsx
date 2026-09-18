@@ -9,8 +9,8 @@ const providers: { id: Provider; label: string; url: string }[] = [
   { id: 'jev', label: 'TypeSafe / Jev', url: 'https://console.typesafe.ai/' },
 ];
 
-export function KeySetup({ status, active, onChange, onDone }: {
-  status: KeyStatus; active: boolean; onChange: (status: KeyStatus) => void; onDone: () => void;
+export function KeySetup({ status, active, onChange, onDone, onLocal }: {
+  status: KeyStatus; active: boolean; onChange: (status: KeyStatus) => void; onDone: () => void; onLocal?: () => void;
 }) {
   // Entered values exist only for this form submission. Never use localStorage,
   // drafts, query strings, logs or a read-back bridge method for credentials.
@@ -32,7 +32,8 @@ export function KeySetup({ status, active, onChange, onDone }: {
     finally { setBusy(false); }
   };
   return <div className="dialog-body key-setup">
-    <div className="key-intro"><span className="key-icon"><KeyRound size={22} /></span><p>Bring your own DeepSeek and TypeSafe keys. No terminal setup or <code>.env</code> editing needed.</p></div>
+    <div className="key-intro"><span className="key-icon"><KeyRound size={22} /></span><p>Add your TypeSafe / Jev key. DeepSeek is optional when you set up local Bonsai in Settings. No terminal or <code>.env</code> editing needed.</p></div>
+    {onLocal && <button type="button" className="button" disabled={active || busy} onClick={onLocal}>Set up local Bonsai instead of DeepSeek</button>}
     <div className="local-note key-security-note"><ShieldCheck size={18} /><p>Saved in <strong>Windows Credential Manager</strong> for your Windows account, not in the project or chat history. Existing keys are never sent back to this form.</p></div>
     {active && <p className="inline-warning">A run is active. Stop it before changing keys.</p>}
     {!status.key_setup.supported && <p className="inline-warning">Secure storage is unavailable here. Open the Windows desktop app to set up keys. No plaintext fallback is used.</p>}

@@ -301,3 +301,9 @@ select { width: 100%; border: 1px solid var(--control-border); border-radius: 5p
 @media (max-width: 380px) { .context-button { max-width: 122px; }.mcp-mode { max-width: 85px; }.statusbar .engine-label { display: none; }.theme-choice > span:last-child { gap: 3px; }.response-actions { gap: 2px; }.tool-outcome > span { max-width: 64px; white-space: normal; }.welcome-note { text-align: center; }.new-conversation { font-size: 12px; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
 @media (forced-colors: active) { button, .composer, .tool-window, .theme-choice { border: 1px solid ButtonText; }.brand-mark path, .brand-mark rect { forced-color-adjust: none; }.selected-mode, .nav-item.selected, .theme-choice.is-selected { outline: 2px solid Highlight; }.switch-track::after { background: ButtonText; } }
+
+.local-model-card { border: 1px solid var(--border); border-radius: 12px; padding: 18px; display: grid; gap: 14px; }
+.local-model-card select { max-width: 100%; }
+.local-model-progress { display: grid; gap: 8px; }
+.local-model-progress p { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+.local-model-progress progress { width: 100%; accent-color: var(--blue); height: 12px; }

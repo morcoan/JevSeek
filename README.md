@@ -16,16 +16,17 @@
 
 **JevSeek is a desktop coding agent that separates choosing an action from writing its arguments.**
 [TypeSafe/Jev](https://typesafe.ai/) selects the next tool, non-thinking
-[DeepSeek](https://www.deepseek.com/) supplies the arguments, and
+[DeepSeek](https://www.deepseek.com/) or optional local Bonsai supplies the arguments, and
 [OpenHands](https://github.com/OpenHands/software-agent-sdk) executes the native tools.
 The next decision uses what **actually happened**, rather than a speculative plan.
 
 You get a React desktop workspace for conversations, live tool activity, saved
 sessions and inspectable artifacts—with a CLI using the same backend.
 
-> **Local execution, not local inference.** Files and tools run on your computer;
-> selected task context goes to DeepSeek/Jev APIs and enabled MCP services.
-> Your own provider keys are required, and API charges apply.
+> **Local tools, optional local generation.** Windows desktop Settings can download
+> and run either Bonsai 2 27B model with one click, replacing DeepSeek.
+> Jev still receives routing context and needs its API key; this is not fully offline.
+> [Local model setup, requirements and privacy →](docs/LOCAL_MODELS.md)
 
 ## What it does
 
@@ -36,6 +37,7 @@ sessions and inspectable artifacts—with a CLI using the same backend.
 | **Continue a conversation** | Persistent history, follow-up tasks and offline viewing. Opening a completed session never replays its effects. |
 | **Keep context grounded** | Pinned user requests, recent source snapshots, deterministic compaction and links to full local output. |
 | **Connect MCP tools** | Register trusted HTTP/SSE/stdio servers, inspect the connection and enable them for a new run. |
+| **Choose local generation** | One-click Prism Bonsai 2 or community CRACK setup, resumable download progress, integrity checks and automatic NVIDIA/CPU runtime selection. |
 | **Manage your keys** | First-run setup and Settings controls backed by Windows Credential Manager. No keys bundled in the app. |
 | **Make it comfortable** | Light/dark/system themes, bundled fonts, keyboard controls, responsive navigation and reduced-motion support. |
 
@@ -47,18 +49,25 @@ There are no subagents, synthetic-thinking gates or dedicated planning tools in 
 ```mermaid
 flowchart LR
     U[User request + actual history] --> J{Jev selects}
-    J -->|Tool| D[DeepSeek supplies arguments]
+    J -->|Tool| D[DeepSeek or local Bonsai supplies arguments]
     D --> V[Validate one native call]
     V --> T[OpenHands / MCP tool]
     T --> O[Persist actual result]
     O --> U
-    J -->|Done| S[Factual final summary]
+    J -->|Done proposed| C{Jev completion review}
+    C -->|Complete| S[Factual final summary]
+    C -->|Work remains| J
     J -->|Ask| A[Pause for clarification]
 ```
 
-**The boundary is deliberate:** Jev chooses the action; DeepSeek cannot silently
+**The boundary is deliberate:** Jev chooses the action; the generation model cannot silently
 switch to another tool. Arguments are validated before effects. Incomplete calls
 do not execute. Interrupted effects require review rather than automatic replay.
+
+**v0.2.1 hotfix:** follow-ups retain the previous assistant response as conversation,
+not execution evidence. A separate Jev completion review catches premature `done`
+decisions and sends unfinished work back to tool selection. Pure conversation does
+not require a tool call. See [completion policy and limits](docs/BACKEND.md#completion-hotfix-v021).
 
 Context compaction is deterministic—not another model's generated summary. Earlier
 requests remain pinned except for credential redaction; oversized pinned context
@@ -114,7 +123,8 @@ for configuration, MCP setup and interrupted-run handling.
 
 ### Standalone Windows EXE
 
-A single-file Windows x64 build is supported: `release/JevSeek.exe` after building.
+Download the unsigned Windows x64 EXE from the [latest release](https://github.com/morcoan/JevSeek/releases/latest).
+A single-file Windows x64 build is also supported: `release/JevSeek.exe` after building.
 It includes Python, the frontend/fonts and Fixed Version WebView2. Project-specific
 tools such as Git, Node, Python interpreters for your projects, or MCP servers are
 **not** bundled. Build outputs are not committed to this repository.

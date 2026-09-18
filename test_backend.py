@@ -253,7 +253,7 @@ class Stream(list):
 
 class ProviderTests(Base):
     def model(self,chunks):
-        m=Models.__new__(Models);m.session=self.s;m.settings=Settings();m.cancel=None
+        m=Models.__new__(Models);m.session=self.s;m.settings=Settings();m.cancel=None;m.local=None;m.provider='deepseek'
         stream=Stream(chunks);m.ds=Mock();m.ds.chat.completions.create.return_value=stream
         return m,stream
     def chunk(self,text,finish=None,tool=False,reasoning=None):

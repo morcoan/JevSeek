@@ -46,7 +46,7 @@ side effects before acknowledging and continuing.
 
 ## Network/privacy
 
-Task context goes to DeepSeek/Jev and enabled MCP services when a task runs.
+Task context goes to Jev and enabled MCP services when a task runs, and to DeepSeek only when cloud generation is selected. Optional [local Bonsai](docs/LOCAL_MODELS.md) replaces DeepSeek, not Jev. Model/runtime downloads are pinned and SHA-256 verified; the owned model server is authenticated and loopback-only.
 API providers have their own billing/retention/privacy terms. The bundled Microsoft
 WebView2 Runtime can communicate with Microsoft, including Defender SmartScreen
 and runtime diagnostics. SmartScreen is enabled; see Microsoft's

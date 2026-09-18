@@ -42,6 +42,7 @@ def main():
                 expect(page.get_by_role('dialog', name='Microsoft runtime terms')).to_be_visible()
                 expect(page.get_by_role('button', name='Agree & continue')).to_be_disabled()
                 def audit(name):
+                    page.wait_for_timeout(250)  # Let semantic-color transitions settle before contrast sampling.
                     page.screenshot(path=str(output / (name + '.png')))
                     page.evaluate((ROOT / 'frontend' / 'node_modules' / 'axe-core' / 'axe.min.js').read_text(encoding='utf-8'))
                     result = page.evaluate("async()=> (await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}})).violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)}))")

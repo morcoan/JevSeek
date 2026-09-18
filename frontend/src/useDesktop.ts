@@ -58,6 +58,7 @@ export function useDesktop() {
       try {
         const response = await call('poll', cursor.current); if (!alive) return;
         cursor.current = response.cursor; setActive(response.active);
+        if (response.local_model) setBoot(old => old ? {...old, local_model: response.local_model} : old);
         const incoming = response.events.filter(e => e.session_id === selectedRef.current);
         if (incoming.length) {
           // Validate outside the state updater so protocol errors can be displayed.

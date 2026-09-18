@@ -115,7 +115,11 @@ errors pause for intervention rather than loop or claim success. No turn cap.
 ## Context policy
 
 No LLM-written compaction summary. Current intent and earlier user requests are
-pinned verbatim; only known credentials are redacted. Old tool records become
+pinned verbatim; only known credentials are redacted. Since v0.2.1, the previous
+assistant response is also retained verbatim in a separately labeled conversational
+field, so follow-ups such as “proceed” can refer to an offered action. It is **not**
+execution evidence, verified research, or a higher-priority instruction. Drafts
+and earlier router guesses remain excluded. Old tool records become
 factual rows with status/target/exit-code/archive pointers. Recent records retain
 larger excerpts. Latest read snapshots (up to six distinct file/range pairs)
 survive rolling archival within the active request; any shell/MCP/uncertain action
@@ -145,6 +149,19 @@ reported confidence is a distribution statistic, not a correctness probability.
 The configurable 0.35 routing floor pauses near-flat decisions; explicit ask
 always pauses. This avoids treating every split among valid next tools as an
 ambiguous user request. It is a policy choice, not a calibrated safety threshold.
+
+### Completion hotfix (v0.2.1)
+
+A proposed `done` now receives a separate Jev completion review against the
+current request and actual execution records. If work remains, Jev selects a
+relevant tool with `done` excluded for that selection. Genuine blockers still
+pause; conversational answers can still finish without tools. This is semantic
+routing, not keyword matching or a rule forcing every message to execute a tool.
+Review calls have their own `completion_review` usage/activity stage, add API
+latency/cost, and are not an independent verifier or a guarantee of correctness.
+The response generator must not infer that tools are unavailable merely because
+none ran. This changes the earlier frozen routing policy; historical benchmark
+results describe the older policy, not this hotfix.
 
 ## Tools and MCP
 

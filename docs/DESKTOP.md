@@ -14,7 +14,10 @@ unsigned. See [RELEASE.md](RELEASE.md) for platform limits, checksums, building 
 publication checks. Release binaries are built separately from this source repository.
 
 1. Review and agree to the included Microsoft runtime terms/privacy notice.
-2. Paste your **DeepSeek** and **TypeSafe / Jev** API keys in the first-run dialog.
+2. Paste your **TypeSafe / Jev** key and either add a **DeepSeek** key or choose
+   **Set up local Bonsai instead of DeepSeek**. In Settings, select either model
+   and click **Set up & use Bonsai** for automatic download/install with progress.
+   See [local model requirements and privacy](LOCAL_MODELS.md).
    “Get a key” opens the corresponding provider's website.
 3. Save securely, choose a workspace, and send a task.
 

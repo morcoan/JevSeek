@@ -57,11 +57,12 @@ export const statusLabels: Record<Status, string> = {
 };
 export function basename(path: string) { return path.replace(/[\\/]+$/, '').split(/[\\/]/).pop() || 'Choose workspace'; }
 export function dateLabel(time?: number) { return time ? new Intl.DateTimeFormat(undefined, { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }).format(time * 1000) : ''; }
-export function bytesLabel(bytes: number) { return bytes < 1024 ? `${bytes} B` : `${(bytes / 1024).toFixed(1)} KB`; }
+export function bytesLabel(bytes: number) { return bytes < 1024 ? `${bytes} B` : bytes < 1024 ** 2 ? `${(bytes / 1024).toFixed(1)} KB` : bytes < 1024 ** 3 ? `${(bytes / 1024 ** 2).toFixed(1)} MB` : `${(bytes / 1024 ** 3).toFixed(2)} GB`; }
 export function progressLabel(events: BackendEvent[]) {
   const last = [...events].reverse().find(e => ['tool_started', 'tool_finished', 'model_started', 'model_progress', 'run_started'].includes(e.kind));
   if (!last) return 'Starting the agent';
   if (last.kind === 'tool_started') return `Running ${last.data.tool}`;
+  if (last.data.stage === 'completion_review') return 'Checking whether the requested work is complete';
   if (last.data.stage === 'summary') return 'Writing the response';
   if (last.data.stage === 'arguments') return 'Preparing tool arguments';
   return 'Choosing the next action';

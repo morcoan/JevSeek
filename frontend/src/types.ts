@@ -22,17 +22,23 @@ export interface KeyStatus {
   };
 }
 export interface RuntimeTerms { required: boolean; accepted: boolean; version: string }
+export interface LocalModel { selected: 'deepseek' | 'prism' | 'crack'; phase: string; message: string; downloaded: number; total: number; speed: number; busy: boolean; running: boolean; models: {id: string; label: string; bytes: number}[] }
 export interface Bootstrap extends KeyStatus {
+  local_model?: LocalModel;
   runtime_terms?: RuntimeTerms;
   sessions: SessionMeta[]; unreadable: number; preferences: Preferences;
   active: Active | null; cursor: number; desktop: boolean;
 }
-export interface Poll { cursor: number; active: Active | null; reset: boolean; events: BackendEvent[] }
+export interface Poll { local_model?: LocalModel; cursor: number; active: Active | null; reset: boolean; events: BackendEvent[] }
 export interface Artifact { id: string; name: string; kind: string; tool: string; time: number; bytes: number }
 export interface ArtifactContent { name: string; text: string; truncated: boolean; bytes: number }
 export type Envelope<T> = { ok: true; data: T } | { ok: false; error: string };
 export interface BridgeMethods {
   bootstrap(): Promise<Envelope<Bootstrap>>;
+  local_model_status(): Promise<Envelope<LocalModel>>;
+  setup_local_model(variant: string): Promise<Envelope<LocalModel>>;
+  cancel_local_setup(): Promise<Envelope<LocalModel>>;
+  use_deepseek(): Promise<Envelope<LocalModel>>;
   get_key_status(): Promise<Envelope<KeyStatus>>;
   accept_runtime_terms(accepted: boolean): Promise<Envelope<RuntimeTerms>>;
   close_app(): Promise<Envelope<boolean>>;

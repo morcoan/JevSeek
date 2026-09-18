@@ -6,11 +6,13 @@ safe envelopes; artifacts must be referenced by the selected session's log.
 from __future__ import annotations
 
 from collections import deque
+from dataclasses import replace
 from functools import wraps
 import json
 import os
 from pathlib import Path
 import re
+import sys
 import threading
 import time
 import webbrowser
@@ -56,6 +58,31 @@ class DesktopAPI:
         self._runner = runner  # Dependency injection for offline adapter tests only.
         self._choose_folder = None
         self._redactor = Redactor.environment()
+        from .bonsai import BonsaiManager
+        self._bonsai = BonsaiManager(self._state_dir, [self._project.parent / 'badbonsai', Path(self._project.anchor) / 'badbonsai', Path(sys.executable).parent / 'badbonsai', Path(Path(sys.executable).anchor) / 'badbonsai'])
+
+    @endpoint
+    def local_model_status(self):
+        return self._bonsai.status()
+
+    @endpoint
+    def setup_local_model(self, variant):
+        with self._guard:
+            if self._active: raise DesktopError('Wait for the active run before changing models.')
+            if not self._runtime_terms()['accepted']: raise DesktopError('Accept the runtime terms first.')
+            try: return self._bonsai.setup(variant)
+            except ValueError as exc: raise DesktopError(str(exc)) from exc
+
+    @endpoint
+    def cancel_local_setup(self):
+        return self._bonsai.cancel()
+
+    @endpoint
+    def use_deepseek(self):
+        with self._guard:
+            if self._active: raise DesktopError('Wait for the active run before changing models.')
+            try: return self._bonsai.use_deepseek()
+            except ValueError as exc: raise DesktopError(str(exc)) from exc
 
     def _runtime_terms(self):
         version = 'microsoft-webview2-fixed-v1'
@@ -222,7 +249,7 @@ class DesktopAPI:
     def bootstrap(self):
         status = self._key_status()
         return {**self._list(), 'preferences': self._preferences(), 'active': self._active,
-                'cursor': self._cursor, 'desktop': True, 'runtime_terms': self._runtime_terms(), **status}
+                'cursor': self._cursor, 'desktop': True, 'runtime_terms': self._runtime_terms(), 'local_model': self._bonsai.status(), **status}
 
     @endpoint
     def list_sessions(self):
@@ -239,7 +266,7 @@ class DesktopAPI:
         if not isinstance(cursor, int) or cursor < 0: raise DesktopError('Invalid event cursor.')
         with self._guard:
             return {'cursor': self._cursor, 'active': dict(self._active) if self._active else None,
-                    'reset': bool(self._events and cursor < self._events[0]['cursor'] - 1),
+                    'reset': bool(self._events and cursor < self._events[0]['cursor'] - 1), 'local_model': self._bonsai.status(),
                     'events': [self._redactor.clean(item['event']) for item in self._events if item['cursor'] > cursor]}
 
     @endpoint
@@ -276,8 +303,10 @@ class DesktopAPI:
             if not self._runtime_terms()['accepted']:
                 raise DesktopError('Review and agree to the included Microsoft runtime terms before starting a run.')
             keys = self._provider_keys()
-            if self._runner is None and not all(keys.values()):
-                raise DesktopError('Add both API keys in Settings before starting a run. Saved conversations can still be viewed offline.')
+            if self._bonsai.status()['busy']: raise DesktopError('Wait for model setup to finish, or cancel it in Settings.')
+            local = self._bonsai.selection()['provider'] != 'deepseek'
+            if self._runner is None and (not keys.get('jev') or (not local and not keys.get('deepseek'))):
+                raise DesktopError('Add a Jev key and either set up local Bonsai or add a DeepSeek key in Settings.')
             if session_id:
                 session, _ = self._snapshot(session_id)
                 if session.pending() and not acknowledge:
@@ -310,9 +339,15 @@ class DesktopAPI:
                 from .context import ContextPolicy
                 from mcp_setup import load_servers
                 from main import instructions
+                local = self._bonsai.connection()
+                if local:
+                    self._redactor = Redactor([*self._redactor.secrets, local['api_key']])
+                    session.redactor = self._redactor
                 policy = ContextPolicy(router_bytes=int(os.getenv('JEV_CONTEXT_BYTES', '24000')),
-                                       model_bytes=int(os.getenv('DS_CONTEXT_BYTES', '96000')))
-                models = Models(session, Settings.environment(), credentials=keys)
+                                       model_bytes=24000 if local else int(os.getenv('DS_CONTEXT_BYTES', '96000')))
+                settings = Settings.environment()
+                if local: settings = replace(settings, model='bonsai', output_tokens=4096)
+                models = Models(session, settings, credentials=keys, local=local)
                 tools = Tools(session.workspace, session.directory / 'terminal', load_servers() if use_mcp else {})
                 agent = Agent(session, models, tools, policy, instructions(), cancel=self._cancel)
                 result = agent.run(prompt, acknowledge_pending=acknowledge)
@@ -344,6 +379,7 @@ class DesktopAPI:
         with self._guard:
             if self._active:
                 self._cancel.set()
+                self._bonsai.cancel()
                 self._active['stopping'] = True
             return {'active': dict(self._active) if self._active else None}
 
@@ -355,6 +391,10 @@ class DesktopAPI:
                 self._transient(self._active['session_id'], 'desktop_notice', {
                     'message': 'Stopping safely before closing. Native tools may need time to return. Close the window again once the run has stopped.'})
                 return False
+        if self._bonsai.status()['busy']:
+            self._bonsai.cancel()
+            return False
+        self._bonsai.close()
         return True
 
     @endpoint

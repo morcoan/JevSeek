@@ -85,12 +85,13 @@ def main():
     if any(p.is_symlink() for p in built.rglob('*')): raise ValueError('Symlink in frontend build')
     shutil.copytree(built, stage / 'frontend' / 'dist')
     licenses(stage); icon()
-    info = {'product': 'JevSeek', 'version': '0.1.0', 'platform': 'Windows x64', 'python': sys.version.split()[0],
+    shutil.copy2(ROOT / 'LICENSE', stage / 'THIRD_PARTY_NOTICES' / 'JevSeek-LICENSE.txt')
+    info = {'product': 'JevSeek', 'version': '0.2.1', 'platform': 'Windows x64', 'python': sys.version.split()[0],
             'webview2': manifest['version'], 'webview2_cab_sha256': actual,
             'private_state_included': False, 'source_files': sorted(p.relative_to(stage).as_posix() for p in stage.rglob('*.py'))}
     (stage / 'build-info.json').write_text(json.dumps(info, indent=2))
     # A caller may have API keys in its shell. Analysis hooks must not inherit them.
-    env = {k:v for k,v in os.environ.items() if not any(word in k.upper() for word in ('KEY', 'TOKEN', 'SECRET', 'PASSWORD')) and k not in ('PYTHONPATH', 'PYTHONHOME')}
+    env = {k:v for k,v in os.environ.items() if not any(word in k.upper() for word in ('KEY', 'TOKEN', 'SECRET', 'PASSWORD')) and k not in ('PYTHONPATH', 'PYTHONHOME', 'JEV_KET')}
     env.update(JEVSEEK_BUILD_STAGE=str(stage), JEVSEEK_WEBVIEW2_RUNTIME=str(runtime),
                OPENHANDS_SUPPRESS_BANNER='1', LITELLM_LOCAL_MODEL_COST_MAP='True', AWS_EC2_METADATA_DISABLED='true')
     command = [sys.executable, '-m', 'PyInstaller', '--noconfirm', '--clean', '--distpath', str(ROOT / 'release'),
