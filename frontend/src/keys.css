@@ -1,0 +1,34 @@
+/* Secure provider setup reuses the same neutral / pink workspace grammar. */
+.key-setup-banner { display: flex; align-items: center; gap: 12px; padding: 12px 24px; border-bottom: 1px solid var(--border); background: var(--blue-wash); color: var(--blue); font-size: 12px; }
+.key-setup-banner > span { flex: 1; }
+.key-setup-banner .button { font-size: 12px; color: var(--text); }
+.key-intro { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
+.key-intro p { font-size: 14px; line-height: 1.65; }
+.key-icon { display: grid; place-items: center; width: 42px; height: 42px; flex-shrink: 0; background: var(--pink-wash); border: 1px solid var(--border); border-radius: 6px; }
+.key-security-note { padding: 12px; background: var(--sidebar); border-radius: 5px; margin: 0 0 20px; }
+.key-security-note p { font-size: 12px; }
+.key-field { margin-bottom: 20px; }
+.key-field-heading, .key-field-status { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.key-field-heading label { font-size: 13px; font-weight: 550; }
+.key-field input { min-height: 42px; font-size: 14px; }
+.key-field-status { min-height: 32px; margin-top: 4px; }
+.key-field-status > span { display: flex; align-items: center; gap: 5px; font-size: 11px; }
+.key-field-status .quiet-button { font-size: 11px; }
+.key-error { display: flex; gap: 8px; align-items: flex-start; color: var(--error); background: var(--error-wash); border-radius: 5px; padding: 12px; font-size: 13px; margin: 12px 0; }
+.key-error svg { margin-top: 2px; }
+.key-removal { border: 1px solid var(--warning); background: var(--warning-wash); border-radius: 5px; color: var(--warning); padding: 12px; font-size: 13px; margin: 12px 0; }
+.key-removal .dialog-actions { margin-top: 12px; }
+.key-removal button { color: var(--text); }
+.key-setup .save-feedback { align-items: flex-start; line-height: 1.6; }
+.key-setup .save-feedback svg { margin-top: 2px; }
+.text-link { padding: 0; color: var(--blue); text-decoration: underline; text-underline-offset: 3px; font: inherit; }
+.runtime-license-text { max-height: 280px; overflow: auto; border: 1px solid var(--control-border); border-radius: 4px; background: var(--canvas); padding: 16px; font-size: 13px; margin: 16px 0; }
+.runtime-terms .caption { line-height: 1.7; }
+@media (max-width: 719px) {
+  .key-setup-banner { padding: 12px 16px; flex-wrap: wrap; }
+  .key-setup-banner > span { min-width: 70%; }
+  .key-setup-banner .button { margin-left: 28px; }
+  .key-field input { min-height: 44px; font-size: 16px; }
+  .key-setup .dialog-actions { justify-content: stretch; }
+  .key-setup .dialog-actions button { flex: 1; }
+}

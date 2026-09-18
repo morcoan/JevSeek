@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+<title id="title">JevSeek — Decide. Execute. Observe.</title><desc id="desc">A pink pixel J on a warm neutral background. Jev selects an action, DeepSeek supplies arguments, native tools execute, and actual results inform the next decision.</desc>
+<rect width="1200" height="360" rx="24" fill="#f6f3f0"/>
+<path d="M920 0v360M980 0v360M1040 0v360M1100 0v360M1160 0v360M880 60h320M880 120h320M880 180h320M880 240h320M880 300h320" stroke="#e6dfda"/>
+<rect x="56" y="48" width="88" height="88" rx="18" fill="#ed9dc4"/>
+<path d="M78 70h44v29h-15v15H78V99h15V85H78z" fill="#281b23"/><path d="M78 70h15v15H78z" fill="#fcfaf9"/>
+<text x="166" y="104" font-family="Segoe UI,Arial,sans-serif" font-size="58" font-weight="700" fill="#281b23">JevSeek</text>
+<text x="59" y="180" font-family="Segoe UI,Arial,sans-serif" font-size="32" font-weight="600" fill="#281b23">Decide. Execute. Observe.</text>
+<text x="60" y="216" font-family="Segoe UI,Arial,sans-serif" font-size="20" fill="#655a62">A local coding workspace with API-backed intelligence.</text>
+<g font-family="Consolas,monospace" font-size="17" text-anchor="middle" fill="#281b23">
+<rect x="60" y="265" width="174" height="48" rx="7" fill="#ed9dc4"/><text x="147" y="295">JEV / ACTION</text>
+<text x="258" y="295">→</text><rect x="282" y="265" width="232" height="48" rx="7" fill="#e5eaf8"/><text x="398" y="295">DEEPSEEK / ARGUMENTS</text>
+<text x="538" y="295">→</text><rect x="562" y="265" width="188" height="48" rx="7" fill="#e9e3de"/><text x="656" y="295">NATIVE TOOLS</text>
+<text x="774" y="295">→</text><rect x="798" y="265" width="218" height="48" rx="7" fill="#fffdfb" stroke="#c8bcb7"/><text x="907" y="295">ACTUAL FEEDBACK ↺</text>
+</g>
+<rect x="1028" y="54" width="112" height="112" rx="12" fill="#fffdfb" stroke="#c8bcb7"/><path d="M1052 85l18 17-18 17m30 0h30" fill="none" stroke="#aa477a" stroke-width="6" stroke-linecap="square"/>
+</svg>

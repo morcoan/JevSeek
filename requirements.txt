@@ -1,0 +1,21 @@
+# Core — MUST stay version-locked together (built/tested/released as matched set).
+# Installing them separately causes ModuleNotFoundError (e.g. openhands.sdk.utils.path).
+openhands-sdk==1.49.1
+openhands-tools==1.49.1
+
+# .env loader for DS_KEY / LLM_* vars
+python-dotenv==1.2.2
+
+# Jev/TypeSafe decision layer (tool routing; no DeepSeek planner)
+typesafe-sdk==0.6.0
+
+# MCP discovery and atomic configuration locking (also SDK transitive deps)
+fastmcp==4.0.4
+filelock==3.32.3
+
+# Direct plain-nonthinking Flash API access (runtime + benchmarks)
+openai==2.26.0
+# Validate native tool arguments before executing any effects
+jsonschema==4.26.0
+# Dependency-lock maintenance helper (also a transitive SDK dependency)
+packaging==26.3

@@ -1,0 +1,3 @@
+#!/bin/sh
+# This scans staged bytes, not just the working tree. It never prints secrets.
+python scripts/public_audit.py --staged

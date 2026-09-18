@@ -1,0 +1,3 @@
+# Windows x64 build tooling. Runtime remains constrained by requirements*.lock.
+pyinstaller==6.21.0
+pyinstaller-hooks-contrib==2026.6

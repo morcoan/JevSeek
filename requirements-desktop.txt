@@ -1,0 +1,4 @@
+# Optional desktop shell; install core requirements first.
+pywebview==6.2.1
+# Native Windows Credential Manager (no roaming/shadow copies/plaintext fallback).
+pywin32==312; sys_platform == "win32"
