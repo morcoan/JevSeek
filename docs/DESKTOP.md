@@ -11,7 +11,7 @@ Open `release/JevSeek.exe`. It includes Python, the frontend/fonts and Microsoft
 WebView2; no Python, Node or separate WebView2 installation is needed. First
 launch extracts the embedded runtime and may take a little time. This build is
 unsigned. See [RELEASE.md](RELEASE.md) for platform limits, checksums, building and
-publication checks. No public download/repository has been created automatically.
+publication checks. Release binaries are built separately from this source repository.
 
 1. Review and agree to the included Microsoft runtime terms/privacy notice.
 2. Paste your **DeepSeek** and **TypeSafe / Jev** API keys in the first-run dialog.

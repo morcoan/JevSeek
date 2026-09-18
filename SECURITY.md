@@ -63,5 +63,5 @@ rules cannot undo an earlier commit; a leaked credential must be revoked even if
 removed from history. Enable hosting-provider secret scanning/push protection.
 Never paste keys, complete private tool traces or credential-vault exports in a
 public issue. Report security issues privately to the repository owner through
-the hosting provider's private reporting channel once it is configured; no public
-security contact/remote has been created by this local preparation.
+GitHub's private vulnerability reporting channel if available. Otherwise request
+a private contact without posting the vulnerability details or sensitive data.
