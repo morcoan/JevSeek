@@ -68,11 +68,11 @@ flowchart LR
 switch to another tool. Arguments are validated before effects. Incomplete calls
 do not execute. Interrupted effects require review rather than automatic replay.
 
-**Source-only cost improvement:** schema-determined arguments now bypass generation.
+**v0.2.3 cost improvement:** schema-determined arguments now bypass generation.
 Optional/free/unsupported fields still use the original model path; routing and
 execution safeguards are unchanged. The unvalidated neural argument adapter is
-research-only. No whole-agent saving percentage is claimed, and the existing
-EXE release is unchanged. [Exact scope and tests →](research/argument_offload/README.md)
+research-only. No whole-agent saving percentage is claimed. The Windows release
+now packages this previously validated source improvement. [Exact scope and tests →](research/argument_offload/README.md)
 
 **v0.2.2 context fix:** corrects the repeatable context-accounting overflow and adds
 intent-relevant archival search with a Jev-selectable `recall` tool.
@@ -196,7 +196,7 @@ Recorded local validation includes:
   the offline EXE check and is not a model-quality benchmark.
 
 These are historical recorded checks, **not a claim that hosted CI is running**.
-The source-only argument bypass adds28offline tests; the archived neural argument
+The v0.2.3 argument bypass adds28offline tests; the archived neural argument
 prototype retains39offline tests but has no completed live quality/cost trial.
 
 ```sh

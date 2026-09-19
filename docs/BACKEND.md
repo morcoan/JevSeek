@@ -193,7 +193,7 @@ needed, Flash is given exactly one native function, forced to `selected_action`
 with parallel calls disabled; Jev alone selects the tool. Arguments are validated
 before execution.
 
-### Schema-determined argument bypass (source publication)
+### Schema-determined argument bypass (v0.2.3)
 
 `JEV_ARGUMENT_OFFLOAD=deterministic` is the source default; `off` restores the
 original always-generate behavior. After tool selection, a conservative local
@@ -209,8 +209,8 @@ cancellation, native validation, `tool_started` persistence and execution remain
 unchanged.28offline tests cover the schema subset, mutation isolation, unchanged
 fallback, zero-versus-one generation calls for identical fixed arguments, and
 actual agent persist-before-effect/completed-session no-replay behavior.
-Whole-agent savings/coverage were not measured. This change is in source, not the
-existing v0.2.2EXE.
+Whole-agent savings/coverage were not measured. v0.2.3 packages this previously
+validated source change in the Windows EXE.
 
 The general Jev enum/span argument adapter is **not enabled**: its live quality and
 cost comparison was never completed. Its39offline contracts and proposed protocol

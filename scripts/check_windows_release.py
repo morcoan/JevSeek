@@ -30,7 +30,7 @@ def stop_tree(process):
 
 def isolated_environment(profile):
     env = {k:v for k,v in os.environ.items() if not any(w in k.upper() for w in ('KEY','TOKEN','SECRET','PASSWORD'))
-           and not k.startswith(('PYTHON','PI_','WEBVIEW2','_PYI')) and k not in ('VIRTUAL_ENV','CONDA_PREFIX')}
+           and not k.startswith(('PYTHON','PI_','WEBVIEW2','_PYI')) and k not in ('VIRTUAL_ENV','CONDA_PREFIX','JEV_KET')}
     windows = Path(os.environ.get('SystemRoot', 'C:/Windows'))
     env.update(PATH=os.pathsep.join(map(str, [windows/'System32', windows/'System32/WindowsPowerShell/v1.0', windows])),
                JEVSEEK_DATA_DIR=str(profile), PYINSTALLER_RESET_ENVIRONMENT='1')
@@ -67,7 +67,13 @@ def main():
         results['mcp-helper'] = {'exit':code,'ok':code==0 and mcp_output.exists() and not mcp_output.read_text().strip()}
     except subprocess.TimeoutExpired:
         stop_tree(process); results['mcp-helper'] = {'exit':-1,'ok':False}
-    results['ok'] = all(results[m]['exit']==0 and results[m]['report'].get('ok') for m in ('self-test','smoke-test')) and results['mcp-helper']['ok']
+    backend = results['self-test']['report']; native = results['smoke-test']['report']
+    expected = json.loads((ROOT/'release'/'build-info.json').read_text(encoding='utf-8'))
+    results['package_identity'] = (backend.get('build_info') == expected
+                                   and backend.get('frozen') and backend.get('python_bundled')
+                                   and native.get('frozen') and native.get('bundled_runtime_present'))
+    results['ok'] = (all(results[m]['exit']==0 and results[m]['report'].get('ok') for m in ('self-test','smoke-test'))
+                     and results['mcp-helper']['ok'] and results['package_identity'])
     results['environment'] = 'Windows/PowerShell-only PATH; no provider keys, PYTHONHOME or PYTHONPATH; EXE copied outside source'
     (out/'report.json').write_text(json.dumps(results,indent=2),encoding='utf-8')
     print(json.dumps({'evidence':str(out),**results},indent=2))

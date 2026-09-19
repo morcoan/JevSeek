@@ -22,6 +22,9 @@ def backend_check(output, live=False):
         for names in ENV_NAMES.values():
             for name in names: os.environ.pop(name, None)
     report = {'frozen': is_frozen(), 'python_bundled': bool(getattr(sys, '_MEIPASS', None))}
+    build_info = resource_root() / 'build-info.json'
+    if build_info.is_file():
+        report['build_info'] = json.loads(build_info.read_text(encoding='utf-8'))
     tools = models = None
     try:
         from .session import Session
@@ -48,6 +51,29 @@ def backend_check(output, live=False):
             # Client construction/import coverage only, no request or cost.
             models = Models(s, Settings(), credentials={'deepseek': 'offline_test_not_a_key', 'jev': 'offline_test_not_a_key'})
             tools = Tools(workspace, workspace / 'terminal', {})
+            # Verify the new packaged path, with both provider entrypoints blocked.
+            # These are argument contracts, not paid model-quality trials.
+            generate = models.generate; system_one = models.jev.system_one
+            generated = []
+            def no_model_io(*args, **kwargs):
+                raise AssertionError('Unexpected provider call in offline release check')
+            try:
+                models.generate = no_model_io; models.jev.system_one = no_model_io
+                schema = {'type':'object', 'properties':{'scope':{'const':'workspace'}},
+                          'required':['scope'], 'additionalProperties':False}
+                report['schema_determined_arguments'] = models.arguments({}, 'mcp.fixed', schema, '') == {'scope':'workspace'}
+                def record_generation(stage, messages, schema=None):
+                    generated.append({'stage':stage, 'messages':messages, 'schema':schema})
+                    return {'path':'fixture.txt'}
+                models.generate = record_generation
+                state = {'user_intent':'Read fixture.txt'}
+                answer = models.arguments(state, 'read', tools.schemas['read'], '')
+                report['free_arguments_use_original_generator'] = (answer == {'path':'fixture.txt'}
+                    and len(generated) == 1 and generated[0]['stage'] == 'arguments'
+                    and generated[0]['schema'] == tools.schemas['read']
+                    and json.loads(generated[0]['messages'][1]['content']) == state)
+            finally:
+                models.generate = generate; models.jev.system_one = system_one
             outcomes = []
             for name, args in [
                 ('write', {'path': 'fixture.txt', 'file_text': 'alpha\n'}),
@@ -61,7 +87,8 @@ def backend_check(output, live=False):
             report['tools'] = outcomes
             report['fixture_edited'] = (workspace / 'fixture.txt').read_text().strip() == 'beta'
             report['mcp_config_empty'] = read_config(workspace / 'missing.json') == {'mcpServers': {}}
-            report['ok'] = report['fixture_edited'] and all(r['ok'] and r['expected_output'] for r in outcomes) and all(report[k] for k in ('native_vault_roundtrip','native_vault_removal','keys_not_exported'))
+            report['ok'] = report['fixture_edited'] and all(r['ok'] and r['expected_output'] for r in outcomes) and all(report[k] for k in ('native_vault_roundtrip','native_vault_removal','keys_not_exported',
+                'schema_determined_arguments','free_arguments_use_original_generator'))
             if live:
                 if not all(live_keys.values()): raise ValueError('Explicit provider keys are required for --live-check')
                 from .agent import Agent
@@ -109,7 +136,17 @@ def native_check(window, api, output, runtime):
         report['vault_supported'] = bool(keys and keys['ok'] and keys['data']['key_setup']['supported'])
         report['no_inherited_or_bundled_keys'] = not any(keys['data']['providers'].values())
         if is_frozen():
-            report['terms_shown'] = window.evaluate_js("document.querySelector('.runtime-license-text')?.textContent.includes('MICROSOFT SOFTWARE LICENSE TERMS') || false")
+            phase('waiting_for_license_text')
+            # React renders the dialog before its bundled text fetch finishes.
+            # Wait for actual visible terms, not merely for the main heading.
+            deadline = time.monotonic() + 15
+            report['terms_shown'] = False
+            while time.monotonic() < deadline:
+                shown = window.evaluate_js("(() => { const e = document.querySelector('.runtime-license-text'); return Boolean(e && e.getClientRects().length && e.textContent.includes('MICROSOFT SOFTWARE LICENSE TERMS')); })()")
+                if shown:
+                    report['terms_shown'] = True
+                    break
+                time.sleep(.1)
         report['no_preview'] = window.evaluate_js("!document.querySelector('.preview-banner')")
         report['no_overflow'] = window.evaluate_js('document.documentElement.scrollWidth <= innerWidth')
         report['local_ui_only'] = window.get_current_url().startswith('http://127.0.0.1:')
@@ -133,7 +170,9 @@ def native_check(window, api, output, runtime):
                 report['screenshot'] = True
             else:
                 report['screenshot'] = False
-        report['ok'] = all(report.get(k) for k in ('ui_rendered', 'vault_supported', 'no_preview', 'no_overflow', 'local_ui_only'))
+        checks = ['ui_rendered', 'vault_supported', 'no_inherited_or_bundled_keys', 'no_preview', 'no_overflow', 'local_ui_only']
+        if is_frozen(): checks += ['bundled_runtime_present', 'terms_shown']
+        report['ok'] = all(report.get(k) for k in checks)
         phase('complete')
     except Exception as exc:
         report.update(ok=False, error=type(exc).__name__, detail=str(exc)[:1500])

@@ -86,9 +86,11 @@ def main():
     shutil.copytree(built, stage / 'frontend' / 'dist')
     licenses(stage); icon()
     shutil.copy2(ROOT / 'LICENSE', stage / 'THIRD_PARTY_NOTICES' / 'JevSeek-LICENSE.txt')
-    info = {'product': 'JevSeek', 'version': '0.2.2', 'platform': 'Windows x64', 'python': sys.version.split()[0],
+    source_files = sorted(p.relative_to(stage).as_posix() for p in stage.rglob('*.py'))
+    info = {'product': 'JevSeek', 'version': '0.2.3', 'platform': 'Windows x64', 'python': sys.version.split()[0],
             'webview2': manifest['version'], 'webview2_cab_sha256': actual,
-            'private_state_included': False, 'source_files': sorted(p.relative_to(stage).as_posix() for p in stage.rglob('*.py'))}
+            'private_state_included': False, 'source_files': source_files,
+            'source_sha256': {name: hashlib.sha256((stage / name).read_bytes()).hexdigest() for name in source_files}}
     (stage / 'build-info.json').write_text(json.dumps(info, indent=2))
     # A caller may have API keys in its shell. Analysis hooks must not inherit them.
     env = {k:v for k,v in os.environ.items() if not any(word in k.upper() for word in ('KEY', 'TOKEN', 'SECRET', 'PASSWORD')) and k not in ('PYTHONPATH', 'PYTHONHOME', 'JEV_KET')}
