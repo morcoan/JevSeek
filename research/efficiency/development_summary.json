@@ -1,0 +1,141 @@
+{
+  "phase": "development",
+  "batches": 4,
+  "queries": 32,
+  "arms": {
+    "thinking": {
+      "correct": 31,
+      "total": 32,
+      "batch_correct": 3,
+      "none_correct": 8,
+      "none_total": 8,
+      "invalid": 0,
+      "median_endpoint_seconds": 5.512590250000358,
+      "usage": {
+        "calls": 4,
+        "input_tokens": 2537,
+        "output_tokens": 5391,
+        "cache_hit_input_tokens": 0,
+        "reasoning_tokens_reported": 5121,
+        "reasoning_usage_available_calls": 4,
+        "seconds": 24.98466890002601,
+        "errors": 0
+      },
+      "reported_token_proxy": 7928
+    },
+    "plain": {
+      "correct": 32,
+      "total": 32,
+      "batch_correct": 4,
+      "none_correct": 8,
+      "none_total": 8,
+      "invalid": 0,
+      "median_endpoint_seconds": 0.9648505500226747,
+      "usage": {
+        "calls": 4,
+        "input_tokens": 2437,
+        "output_tokens": 268,
+        "cache_hit_input_tokens": 0,
+        "reasoning_tokens_reported": 0,
+        "reasoning_usage_available_calls": 0,
+        "seconds": 4.186829200014472,
+        "errors": 0
+      },
+      "reported_token_proxy": 2705
+    },
+    "jev_verbose": {
+      "correct": 32,
+      "total": 32,
+      "batch_correct": 4,
+      "none_correct": 8,
+      "none_total": 8,
+      "invalid": 0,
+      "median_endpoint_seconds": 0.354215449973708,
+      "usage": {
+        "calls": 4,
+        "input_tokens": 18131,
+        "output_tokens": 5417,
+        "cache_hit_input_tokens": 0,
+        "reasoning_tokens_reported": 0,
+        "reasoning_usage_available_calls": 0,
+        "seconds": 1.4240379999973811,
+        "errors": 0
+      },
+      "reported_token_proxy": 23548
+    },
+    "jev_compact": {
+      "correct": 32,
+      "total": 32,
+      "batch_correct": 4,
+      "none_correct": 8,
+      "none_total": 8,
+      "invalid": 0,
+      "median_endpoint_seconds": 0.16840965001028962,
+      "usage": {
+        "calls": 4,
+        "input_tokens": 8466,
+        "output_tokens": 5417,
+        "cache_hit_input_tokens": 0,
+        "reasoning_tokens_reported": 0,
+        "reasoning_usage_available_calls": 0,
+        "seconds": 0.7976396000594832,
+        "errors": 0
+      },
+      "reported_token_proxy": 13883
+    },
+    "code": {
+      "correct": 22,
+      "total": 32,
+      "batch_correct": 0,
+      "none_correct": 4,
+      "none_total": 8,
+      "invalid": 0,
+      "median_endpoint_seconds": 0.00037895000423304737,
+      "usage": {
+        "calls": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_hit_input_tokens": 0,
+        "reasoning_tokens_reported": 0,
+        "reasoning_usage_available_calls": 0,
+        "seconds": 0.0,
+        "errors": 0
+      },
+      "reported_token_proxy": 0
+    }
+  },
+  "compact_comparisons": {
+    "jev_verbose": {
+      "compact_minus_correct": 0,
+      "compact_minus_full_batches": 0,
+      "median_speedup": 2.1032966338453045,
+      "reported_token_proxy_reduction": 0.41043825377951415,
+      "input_token_reduction": 0.5330649164414538
+    },
+    "thinking": {
+      "compact_minus_correct": 1,
+      "compact_minus_full_batches": 1,
+      "median_speedup": 32.7332207487133,
+      "reported_token_proxy_reduction": -0.7511352169525731,
+      "input_token_reduction": -2.337012219156484
+    },
+    "plain": {
+      "compact_minus_correct": 0,
+      "compact_minus_full_batches": 0,
+      "median_speedup": 5.7291880243425695,
+      "reported_token_proxy_reduction": -4.132347504621072,
+      "input_token_reduction": -2.4739433729995897
+    }
+  },
+  "development_gate_passed": true,
+  "validation": {
+    "source_input_hashes_match": true,
+    "rendered_results_recomputed": 20
+  },
+  "caveats": [
+    "Authored bounded dispatch endpoint, not a complete agent or novel-code task.",
+    "Caller supplies existing concrete catalogue and questions; authoring/permission costs are not measured here.",
+    "Provider token counts are accounting proxies, not equal compute or dollar units.",
+    "Small correlated batches; equal observed accuracy is not statistical noninferiority."
+  ]
+}

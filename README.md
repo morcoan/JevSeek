@@ -16,8 +16,9 @@
 
 **JevSeek is a desktop coding agent that separates choosing an action from writing its arguments.**
 [TypeSafe/Jev](https://typesafe.ai/) selects the next tool, non-thinking
-[DeepSeek](https://www.deepseek.com/) or optional local Bonsai supplies the arguments, and
-[OpenHands](https://github.com/OpenHands/software-agent-sdk) executes the native tools.
+[DeepSeek](https://www.deepseek.com/) or optional local Bonsai supplies open-ended arguments,
+and [OpenHands](https://github.com/OpenHands/software-agent-sdk) executes the native tools.
+When the selected tool's schema fixes every argument, code supplies them directly—no generation call.
 The next decision uses what **actually happened**, rather than a speculative plan.
 
 You get a React desktop workspace for conversations, live tool activity, saved
@@ -49,8 +50,11 @@ There are no subagents, synthetic-thinking gates or dedicated planning tools in 
 ```mermaid
 flowchart LR
     U[User request + actual history] --> J{Jev selects}
-    J -->|Tool| D[DeepSeek or local Bonsai supplies arguments]
-    D --> V[Validate one native call]
+    J -->|Tool| P{Schema fixes all arguments?}
+    P -->|Yes| B[Code supplies fixed arguments]
+    P -->|No| D[DeepSeek or local Bonsai supplies arguments]
+    B --> V[Validate one native call]
+    D --> V
     V --> T[OpenHands / MCP tool]
     T --> O[Persist actual result]
     O --> U
@@ -63,6 +67,12 @@ flowchart LR
 **The boundary is deliberate:** Jev chooses the action; the generation model cannot silently
 switch to another tool. Arguments are validated before effects. Incomplete calls
 do not execute. Interrupted effects require review rather than automatic replay.
+
+**Source-only cost improvement:** schema-determined arguments now bypass generation.
+Optional/free/unsupported fields still use the original model path; routing and
+execution safeguards are unchanged. The unvalidated neural argument adapter is
+research-only. No whole-agent saving percentage is claimed, and the existing
+EXE release is unchanged. [Exact scope and tests →](research/argument_offload/README.md)
 
 **v0.2.2 context fix:** corrects the repeatable context-accounting overflow and adds
 intent-relevant archival search with a Jev-selectable `recall` tool.
@@ -153,8 +163,16 @@ agent superiority.
 | Native reasoning, synthetic deliberation, or plain arguments? | On that task, plain and native-max each passed **30/30**; synthetic v2 halted at **11/30**. | Use plain non-thinking arguments; keep deliberation experimental. |
 | Does that survive production context handling? | A separate backend run passed **30/30** with **10 actions** and **3 automatic compactions**. | Retain factual source context and inspectable session artifacts. |
 
+The [complete research archive](research/README.md) also publishes the later
+intelligence, grounding, efficiency and cost studies—including every negative or
+incomplete avenue. The clearest new win is a **bounded decision endpoint** with
+0.225smedian latency and estimated34%lower off-peak API cost than nonthinking
+Flash at equal observed accuracy. It is not an automatic whole-agent speedup.
+[Measured efficiency](research/efficiency/RESULTS.md) · [Cost accounting](research/cost_offload/README.md)
+
 **Important limits:** these are small local studies, not a broad benchmark suite.
-All main comparison arms used Jev; there is **no Jev-vs-DeepSeek-router ablation**.
+All main arms in the ORIGINAL build-engine comparisons used Jev; there is **no
+whole-agent Jev-vs-DeepSeek-router ablation** in those studies.
 Provider load, cache behavior and model aliases can change. Test success is not a
 security guarantee, and an unfinished run is not a performance win.
 
@@ -177,7 +195,9 @@ Recorded local validation includes:
 - A source-desktop, real-provider read-only integration check. This is separate from
   the offline EXE check and is not a model-quality benchmark.
 
-These are recorded checks, **not a claim that hosted CI is running**.
+These are historical recorded checks, **not a claim that hosted CI is running**.
+The source-only argument bypass adds28offline tests; the archived neural argument
+prototype retains39offline tests but has no completed live quality/cost trial.
 
 ```sh
 python -m unittest -v test_credentials.py test_public_audit.py test_desktop.py test_backend.py test_mcp_setup.py
@@ -209,7 +229,7 @@ npm run build
 jevseek/       Agent loop, context, sessions, native tools and desktop bridge
 frontend/      React + TypeScript + CSS desktop interface
 benchmarks/    Experimental runners and the independent build-engine evaluator
-research/      Historical routing study and production-context findings
+research/      Full study archive: wins, failures, limits, prototypes and summaries
 docs/          Architecture, usage, desktop and release documentation
 scripts/       Build, validation and privacy-safe export helpers
 packaging/     Windows executable spec, icon and runtime version pin

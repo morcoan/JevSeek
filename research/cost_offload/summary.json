@@ -1,0 +1,127 @@
+{
+  "kind": "posthoc_list_price_audit_of_saved_confirmation_NOT_new_quality_trial",
+  "sources": {
+    "jev": {
+      "url": "https://docs.typesafe.ai/models.md",
+      "model": "jev-1.13.0",
+      "input_usd_per_million": "0.042",
+      "output_usd_per_million": "0",
+      "quote": "Price: Charged per input token. Output tokens are free."
+    },
+    "deepseek": {
+      "url": "https://api-docs.deepseek.com/quick_start/pricing",
+      "model": "DeepSeek-V4.1-Flash",
+      "off_peak": {
+        "input_cache_hit": "0.003",
+        "input_cache_miss": "0.15",
+        "output": "0.60"
+      },
+      "peak": {
+        "input_cache_hit": "0.006",
+        "input_cache_miss": "0.30",
+        "output": "1.20"
+      },
+      "peak_hours": "Monday-Friday 01:00-04:00 and06:00-10:00 UTC; all others off-peak"
+    },
+    "retrieved": "2026-09-19; official pages fetched via Exa, current public list prices, not account-specific invoices"
+  },
+  "new_provider_requests": 0,
+  "calls_repriced": 48,
+  "outcomes_and_rendered_results_recomputed": 48,
+  "accuracy": {
+    "plain": 96,
+    "thinking": 96,
+    "jev_verbose": 96,
+    "jev_compact": 96
+  },
+  "usage": {
+    "plain": {
+      "requests": 12,
+      "input_miss": 7714,
+      "input_hit": 0,
+      "output": 817
+    },
+    "thinking": {
+      "requests": 12,
+      "input_miss": 8014,
+      "input_hit": 0,
+      "output": 10281
+    },
+    "jev_verbose": {
+      "requests": 12,
+      "input_miss": 54919,
+      "input_hit": 0,
+      "output": 16416
+    },
+    "jev_compact": {
+      "requests": 12,
+      "input_miss": 25985,
+      "input_hit": 0,
+      "output": 16416
+    }
+  },
+  "scenarios": {
+    "off_peak": {
+      "estimated_usd_for_12_batches": {
+        "plain": "0.00164730",
+        "thinking": "0.00737070",
+        "jev_verbose": "0.002306598",
+        "jev_compact": "0.001091370"
+      },
+      "compact_saving_fraction": {
+        "plain": "0.3374795119286104534693134220",
+        "thinking": "0.8519312955350238104928975538",
+        "jev_verbose": "0.5268486316211147326062018609"
+      },
+      "fallback_break_even_fraction_of_equal_cost_flash_requests": {
+        "plain": "0.3374795119286104534693134220",
+        "thinking": "0.8519312955350238104928975538"
+      }
+    },
+    "peak": {
+      "estimated_usd_for_12_batches": {
+        "plain": "0.0032946",
+        "thinking": "0.0147414",
+        "jev_verbose": "0.002306598",
+        "jev_compact": "0.001091370"
+      },
+      "compact_saving_fraction": {
+        "plain": "0.6687397559643052267346567110",
+        "thinking": "0.9259656477675119052464487769",
+        "jev_verbose": "0.5268486316211147326062018609"
+      },
+      "fallback_break_even_fraction_of_equal_cost_flash_requests": {
+        "plain": "0.6687397559643052267346567110",
+        "thinking": "0.9259656477675119052464487769"
+      }
+    }
+  },
+  "plain_flash_cache_hit_fraction_at_cost_equality": {
+    "off_peak": "0.4902562528770906858984195182",
+    "peak": "0.9714777796003026567121533602"
+  },
+  "raw_call_sha256": {
+    ".local\\research\\efficiency\\confirmation-1789831826798837800\\storage-841001\\calls.json": "803963b6748f902a4b387a16ec636b90e807637fb4127af10bfcf1465ee3c70c",
+    ".local\\research\\efficiency\\confirmation-1789831826798837800\\notifications-841000\\calls.json": "2112ee6cff29fff02e3fb914369ce702c8a2d41f108195ef5c2c689164658024",
+    ".local\\research\\efficiency\\confirmation-1789831826798837800\\notifications-841003\\calls.json": "6eeae99c4a2c35dbab0e22c2bafebae4a0ff3557fe8941bece3bacd737f335af",
+    ".local\\research\\efficiency\\confirmation-1789831826798837800\\pipeline-841002\\calls.json": "1db6d3e7f08a28ad062dcfac63774b11196ff5c46c84136a03db6c35193c3070",
+    ".local\\research\\efficiency\\confirmation-1789831826798837800\\pipeline-841005\\calls.json": "a989d14a4734a011cf0d15a65956d270fd5c7e9868c1b82b12da4515a452d4e5",
+    ".local\\research\\efficiency\\confirmation-1789831826798837800\\storage-841004\\calls.json": "affc06307342111ea769c275cea11920739465dce772e156654f571a71ce4b3f",
+    ".local\\research\\efficiency\\confirmation-1789831826798837800\\storage-841007\\calls.json": "aed69defd888c47fcf8b138a347383ac4d67d61f147881a204b0fca095bc95bf",
+    ".local\\research\\efficiency\\confirmation-1789831826798837800\\notifications-841006\\calls.json": "00e06781be85792fba77183cf81e23156dab63bfb822a67392310702e8813e84",
+    ".local\\research\\efficiency\\confirmation-1789831826798837800\\pipeline-841008\\calls.json": "4373b828e0bce8a08143f6408fa8ad0df918d9ea0d11ef34ee2f519c433de76d",
+    ".local\\research\\efficiency\\confirmation-1789831826798837800\\notifications-841009\\calls.json": "9d525d40508eeb2ff8715a0ca8fb4f038e918e8e25901890d38efe01413fd32d",
+    ".local\\research\\efficiency\\confirmation-1789831826798837800\\storage-841010\\calls.json": "8bec258e6e05f9508bcbb84680d9c70d6b33d89275b8c07d5ea058327735312b",
+    ".local\\research\\efficiency\\confirmation-1789831826798837800\\pipeline-841011\\calls.json": "91f3287dc6d218c23919148004c4332f466e72a6694c16303face8f7db95be28"
+  },
+  "limits": [
+    "Saved choices/latencies unchanged; not an invoice or a new quality sample.",
+    "12batches repeat24semantic patterns from3authored catalogues, not96independent real-world tasks.",
+    "This is a selection endpoint, not a full coding agent. Upstream query/catalogue authoring and downstream narration/execution/fallback are excluded.",
+    "In an actual cascade, charge every Jev and Flash attempt, failure, retry, fallback and reporting call. Do not double-count reasoning tokens.",
+    "Fallback break-even assumes each fallback costs the average original Flash request; it is an economic bound, NOT an accuracy threshold or confidence calibration.",
+    "Candidate NONE answers are valid for the original selection service; solving the unavailable work may require a separately charged generative fallback.",
+    "Actual cache usage, peak hours, model version, contract rates and prices can change the result."
+  ],
+  "offline_cost_checks": 7
+}

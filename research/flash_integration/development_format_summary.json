@@ -1,0 +1,96 @@
+{
+  "kind": "posthoc_format_replay_NOT_new_inference",
+  "phase": "development",
+  "scores": {
+    "allocation": {
+      "direct": 0,
+      "thinking": 2,
+      "self_tool": 2,
+      "jev_tool": 2
+    },
+    "ordering": {
+      "direct": 2,
+      "thinking": 2,
+      "self_tool": 2,
+      "jev_tool": 2
+    },
+    "grounding": {
+      "direct": 21,
+      "thinking": 0,
+      "self_tool": 27,
+      "jev_tool": 26
+    }
+  },
+  "changes": [
+    {
+      "task": "allocation-621000",
+      "arm": "direct",
+      "reason": "ambiguous_or_invalid_output",
+      "old": {
+        "feasible": false,
+        "optimal": false,
+        "error": "shape",
+        "correct": false,
+        "answered": false
+      },
+      "new": {
+        "feasible": false,
+        "optimal": false,
+        "error": "shape",
+        "correct": false,
+        "answered": false
+      }
+    },
+    {
+      "task": "allocation-621001",
+      "arm": "jev_tool",
+      "reason": "unique_schema_valid_trailing_json",
+      "old": {
+        "feasible": false,
+        "optimal": false,
+        "error": "shape",
+        "correct": false,
+        "answered": false
+      },
+      "new": {
+        "feasible": true,
+        "optimal": true,
+        "cost": 52,
+        "violated_services": [],
+        "correct": true,
+        "answered": true
+      }
+    },
+    {
+      "task": "allocation-621001",
+      "arm": "direct",
+      "reason": "strict_json",
+      "old": {
+        "feasible": false,
+        "optimal": false,
+        "cost": 55,
+        "violated_services": [
+          "j1"
+        ],
+        "correct": false,
+        "answered": true
+      },
+      "new": {
+        "feasible": false,
+        "optimal": false,
+        "cost": 55,
+        "violated_services": [
+          "j1"
+        ],
+        "correct": false,
+        "answered": true
+      }
+    }
+  ],
+  "codec_tests": {
+    "format_checks": 10,
+    "provider_calls": 0,
+    "all_pass": true
+  },
+  "new_provider_calls": 0
+}

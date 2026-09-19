@@ -1,0 +1,513 @@
+{
+  "phase": "development",
+  "tasks": 8,
+  "optimal_scores": {
+    "direct": 0,
+    "qwen_solver": 0,
+    "jev_solver": 5,
+    "strong_solver": 1,
+    "solver_without_semantics": 0
+  },
+  "feasible_scores": {
+    "direct": 0,
+    "qwen_solver": 0,
+    "jev_solver": 6,
+    "strong_solver": 1,
+    "solver_without_semantics": 0
+  },
+  "paired": {
+    "jev_vs_direct": {
+      "rescues": 5,
+      "regressions": 0,
+      "sign_p_descriptive": 0.0625
+    },
+    "jev_vs_qwen_solver": {
+      "rescues": 5,
+      "regressions": 0,
+      "sign_p_descriptive": 0.0625
+    },
+    "jev_vs_strong_solver": {
+      "rescues": 5,
+      "regressions": 1,
+      "sign_p_descriptive": 0.21875
+    },
+    "jev_vs_solver_without_semantics": {
+      "rescues": 5,
+      "regressions": 0,
+      "sign_p_descriptive": 0.0625
+    }
+  },
+  "edge_accuracy": {
+    "qwen_solver": {
+      "total": 240,
+      "correct": 105,
+      "false_positive": 135,
+      "false_negative": 0,
+      "unknown": 0
+    },
+    "jev_solver": {
+      "total": 240,
+      "correct": 228,
+      "false_positive": 10,
+      "false_negative": 2,
+      "unknown": 0
+    },
+    "strong_solver": {
+      "total": 240,
+      "correct": 200,
+      "false_positive": 35,
+      "false_negative": 5,
+      "unknown": 0
+    }
+  },
+  "rows": [
+    {
+      "task": "development-87000",
+      "optimal_cost": 31,
+      "outcomes": {
+        "direct": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 33,
+          "violated_services": [
+            "j0",
+            "j1",
+            "j2"
+          ]
+        },
+        "qwen_solver": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 31,
+          "violated_services": [
+            "j0",
+            "j3"
+          ]
+        },
+        "jev_solver": {
+          "feasible": true,
+          "optimal": true,
+          "cost": 31,
+          "violated_services": []
+        },
+        "strong_solver": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 31,
+          "violated_services": [
+            "j2"
+          ]
+        },
+        "solver_without_semantics": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 31,
+          "violated_services": [
+            "j0",
+            "j3"
+          ]
+        }
+      }
+    },
+    {
+      "task": "development-87001",
+      "optimal_cost": 43,
+      "outcomes": {
+        "qwen_solver": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 34,
+          "violated_services": [
+            "j0",
+            "j1",
+            "j2",
+            "j4"
+          ]
+        },
+        "jev_solver": {
+          "feasible": true,
+          "optimal": true,
+          "cost": 43,
+          "violated_services": []
+        },
+        "strong_solver": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 34,
+          "violated_services": [
+            "j0"
+          ]
+        },
+        "direct": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 46,
+          "violated_services": [
+            "j0",
+            "j1",
+            "j2"
+          ]
+        },
+        "solver_without_semantics": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 34,
+          "violated_services": [
+            "j0",
+            "j1",
+            "j2",
+            "j4"
+          ]
+        }
+      }
+    },
+    {
+      "task": "development-87002",
+      "optimal_cost": 31,
+      "outcomes": {
+        "jev_solver": {
+          "feasible": true,
+          "optimal": true,
+          "cost": 31,
+          "violated_services": []
+        },
+        "strong_solver": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 31,
+          "violated_services": [
+            "j4"
+          ]
+        },
+        "direct": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 40,
+          "violated_services": [
+            "j3",
+            "j4"
+          ]
+        },
+        "qwen_solver": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 31,
+          "violated_services": [
+            "j4"
+          ]
+        },
+        "solver_without_semantics": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 31,
+          "violated_services": [
+            "j4"
+          ]
+        }
+      }
+    },
+    {
+      "task": "development-87003",
+      "optimal_cost": 20,
+      "outcomes": {
+        "strong_solver": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 20,
+          "violated_services": [
+            "j3",
+            "j4"
+          ]
+        },
+        "direct": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 23,
+          "violated_services": [
+            "j3",
+            "j4"
+          ]
+        },
+        "qwen_solver": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 20,
+          "violated_services": [
+            "j1",
+            "j2",
+            "j3",
+            "j4"
+          ]
+        },
+        "jev_solver": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 20,
+          "violated_services": [
+            "j3",
+            "j4"
+          ]
+        },
+        "solver_without_semantics": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 20,
+          "violated_services": [
+            "j1",
+            "j2",
+            "j3",
+            "j4"
+          ]
+        }
+      }
+    },
+    {
+      "task": "development-87004",
+      "optimal_cost": 31,
+      "outcomes": {
+        "direct": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 42,
+          "violated_services": [
+            "j4"
+          ]
+        },
+        "qwen_solver": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 31,
+          "violated_services": [
+            "j2",
+            "j3"
+          ]
+        },
+        "jev_solver": {
+          "feasible": true,
+          "optimal": false,
+          "cost": 38,
+          "violated_services": []
+        },
+        "strong_solver": {
+          "feasible": true,
+          "optimal": true,
+          "cost": 31,
+          "violated_services": []
+        },
+        "solver_without_semantics": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 31,
+          "violated_services": [
+            "j2",
+            "j3"
+          ]
+        }
+      }
+    },
+    {
+      "task": "development-87005",
+      "optimal_cost": 41,
+      "outcomes": {
+        "qwen_solver": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 36,
+          "violated_services": [
+            "j0",
+            "j1",
+            "j2",
+            "j3"
+          ]
+        },
+        "jev_solver": {
+          "feasible": true,
+          "optimal": true,
+          "cost": 41,
+          "violated_services": []
+        },
+        "strong_solver": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 36,
+          "violated_services": [
+            "j0",
+            "j1"
+          ]
+        },
+        "direct": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 41,
+          "violated_services": [
+            "j0",
+            "j2",
+            "j3",
+            "j4"
+          ]
+        },
+        "solver_without_semantics": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 36,
+          "violated_services": [
+            "j0",
+            "j1",
+            "j2",
+            "j3"
+          ]
+        }
+      }
+    },
+    {
+      "task": "development-87006",
+      "optimal_cost": 29,
+      "outcomes": {
+        "jev_solver": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 20,
+          "violated_services": [
+            "j3"
+          ]
+        },
+        "strong_solver": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 20,
+          "violated_services": [
+            "j3"
+          ]
+        },
+        "direct": {
+          "feasible": false,
+          "optimal": false,
+          "error": "host_reused"
+        },
+        "qwen_solver": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 20,
+          "violated_services": [
+            "j1",
+            "j3"
+          ]
+        },
+        "solver_without_semantics": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 20,
+          "violated_services": [
+            "j1",
+            "j3"
+          ]
+        }
+      }
+    },
+    {
+      "task": "development-87007",
+      "optimal_cost": 38,
+      "outcomes": {
+        "strong_solver": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 35,
+          "violated_services": [
+            "j4"
+          ]
+        },
+        "direct": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 41,
+          "violated_services": [
+            "j1",
+            "j2",
+            "j3"
+          ]
+        },
+        "qwen_solver": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 35,
+          "violated_services": [
+            "j0",
+            "j1",
+            "j2",
+            "j4"
+          ]
+        },
+        "jev_solver": {
+          "feasible": true,
+          "optimal": true,
+          "cost": 38,
+          "violated_services": []
+        },
+        "solver_without_semantics": {
+          "feasible": false,
+          "optimal": false,
+          "cost": 35,
+          "violated_services": [
+            "j0",
+            "j1",
+            "j2",
+            "j4"
+          ]
+        }
+      }
+    }
+  ],
+  "development_gate_passed": true,
+  "actual_usage": {
+    "qwen": {
+      "input": 19752,
+      "output": 2794,
+      "cache_hit": 0,
+      "seconds": 25.342726600181777,
+      "calls": 16
+    },
+    "deepseek": {
+      "input": 12622,
+      "output": 1817,
+      "cache_hit": 0,
+      "seconds": 10.12460970011307,
+      "calls": 8
+    },
+    "jev": {
+      "input": 63766,
+      "output": 9878,
+      "cache_hit": 0,
+      "seconds": 2.248502900125459,
+      "calls": 8
+    }
+  },
+  "timing": {
+    "direct": {
+      "median_call_plus_solver_seconds": 0.4118387500056997,
+      "sum_seconds": 3.5918585000326857
+    },
+    "qwen_solver": {
+      "median_call_plus_solver_seconds": 2.7624756999721285,
+      "sum_seconds": 21.75708530016709
+    },
+    "jev_solver": {
+      "median_call_plus_solver_seconds": 0.2173758500139229,
+      "sum_seconds": 2.248502900125459
+    },
+    "strong_solver": {
+      "median_call_plus_solver_seconds": 1.2889088499941863,
+      "sum_seconds": 10.128642400086392
+    },
+    "solver_without_semantics": {
+      "median_call_plus_solver_seconds": 0.0006684499967377633,
+      "sum_seconds": 0.005452600074931979
+    }
+  },
+  "provider_errors": 0,
+  "arm_errors": 0,
+  "recomputed_assignments": 40,
+  "independent_reference_cost_check": true,
+  "source_fixture_hashes_match": true,
+  "visible_only_payloads_verified": true,
+  "scope": "Synthetic6capability/Booleanrequirement placement tasks; exact solver included; domain-limited system augmentation, not general intelligence."
+}

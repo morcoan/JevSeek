@@ -1,0 +1,7 @@
+# Uncertainty / source-scope stress test
+
+32hand-authored cases, fixed before inference: absent facts versus negative facts, no proof versus proof of absence, double negation, relation direction, permission versus obligation, proposed versus executed work, stale test results, contradictory sources and explicit precedence, irrelevant conflicts, quantifier scope, material implication with unknowns, and untrusted instructions/quoted claims inside evidence.
+
+Compare the frozen focused policy and optional dual-polarity consistency policy on exactly the same source/claim.2Jevrequests total, no retries or other models. Label classes are supported/refuted/unknown/conflict. Unknown from a dual disagreement is an ABSTENTION, not evidence that the source is neutral. Report exact-label accuracy, false acceptances, genuine unknown predictions, conflicts, and abstentions separately. Both policies still make fallible semantic judgments; no security guarantee from passing injection probes.
+
+This is an authored stress suite, not an external benchmark or a new random heldout distribution. Cases were designed after reading the runtime policy but before seeing their model outputs. The old-test case concerns the unobserved outcome of a future run on current code, not the known absence of a past test execution. Do not change expected labels after seeing outputs or count abstentions as correct unknowns. No source text can trigger tools/effects in this experiment.

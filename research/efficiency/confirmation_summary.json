@@ -1,0 +1,141 @@
+{
+  "phase": "confirmation",
+  "batches": 12,
+  "queries": 96,
+  "arms": {
+    "thinking": {
+      "correct": 96,
+      "total": 96,
+      "batch_correct": 12,
+      "none_correct": 24,
+      "none_total": 24,
+      "invalid": 0,
+      "median_endpoint_seconds": 3.5831261500134133,
+      "usage": {
+        "calls": 12,
+        "input_tokens": 8014,
+        "output_tokens": 10281,
+        "cache_hit_input_tokens": 0,
+        "reasoning_tokens_reported": 9452,
+        "reasoning_usage_available_calls": 12,
+        "seconds": 47.83731109998189,
+        "errors": 0
+      },
+      "reported_token_proxy": 18295
+    },
+    "plain": {
+      "correct": 96,
+      "total": 96,
+      "batch_correct": 12,
+      "none_correct": 24,
+      "none_total": 24,
+      "invalid": 0,
+      "median_endpoint_seconds": 1.1620283499942161,
+      "usage": {
+        "calls": 12,
+        "input_tokens": 7714,
+        "output_tokens": 817,
+        "cache_hit_input_tokens": 0,
+        "reasoning_tokens_reported": 0,
+        "reasoning_usage_available_calls": 0,
+        "seconds": 14.176192799932323,
+        "errors": 0
+      },
+      "reported_token_proxy": 8531
+    },
+    "jev_verbose": {
+      "correct": 96,
+      "total": 96,
+      "batch_correct": 12,
+      "none_correct": 24,
+      "none_total": 24,
+      "invalid": 0,
+      "median_endpoint_seconds": 0.36096120000001974,
+      "usage": {
+        "calls": 12,
+        "input_tokens": 54919,
+        "output_tokens": 16416,
+        "cache_hit_input_tokens": 0,
+        "reasoning_tokens_reported": 0,
+        "reasoning_usage_available_calls": 0,
+        "seconds": 3.9971470000455156,
+        "errors": 0
+      },
+      "reported_token_proxy": 71335
+    },
+    "jev_compact": {
+      "correct": 96,
+      "total": 96,
+      "batch_correct": 12,
+      "none_correct": 24,
+      "none_total": 24,
+      "invalid": 0,
+      "median_endpoint_seconds": 0.22460109999519773,
+      "usage": {
+        "calls": 12,
+        "input_tokens": 25985,
+        "output_tokens": 16416,
+        "cache_hit_input_tokens": 0,
+        "reasoning_tokens_reported": 0,
+        "reasoning_usage_available_calls": 0,
+        "seconds": 2.693199299974367,
+        "errors": 0
+      },
+      "reported_token_proxy": 42401
+    },
+    "code": {
+      "correct": 72,
+      "total": 96,
+      "batch_correct": 0,
+      "none_correct": 12,
+      "none_total": 24,
+      "invalid": 0,
+      "median_endpoint_seconds": 0.0003860999713651836,
+      "usage": {
+        "calls": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_hit_input_tokens": 0,
+        "reasoning_tokens_reported": 0,
+        "reasoning_usage_available_calls": 0,
+        "seconds": 0.0,
+        "errors": 0
+      },
+      "reported_token_proxy": 0
+    }
+  },
+  "compact_comparisons": {
+    "jev_verbose": {
+      "compact_minus_correct": 0,
+      "compact_minus_full_batches": 0,
+      "median_speedup": 1.6071212474370677,
+      "reported_token_proxy_reduction": 0.4056073456227658,
+      "input_token_reduction": 0.5268486316211147
+    },
+    "thinking": {
+      "compact_minus_correct": 0,
+      "compact_minus_full_batches": 0,
+      "median_speedup": 15.953288519468629,
+      "reported_token_proxy_reduction": -1.3176277671494945,
+      "input_token_reduction": -2.2424507112553034
+    },
+    "plain": {
+      "compact_minus_correct": 0,
+      "compact_minus_full_batches": 0,
+      "median_speedup": 5.173742915858657,
+      "reported_token_proxy_reduction": -3.9702262337357874,
+      "input_token_reduction": -2.3685506870624837
+    }
+  },
+  "development_gate_passed": true,
+  "validation": {
+    "source_input_hashes_match": true,
+    "rendered_results_recomputed": 60
+  },
+  "caveats": [
+    "Authored bounded dispatch endpoint, not a complete agent or novel-code task.",
+    "Caller supplies existing concrete catalogue and questions; authoring/permission costs are not measured here.",
+    "Provider token counts are accounting proxies, not equal compute or dollar units.",
+    "Small correlated batches; equal observed accuracy is not statistical noninferiority."
+  ]
+}

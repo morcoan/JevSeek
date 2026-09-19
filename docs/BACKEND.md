@@ -66,6 +66,7 @@ optional fields and future event kinds. Reject incompatible `version` values.
 | route | choice, confidence, context_bytes |
 | model_started / model_progress | stage, model / character count |
 | usage | provider, stage, model, seconds, provider-reported usage |
+| argument_offload | backend=code, tool, policy, generation_call_skipped, generator, flash_call_skipped |
 | tool_started | call_id, tool, target, full request artifact |
 | tool_finished | call_id, tool, status, exit_code, text preview, arguments preview, artifact, full_output |
 | tool_uncertain | call_id, tool, explicit acknowledgement note |
@@ -187,9 +188,35 @@ failure, measured retrieval study, limitations and reproduction commands.
 
 `read/write/edit` are schema slices of OpenHands FileEditorAction executed by
 FileEditorExecutor. `bash` is TerminalAction/TerminalExecutor (PowerShell on
-Windows). No hand-written file-edit/shell implementations. Flash is given exactly
-one native function, forced to `selected_action` with parallel calls disabled;
-Jev alone selects the tool. Arguments are validated before execution.
+Windows). No hand-written file-edit/shell implementations. When generation is
+needed, Flash is given exactly one native function, forced to `selected_action`
+with parallel calls disabled; Jev alone selects the tool. Arguments are validated
+before execution.
+
+### Schema-determined argument bypass (source publication)
+
+`JEV_ARGUMENT_OFFLOAD=deterministic` is the source default; `off` restores the
+original always-generate behavior. After tool selection, a conservative local
+schema checker can supply the ENTIRE argument object when every value is fixed:
+closed empty objects, required constants/singleton enums/nulls, and closed required
+nested objects. It does not infer defaults, omit optional fields or resolve remote
+references. Any unsupported/free/optional field keeps the original generator and
+original context. This also avoids unnecessary local Bonsai generation without
+adding a paid Jev request.
+
+The code path emits `argument_offload`, not fabricated provider usage. Existing
+cancellation, native validation, `tool_started` persistence and execution remain
+unchanged.28offline tests cover the schema subset, mutation isolation, unchanged
+fallback, zero-versus-one generation calls for identical fixed arguments, and
+actual agent persist-before-effect/completed-session no-replay behavior.
+Whole-agent savings/coverage were not measured. This change is in source, not the
+existing v0.2.2EXE.
+
+The general Jev enum/span argument adapter is **not enabled**: its live quality and
+cost comparison was never completed. Its39offline contracts and proposed protocol
+are retained in [research](../research/argument_offload/README.md). `bounded` is not
+a production setting; it fails explicitly rather than silently enabling an
+unvalidated semantic decision path.
 
 MCP tools use OpenHands create_mcp_tools and the server's authoritative input
 schema, NOT SDK-injected OpenAI agent metadata. Names are prefixed `mcp.` to avoid

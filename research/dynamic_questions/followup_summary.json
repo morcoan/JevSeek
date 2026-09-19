@@ -1,0 +1,184 @@
+{
+  "kind": "posthoc_same_cases_shared_evidence_diagnostic",
+  "tasks": 16,
+  "scores": {
+    "direct": 15,
+    "questions_only": 13,
+    "questions_ds": 13,
+    "questions_jev": 13
+  },
+  "paired": {
+    "questions_jev_vs_direct": {
+      "rescues": 1,
+      "regressions": 3
+    },
+    "questions_ds_vs_direct": {
+      "rescues": 1,
+      "regressions": 3
+    },
+    "questions_only_vs_direct": {
+      "rescues": 1,
+      "regressions": 3
+    },
+    "questions_jev_vs_questions_ds": {
+      "rescues": 0,
+      "regressions": 0
+    },
+    "questions_jev_vs_questions_only": {
+      "rescues": 0,
+      "regressions": 0
+    }
+  },
+  "generated_questions": 56,
+  "unknown_answers": {
+    "ds": 2,
+    "jev": 2
+  },
+  "answer_disagreements": [
+    {
+      "task": "retry_budget",
+      "question": "q1",
+      "ds": "yes",
+      "jev": "no"
+    },
+    {
+      "task": "interval_touch",
+      "question": "q1",
+      "ds": "yes",
+      "jev": "no"
+    },
+    {
+      "task": "interval_touch",
+      "question": "q2",
+      "ds": "yes",
+      "jev": "no"
+    }
+  ],
+  "invalid_question_lists": 3,
+  "valid_question_subset": {
+    "tasks": 13,
+    "direct": 12,
+    "questions_only": 13,
+    "questions_ds": 13,
+    "questions_jev": 13
+  },
+  "maximum_question_author_seconds": 35.68594990001293,
+  "arm_errors": {
+    "questions_only": 3,
+    "questions_ds": 3,
+    "questions_jev": 3
+  },
+  "timing": {
+    "direct": {
+      "median_serial_seconds": 1.4362497000111034,
+      "sum_serial_seconds": 23.424397099908674
+    },
+    "questions_only": {
+      "median_serial_seconds": 3.9188818499969784,
+      "sum_serial_seconds": 113.64271529999678
+    },
+    "questions_ds": {
+      "median_serial_seconds": 4.579970850012614,
+      "sum_serial_seconds": 122.71681049998733
+    },
+    "questions_jev": {
+      "median_serial_seconds": 4.308681649999926,
+      "sum_serial_seconds": 117.77113139990252
+    }
+  },
+  "deployed_arm_usage": {
+    "direct": {
+      "deepseek": {
+        "input": 13162,
+        "output": 192,
+        "cache_hit": 0,
+        "seconds": 23.424397099908674,
+        "calls": 32
+      },
+      "jev": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      }
+    },
+    "questions_only": {
+      "deepseek": {
+        "input": 26855,
+        "output": 7805,
+        "cache_hit": 4736,
+        "seconds": 113.64271529999678,
+        "calls": 45
+      },
+      "jev": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      }
+    },
+    "questions_ds": {
+      "deepseek": {
+        "input": 39806,
+        "output": 8137,
+        "cache_hit": 10368,
+        "seconds": 122.71681049998733,
+        "calls": 58
+      },
+      "jev": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      }
+    },
+    "questions_jev": {
+      "deepseek": {
+        "input": 27325,
+        "output": 7805,
+        "cache_hit": 5632,
+        "seconds": 114.2826687998895,
+        "calls": 45
+      },
+      "jev": {
+        "input": 22109,
+        "output": 2055,
+        "cache_hit": 0,
+        "seconds": 3.4884626000130083,
+        "calls": 13
+      }
+    }
+  },
+  "actual_followup_usage": {
+    "deepseek": {
+      "input": 59445,
+      "output": 8197,
+      "cache_hit": 20736,
+      "seconds": 130.2413622001477,
+      "calls": 68
+    },
+    "jev": {
+      "input": 22109,
+      "output": 2055,
+      "cache_hit": 0,
+      "seconds": 3.4884626000130083,
+      "calls": 13
+    }
+  },
+  "stage_median_seconds": {
+    "ds_answers": 0.7234595000045374,
+    "jev_answers": 0.2550430000119377,
+    "question_author": 2.619670500003849,
+    "questions_ds_choose": 0.687605999992229,
+    "questions_jev_choose": 0.7710129999904893,
+    "questions_only_choose": 0.7232972999918275
+  },
+  "api_errors": 0,
+  "recomputed_repairs": 55,
+  "source_hashes_match": true,
+  "matched_question_evidence_inputs": true,
+  "scope": "Exploratory follow-up on same16easy closed-world cases; not independent/full coding/weak-model validation. Questions generated once per patch decision, not persistent-program reuse."
+}

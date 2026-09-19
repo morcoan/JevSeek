@@ -1,0 +1,26 @@
+{
+  "status": "offline_only_no_live_argument_trials",
+  "offline_contract_tests": 39,
+  "original_combined_scoped_test_count": 57,
+  "copies": [
+    {
+      "original": "jevseek/argument_offload.py",
+      "snapshot": "research/argument_offload/compiler.py",
+      "original_sha256": "852844e4bfbdba8c09c012fd5dc523c82c3f773ce1823f1e5aea101efcdb52e3",
+      "public_snapshot_sha256": "852844e4bfbdba8c09c012fd5dc523c82c3f773ce1823f1e5aea101efcdb52e3"
+    },
+    {
+      "original": "jevseek/models.py",
+      "snapshot": "research/argument_offload/models_snapshot.py",
+      "original_sha256": "e4a04a4c7a85fcddc1393fc90360ad98c302215d310334dca0fd374720d7e910",
+      "public_snapshot_sha256": "565aaaa4ee14a1e2490a396c25136cbaec8c1fbd1cab811413be174b2c6432a2"
+    },
+    {
+      "original": "test_argument_offload.py",
+      "snapshot": "research/argument_offload/test_prototype.py",
+      "original_sha256": "d062030c24a30855181ed2208b4201987d900d75e3c859a5260711e9d9673c5c",
+      "public_snapshot_sha256": "0d4aeb8bf4a97d9d73a1b1687056b11ad099ed7fee5605acca47b16dcfb19198"
+    }
+  ],
+  "note": "Original bytes are identified above. Only module documentation/import paths and one trailing space changed in archived model/test copies; compiler byte hash is unchanged. No live inference was performed. Production ships only the separately tested deterministic subset."
+}

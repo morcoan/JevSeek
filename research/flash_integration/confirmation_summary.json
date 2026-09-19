@@ -1,0 +1,595 @@
+{
+  "phase": "confirmation",
+  "cases": 24,
+  "transport_gate_passed": true,
+  "by_kind": {
+    "allocation": {
+      "tasks": 8,
+      "arms": {
+        "direct": {
+          "correct_tasks": 2,
+          "tool_used": 0,
+          "final_matches_tool": 0,
+          "median_wall_seconds": 0.9541764500027057,
+          "usage": {
+            "deepseek": {
+              "calls": 8,
+              "input_tokens": 7241,
+              "output_tokens": 287,
+              "cache_hit_input_tokens": 0,
+              "reasoning_tokens_reported": 0,
+              "reasoning_usage_available_calls": 0,
+              "seconds": 7.413739899988286,
+              "errors": 0
+            },
+            "jev": {
+              "calls": 0,
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_hit_input_tokens": 0,
+              "reasoning_tokens_reported": 0,
+              "reasoning_usage_available_calls": 0,
+              "seconds": 0.0,
+              "errors": 0
+            }
+          },
+          "feasible": 3
+        },
+        "thinking": {
+          "correct_tasks": 8,
+          "tool_used": 0,
+          "final_matches_tool": 0,
+          "median_wall_seconds": 10.602486250019865,
+          "usage": {
+            "deepseek": {
+              "calls": 8,
+              "input_tokens": 7441,
+              "output_tokens": 23369,
+              "cache_hit_input_tokens": 0,
+              "reasoning_tokens_reported": 23089,
+              "reasoning_usage_available_calls": 8,
+              "seconds": 95.74381970003014,
+              "errors": 0
+            },
+            "jev": {
+              "calls": 0,
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_hit_input_tokens": 0,
+              "reasoning_tokens_reported": 0,
+              "reasoning_usage_available_calls": 0,
+              "seconds": 0.0,
+              "errors": 0
+            }
+          },
+          "feasible": 8
+        },
+        "self_tool": {
+          "correct_tasks": 6,
+          "tool_used": 8,
+          "final_matches_tool": 8,
+          "median_wall_seconds": 3.531902300019283,
+          "usage": {
+            "deepseek": {
+              "calls": 24,
+              "input_tokens": 105890,
+              "output_tokens": 2910,
+              "cache_hit_input_tokens": 4608,
+              "reasoning_tokens_reported": 0,
+              "reasoning_usage_available_calls": 0,
+              "seconds": 31.013440700015053,
+              "errors": 0
+            },
+            "jev": {
+              "calls": 0,
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_hit_input_tokens": 0,
+              "reasoning_tokens_reported": 0,
+              "reasoning_usage_available_calls": 0,
+              "seconds": 0.0,
+              "errors": 0
+            }
+          },
+          "feasible": 7,
+          "tool_stage_correct_tasks": 6
+        },
+        "jev_tool": {
+          "correct_tasks": 7,
+          "tool_used": 8,
+          "final_matches_tool": 7,
+          "median_wall_seconds": 2.3297698500100523,
+          "usage": {
+            "deepseek": {
+              "calls": 16,
+              "input_tokens": 20014,
+              "output_tokens": 2187,
+              "cache_hit_input_tokens": 12544,
+              "reasoning_tokens_reported": 0,
+              "reasoning_usage_available_calls": 0,
+              "seconds": 20.04035089997342,
+              "errors": 0
+            },
+            "jev": {
+              "calls": 8,
+              "input_tokens": 94953,
+              "output_tokens": 11118,
+              "cache_hit_input_tokens": 0,
+              "reasoning_tokens_reported": 0,
+              "reasoning_usage_available_calls": 0,
+              "seconds": 4.111160000029486,
+              "errors": 0
+            }
+          },
+          "feasible": 7,
+          "tool_stage_correct_tasks": 8
+        }
+      },
+      "paired": {
+        "jev_vs_direct": {
+          "improved_tasks_or_documents": 5,
+          "worsened_tasks_or_documents": 0,
+          "net_correct_labels_or_tasks": 5,
+          "descriptive_sign_p": 0.0625
+        },
+        "jev_vs_self_tool": {
+          "improved_tasks_or_documents": 1,
+          "worsened_tasks_or_documents": 0,
+          "net_correct_labels_or_tasks": 1,
+          "descriptive_sign_p": 1.0
+        },
+        "jev_vs_thinking": {
+          "improved_tasks_or_documents": 0,
+          "worsened_tasks_or_documents": 1,
+          "net_correct_labels_or_tasks": -1,
+          "descriptive_sign_p": 1.0
+        }
+      }
+    },
+    "ordering": {
+      "tasks": 8,
+      "arms": {
+        "direct": {
+          "correct_tasks": 5,
+          "tool_used": 0,
+          "final_matches_tool": 0,
+          "median_wall_seconds": 0.9268972999998368,
+          "usage": {
+            "deepseek": {
+              "calls": 8,
+              "input_tokens": 2135,
+              "output_tokens": 40,
+              "cache_hit_input_tokens": 0,
+              "reasoning_tokens_reported": 0,
+              "reasoning_usage_available_calls": 0,
+              "seconds": 7.377107900043484,
+              "errors": 0
+            },
+            "jev": {
+              "calls": 0,
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_hit_input_tokens": 0,
+              "reasoning_tokens_reported": 0,
+              "reasoning_usage_available_calls": 0,
+              "seconds": 0.0,
+              "errors": 0
+            }
+          }
+        },
+        "thinking": {
+          "correct_tasks": 8,
+          "tool_used": 0,
+          "final_matches_tool": 0,
+          "median_wall_seconds": 2.2476181000238284,
+          "usage": {
+            "deepseek": {
+              "calls": 8,
+              "input_tokens": 2335,
+              "output_tokens": 3180,
+              "cache_hit_input_tokens": 0,
+              "reasoning_tokens_reported": 3132,
+              "reasoning_usage_available_calls": 8,
+              "seconds": 20.134833499847446,
+              "errors": 0
+            },
+            "jev": {
+              "calls": 0,
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_hit_input_tokens": 0,
+              "reasoning_tokens_reported": 0,
+              "reasoning_usage_available_calls": 0,
+              "seconds": 0.0,
+              "errors": 0
+            }
+          }
+        },
+        "self_tool": {
+          "correct_tasks": 6,
+          "tool_used": 8,
+          "final_matches_tool": 8,
+          "median_wall_seconds": 2.752614700002596,
+          "usage": {
+            "deepseek": {
+              "calls": 24,
+              "input_tokens": 11552,
+              "output_tokens": 440,
+              "cache_hit_input_tokens": 2173,
+              "reasoning_tokens_reported": 0,
+              "reasoning_usage_available_calls": 0,
+              "seconds": 21.523074799915776,
+              "errors": 0
+            },
+            "jev": {
+              "calls": 0,
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_hit_input_tokens": 0,
+              "reasoning_tokens_reported": 0,
+              "reasoning_usage_available_calls": 0,
+              "seconds": 0.0,
+              "errors": 0
+            }
+          },
+          "tool_stage_correct_tasks": 6
+        },
+        "jev_tool": {
+          "correct_tasks": 7,
+          "tool_used": 8,
+          "final_matches_tool": 8,
+          "median_wall_seconds": 2.153645199985476,
+          "usage": {
+            "deepseek": {
+              "calls": 16,
+              "input_tokens": 8470,
+              "output_tokens": 376,
+              "cache_hit_input_tokens": 4223,
+              "reasoning_tokens_reported": 0,
+              "reasoning_usage_available_calls": 0,
+              "seconds": 14.18813810008578,
+              "errors": 0
+            },
+            "jev": {
+              "calls": 8,
+              "input_tokens": 4873,
+              "output_tokens": 528,
+              "cache_hit_input_tokens": 0,
+              "reasoning_tokens_reported": 0,
+              "reasoning_usage_available_calls": 0,
+              "seconds": 2.661886799905915,
+              "errors": 0
+            }
+          },
+          "tool_stage_correct_tasks": 7
+        }
+      },
+      "paired": {
+        "jev_vs_direct": {
+          "improved_tasks_or_documents": 2,
+          "worsened_tasks_or_documents": 0,
+          "net_correct_labels_or_tasks": 2,
+          "descriptive_sign_p": 0.5
+        },
+        "jev_vs_self_tool": {
+          "improved_tasks_or_documents": 1,
+          "worsened_tasks_or_documents": 0,
+          "net_correct_labels_or_tasks": 1,
+          "descriptive_sign_p": 1.0
+        },
+        "jev_vs_thinking": {
+          "improved_tasks_or_documents": 0,
+          "worsened_tasks_or_documents": 1,
+          "net_correct_labels_or_tasks": -1,
+          "descriptive_sign_p": 1.0
+        }
+      }
+    },
+    "grounding": {
+      "tasks": 8,
+      "arms": {
+        "direct": {
+          "correct_tasks": 0,
+          "tool_used": 0,
+          "final_matches_tool": 0,
+          "median_wall_seconds": 1.2272324499790557,
+          "usage": {
+            "deepseek": {
+              "calls": 8,
+              "input_tokens": 15868,
+              "output_tokens": 1176,
+              "cache_hit_input_tokens": 0,
+              "reasoning_tokens_reported": 0,
+              "reasoning_usage_available_calls": 0,
+              "seconds": 9.833375699992757,
+              "errors": 0
+            },
+            "jev": {
+              "calls": 0,
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_hit_input_tokens": 0,
+              "reasoning_tokens_reported": 0,
+              "reasoning_usage_available_calls": 0,
+              "seconds": 0.0,
+              "errors": 0
+            }
+          },
+          "labels": {
+            "correct": 107,
+            "total": 136,
+            "accuracy": 0.7867647058823529,
+            "abstentions": 0,
+            "coverage": 1.0,
+            "conditional_accuracy": 0.7867647058823529,
+            "macro_f1": 0.7204745145921616,
+            "false_entailments": 9,
+            "by_label": {
+              "Entailment": {
+                "tp": 50,
+                "fp": 9,
+                "fn": 8,
+                "precision": 0.847457627118644,
+                "recall": 0.8620689655172413,
+                "f1": 0.8547008547008547
+              },
+              "Contradiction": {
+                "tp": 9,
+                "fp": 12,
+                "fn": 6,
+                "precision": 0.42857142857142855,
+                "recall": 0.6,
+                "f1": 0.5
+              },
+              "NotMentioned": {
+                "tp": 48,
+                "fp": 8,
+                "fn": 15,
+                "precision": 0.8571428571428571,
+                "recall": 0.7619047619047619,
+                "f1": 0.8067226890756303
+              }
+            }
+          }
+        },
+        "thinking": {
+          "correct_tasks": 0,
+          "tool_used": 0,
+          "final_matches_tool": 0,
+          "median_wall_seconds": 51.398112499999115,
+          "usage": {
+            "deepseek": {
+              "calls": 8,
+              "input_tokens": 16068,
+              "output_tokens": 101664,
+              "cache_hit_input_tokens": 0,
+              "reasoning_tokens_reported": 100470,
+              "reasoning_usage_available_calls": 8,
+              "seconds": 433.02955700008897,
+              "errors": 0
+            },
+            "jev": {
+              "calls": 0,
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_hit_input_tokens": 0,
+              "reasoning_tokens_reported": 0,
+              "reasoning_usage_available_calls": 0,
+              "seconds": 0.0,
+              "errors": 0
+            }
+          },
+          "labels": {
+            "correct": 114,
+            "total": 136,
+            "accuracy": 0.8382352941176471,
+            "abstentions": 0,
+            "coverage": 1.0,
+            "conditional_accuracy": 0.8382352941176471,
+            "macro_f1": 0.7971696974087759,
+            "false_entailments": 4,
+            "by_label": {
+              "Entailment": {
+                "tp": 45,
+                "fp": 4,
+                "fn": 13,
+                "precision": 0.9183673469387755,
+                "recall": 0.7758620689655172,
+                "f1": 0.8411214953271028
+              },
+              "Contradiction": {
+                "tp": 12,
+                "fp": 9,
+                "fn": 3,
+                "precision": 0.5714285714285714,
+                "recall": 0.8,
+                "f1": 0.6666666666666666
+              },
+              "NotMentioned": {
+                "tp": 57,
+                "fp": 9,
+                "fn": 6,
+                "precision": 0.8636363636363636,
+                "recall": 0.9047619047619048,
+                "f1": 0.8837209302325582
+              }
+            }
+          }
+        },
+        "self_tool": {
+          "correct_tasks": 0,
+          "tool_used": 8,
+          "final_matches_tool": 7,
+          "median_wall_seconds": 3.410702599969227,
+          "usage": {
+            "deepseek": {
+              "calls": 24,
+              "input_tokens": 68424,
+              "output_tokens": 2655,
+              "cache_hit_input_tokens": 8704,
+              "reasoning_tokens_reported": 0,
+              "reasoning_usage_available_calls": 0,
+              "seconds": 27.958434199914336,
+              "errors": 0
+            },
+            "jev": {
+              "calls": 0,
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_hit_input_tokens": 0,
+              "reasoning_tokens_reported": 0,
+              "reasoning_usage_available_calls": 0,
+              "seconds": 0.0,
+              "errors": 0
+            }
+          },
+          "labels": {
+            "correct": 107,
+            "total": 136,
+            "accuracy": 0.7867647058823529,
+            "abstentions": 0,
+            "coverage": 1.0,
+            "conditional_accuracy": 0.7867647058823529,
+            "macro_f1": 0.739110330595616,
+            "false_entailments": 8,
+            "by_label": {
+              "Entailment": {
+                "tp": 49,
+                "fp": 8,
+                "fn": 9,
+                "precision": 0.8596491228070176,
+                "recall": 0.8448275862068966,
+                "f1": 0.8521739130434782
+              },
+              "Contradiction": {
+                "tp": 12,
+                "fp": 16,
+                "fn": 3,
+                "precision": 0.42857142857142855,
+                "recall": 0.8,
+                "f1": 0.5581395348837209
+              },
+              "NotMentioned": {
+                "tp": 46,
+                "fp": 5,
+                "fn": 17,
+                "precision": 0.9019607843137255,
+                "recall": 0.7301587301587301,
+                "f1": 0.8070175438596491
+              }
+            }
+          },
+          "tool_stage_correct_tasks": 0,
+          "tool_stage_correct_labels": 108
+        },
+        "jev_tool": {
+          "correct_tasks": 0,
+          "tool_used": 8,
+          "final_matches_tool": 4,
+          "median_wall_seconds": 2.6366036999970675,
+          "usage": {
+            "deepseek": {
+              "calls": 16,
+              "input_tokens": 37379,
+              "output_tokens": 1501,
+              "cache_hit_input_tokens": 26110,
+              "reasoning_tokens_reported": 0,
+              "reasoning_usage_available_calls": 0,
+              "seconds": 17.510090199881233,
+              "errors": 0
+            },
+            "jev": {
+              "calls": 8,
+              "input_tokens": 36890,
+              "output_tokens": 6064,
+              "cache_hit_input_tokens": 0,
+              "reasoning_tokens_reported": 0,
+              "reasoning_usage_available_calls": 0,
+              "seconds": 3.5531021000933833,
+              "errors": 0
+            }
+          },
+          "labels": {
+            "correct": 102,
+            "total": 136,
+            "accuracy": 0.75,
+            "abstentions": 0,
+            "coverage": 1.0,
+            "conditional_accuracy": 0.75,
+            "macro_f1": 0.7048818654075347,
+            "false_entailments": 13,
+            "by_label": {
+              "Entailment": {
+                "tp": 47,
+                "fp": 13,
+                "fn": 11,
+                "precision": 0.7833333333333333,
+                "recall": 0.8103448275862069,
+                "f1": 0.7966101694915254
+              },
+              "Contradiction": {
+                "tp": 12,
+                "fp": 19,
+                "fn": 3,
+                "precision": 0.3870967741935484,
+                "recall": 0.8,
+                "f1": 0.5217391304347826
+              },
+              "NotMentioned": {
+                "tp": 43,
+                "fp": 2,
+                "fn": 20,
+                "precision": 0.9555555555555556,
+                "recall": 0.6825396825396826,
+                "f1": 0.7962962962962963
+              }
+            }
+          },
+          "tool_stage_correct_tasks": 0,
+          "tool_stage_correct_labels": 102
+        }
+      },
+      "paired": {
+        "jev_vs_direct": {
+          "improved_tasks_or_documents": 2,
+          "worsened_tasks_or_documents": 4,
+          "net_correct_labels_or_tasks": -5,
+          "descriptive_sign_p": 0.6875
+        },
+        "jev_vs_self_tool": {
+          "improved_tasks_or_documents": 2,
+          "worsened_tasks_or_documents": 5,
+          "net_correct_labels_or_tasks": -5,
+          "descriptive_sign_p": 0.453125
+        },
+        "jev_vs_thinking": {
+          "improved_tasks_or_documents": 1,
+          "worsened_tasks_or_documents": 7,
+          "net_correct_labels_or_tasks": -12,
+          "descriptive_sign_p": 0.0703125
+        }
+      }
+    }
+  },
+  "calls_by_provider": {
+    "deepseek": 168,
+    "jev": 24
+  },
+  "errors": 0,
+  "reported_models": [
+    "deepseek-flash",
+    "jev-1.13.0"
+  ],
+  "validated": {
+    "outcomes_recomputed": 96,
+    "tool_results_recomputed": 48,
+    "all_source_hashes_and_visible_only_inputs_match": true
+  },
+  "caveats": [
+    "Small paired samples; NLI claims clustered by document.",
+    "Public benchmarks may be in training data.",
+    "Allocation uses synthetic complete facts and a bounded generator.",
+    "All model judgments are fallible; mathematical checks are conditional on them.",
+    "Tokens from different providers are not equal FLOP/dollar units."
+  ]
+}

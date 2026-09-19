@@ -1,0 +1,44 @@
+{
+  "status": "cancelled_by_user",
+  "variant": "crack",
+  "providers": [
+    "bonsai",
+    "jev"
+  ],
+  "deepseek_enabled": false,
+  "planned_eligible_tasks": 33,
+  "official_dataset_tasks": 66,
+  "completed_controller_records": [
+    {
+      "task": "atrx-vep-crispr",
+      "controller_exit": 0,
+      "verifier_rewards": [
+        {
+          "reward": 0
+        }
+      ],
+      "trial_errors": 0,
+      "usage_providers": [
+        "bonsai",
+        "jev"
+      ]
+    },
+    {
+      "task": "batched-eval-parity",
+      "controller_exit": 0,
+      "verifier_rewards": [
+        null
+      ],
+      "trial_errors": 1,
+      "usage_providers": [
+        "bonsai",
+        "jev"
+      ]
+    }
+  ],
+  "interrupted_task": "bun-sourcemap-leak",
+  "stop_note": "User requested immediate stop. Active task interrupted, not scored or automatically replayed.",
+  "full_benchmark_score": null,
+  "source_status_sha256": "e0c79ff3604809e78b2fcdd2c000bf39a04fd94b36253468068a14821226a220",
+  "vm_status_at_publication": "stopped; not restarted for publication"
+}

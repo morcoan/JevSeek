@@ -1,0 +1,7 @@
+# LLM tool connection — replay validation, NOT a new quality experiment
+
+After frozen confirmation, check an actual Qwen3-1.7B native tool-call loop on ALL24confirmation tasks, not only successful ones. It must call `semantic_assignment` with the current request ID, receive the exact-solver output computed from that task's PREVIOUSLY RECORDED actual Jev labels, and return the proposed assignment in structured form. All24cached Jev outcomes, including failures, are retained.
+
+No new Jev/DeepSeek requests, no new semantic judgment, no extra quality samples. This is transport/integration evidence that a small LLM can invoke and consume the capability as a tool. Cached replay is disclosed in source/results; do not present its22/24(or other)score as an independent replication. Local model tool_choice=auto, one allowed planning function, system directs placement tasks to that tool. No arbitrary shell/code execution or physical deployment. At most2localQwenrequests/task=48requests, one tool call, no retries. Unexpected routes/format/transport counted, not silently forced/repaired.
+
+Tool handler validates request ID, uses only cached model-predicted eligibility plus public costs/IDs, and reruns the actual solver. Hidden latent facts/optimum remain only in offline evaluation. Tool output is explicitly a proposed plan under fallible model-assessed constraints, not a claim that a real deployment has been verified. Native server owned loopback/authenticated and always closed.

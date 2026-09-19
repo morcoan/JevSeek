@@ -1,0 +1,279 @@
+{
+  "tasks": 12,
+  "accuracy_counts": {
+    "direct": 9,
+    "first": 10,
+    "self": 11,
+    "jev": 11,
+    "random_expected": 10.333333333333334,
+    "oracle": 12
+  },
+  "model_call_counts": {
+    "generator": 72,
+    "jev": 12
+  },
+  "call_errors": 0,
+  "wall_call_seconds": 83.0100009998423,
+  "reported_usage": {
+    "generator": {
+      "completion_tokens": 7155,
+      "prompt_tokens": 24128,
+      "total_tokens": 31283,
+      "prompt_cache_hit_tokens": 6272,
+      "prompt_cache_miss_tokens": 17856
+    },
+    "jev": {
+      "input_tokens": 8760,
+      "output_tokens": 588
+    }
+  },
+  "comparisons": {
+    "jev_vs_direct": {
+      "rescues": 3,
+      "regressions": 1
+    },
+    "jev_vs_first": {
+      "rescues": 1,
+      "regressions": 0
+    },
+    "jev_vs_self": {
+      "rescues": 0,
+      "regressions": 0
+    }
+  },
+  "counterfactual_serial_latency": {
+    "direct": {
+      "total": 13.856378999975277,
+      "median": 1.1835854999808362,
+      "max": 1.5855824000027496
+    },
+    "first": {
+      "total": 30.40079210003023,
+      "median": 2.4639314000232844,
+      "max": 2.8399359000031836
+    },
+    "self": {
+      "total": 39.333030699926894,
+      "median": 3.2443066999840084,
+      "max": 3.683731999975862
+    },
+    "jev": {
+      "total": 34.40684920002241,
+      "median": 2.8372233500122093,
+      "max": 3.199889300012728
+    }
+  },
+  "counterfactual_usage": {
+    "direct": {
+      "generator": {
+        "completion_tokens": 1514,
+        "prompt_tokens": 3203,
+        "total_tokens": 4717,
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 1923
+      },
+      "jev": {}
+    },
+    "first": {
+      "generator": {
+        "completion_tokens": 2900,
+        "prompt_tokens": 7607,
+        "total_tokens": 10507,
+        "prompt_cache_hit_tokens": 1536,
+        "prompt_cache_miss_tokens": 6071
+      },
+      "jev": {}
+    },
+    "self": {
+      "generator": {
+        "completion_tokens": 2974,
+        "prompt_tokens": 13009,
+        "total_tokens": 15983,
+        "prompt_cache_hit_tokens": 2944,
+        "prompt_cache_miss_tokens": 10065
+      },
+      "jev": {}
+    },
+    "jev": {
+      "generator": {
+        "completion_tokens": 2876,
+        "prompt_tokens": 7610,
+        "total_tokens": 10486,
+        "prompt_cache_hit_tokens": 1536,
+        "prompt_cache_miss_tokens": 6074
+      },
+      "jev": {
+        "input_tokens": 8760,
+        "output_tokens": 588
+      }
+    }
+  },
+  "selector_choices": {
+    "self": {
+      "c0": 5,
+      "c2": 3,
+      "c1": 4
+    },
+    "jev": {
+      "c0": 3,
+      "c1": 7,
+      "c2": 2
+    }
+  },
+  "conditional_selection": {
+    "self": {
+      "correct": 11,
+      "covered_tasks": 12
+    },
+    "jev": {
+      "correct": 11,
+      "covered_tasks": 12
+    }
+  },
+  "exact_duplicate_plan_tasks": 0,
+  "source_sha256": {
+    "tasks.py": "e98e8bba6e76d5a6dc6f8c5f49098f4ae3cd7146a6abe3c22964e3ed2d33af91",
+    "experiment.py": "20021f8b5222bb56e6d7f07cd4b273ed25dd733e8902cbcdbbad09d1207c9b7e",
+    "PROTOCOL.md": "eed935356a64db57187254b2d4347d2527446a0c7df4fea67c6cfc7f9057dfe6"
+  },
+  "requested_generator": "deepseek-flash",
+  "requested_selector": "jev-1.13.0",
+  "returned_models": [
+    "deepseek-flash",
+    "jev-1.13.0"
+  ],
+  "stage_seconds": {
+    "conditioned_final": {
+      "median": 1.0100785499962512,
+      "total": 38.475827399932314
+    },
+    "direct": {
+      "median": 1.1835854999808362,
+      "total": 13.856378999975277
+    },
+    "jev_select": {
+      "median": 0.3307280000008177,
+      "total": 4.217763099994045
+    },
+    "plans": {
+      "median": 1.4976747000036994,
+      "total": 17.53605009999592
+    },
+    "self_select": {
+      "median": 0.7363206999871181,
+      "total": 8.92398139994475
+    }
+  },
+  "selector_disagreements": 5,
+  "task_scores": [
+    {
+      "task": "anti_null",
+      "direct": true,
+      "first": true,
+      "random_expected": 1.0,
+      "oracle": true,
+      "self": true,
+      "jev": true
+    },
+    {
+      "task": "latest_filter",
+      "direct": true,
+      "first": true,
+      "random_expected": 0.6666666666666666,
+      "oracle": true,
+      "self": true,
+      "jev": true
+    },
+    {
+      "task": "second_distinct",
+      "direct": true,
+      "first": true,
+      "random_expected": 1.0,
+      "oracle": true,
+      "self": true,
+      "jev": true
+    },
+    {
+      "task": "rolling_calendar",
+      "direct": false,
+      "first": true,
+      "random_expected": 1.0,
+      "oracle": true,
+      "self": true,
+      "jev": true
+    },
+    {
+      "task": "longest_streak",
+      "direct": true,
+      "first": true,
+      "random_expected": 1.0,
+      "oracle": true,
+      "self": true,
+      "jev": true
+    },
+    {
+      "task": "universal_group",
+      "direct": true,
+      "first": false,
+      "random_expected": 0.3333333333333333,
+      "oracle": true,
+      "self": false,
+      "jev": false
+    },
+    {
+      "task": "halfopen_overlap",
+      "direct": true,
+      "first": true,
+      "random_expected": 1.0,
+      "oracle": true,
+      "self": true,
+      "jev": true
+    },
+    {
+      "task": "reachability",
+      "direct": true,
+      "first": true,
+      "random_expected": 1.0,
+      "oracle": true,
+      "self": true,
+      "jev": true
+    },
+    {
+      "task": "median",
+      "direct": false,
+      "first": false,
+      "random_expected": 0.6666666666666666,
+      "oracle": true,
+      "self": true,
+      "jev": true
+    },
+    {
+      "task": "net_totals",
+      "direct": true,
+      "first": true,
+      "random_expected": 1.0,
+      "oracle": true,
+      "self": true,
+      "jev": true
+    },
+    {
+      "task": "dense_top",
+      "direct": false,
+      "first": true,
+      "random_expected": 1.0,
+      "oracle": true,
+      "self": true,
+      "jev": true
+    },
+    {
+      "task": "paid_after_refund",
+      "direct": true,
+      "first": true,
+      "random_expected": 0.6666666666666666,
+      "oracle": true,
+      "self": true,
+      "jev": true
+    }
+  ],
+  "interpretation": "12 hand-authored tasks, one sample each; no demonstrated Jev accuracy gain over same-pool self-selection. Latencies are counterfactual stage sums; oracle uses observed completions, not intrinsic plan validity."
+}

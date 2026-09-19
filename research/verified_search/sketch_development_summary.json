@@ -1,0 +1,393 @@
+{
+  "phase": "development",
+  "variant": "typed_sketch",
+  "tasks": 12,
+  "scores": {
+    "plain": 3,
+    "all_recipes": 5,
+    "self_sketch": 3,
+    "jev_sketch": 8,
+    "strong_sketch": 7
+  },
+  "paired": {
+    "jev_vs_plain": {
+      "rescues": 5,
+      "regressions": 0,
+      "two_sided_sign_p_descriptive_only": 0.0625
+    },
+    "jev_vs_all_recipes": {
+      "rescues": 4,
+      "regressions": 1,
+      "two_sided_sign_p_descriptive_only": 0.375
+    },
+    "jev_vs_self_sketch": {
+      "rescues": 5,
+      "regressions": 0,
+      "two_sided_sign_p_descriptive_only": 0.0625
+    },
+    "jev_vs_strong_sketch": {
+      "rescues": 2,
+      "regressions": 1,
+      "two_sided_sign_p_descriptive_only": 1.0
+    }
+  },
+  "by_database": {
+    "cre_Doc_Template_Mgt": {
+      "tasks": 4,
+      "plain": 1,
+      "all_recipes": 1,
+      "self_sketch": 1,
+      "jev_sketch": 2,
+      "strong_sketch": 1
+    },
+    "employee_hire_evaluation": {
+      "tasks": 1,
+      "plain": 0,
+      "all_recipes": 1,
+      "self_sketch": 0,
+      "jev_sketch": 0,
+      "strong_sketch": 1
+    },
+    "pets_1": {
+      "tasks": 2,
+      "plain": 1,
+      "all_recipes": 1,
+      "self_sketch": 1,
+      "jev_sketch": 2,
+      "strong_sketch": 1
+    },
+    "network_1": {
+      "tasks": 3,
+      "plain": 0,
+      "all_recipes": 0,
+      "self_sketch": 1,
+      "jev_sketch": 2,
+      "strong_sketch": 2
+    },
+    "poker_player": {
+      "tasks": 1,
+      "plain": 1,
+      "all_recipes": 1,
+      "self_sketch": 0,
+      "jev_sketch": 1,
+      "strong_sketch": 1
+    },
+    "course_teach": {
+      "tasks": 1,
+      "plain": 0,
+      "all_recipes": 1,
+      "self_sketch": 0,
+      "jev_sketch": 1,
+      "strong_sketch": 1
+    }
+  },
+  "rows": [
+    {
+      "task": "spider-dev-345",
+      "db_id": "cre_Doc_Template_Mgt",
+      "outcomes": {
+        "plain": false,
+        "all_recipes": false,
+        "self_sketch": false,
+        "jev_sketch": false,
+        "strong_sketch": false
+      }
+    },
+    {
+      "task": "spider-dev-265",
+      "db_id": "employee_hire_evaluation",
+      "outcomes": {
+        "all_recipes": true,
+        "self_sketch": false,
+        "jev_sketch": false,
+        "strong_sketch": true,
+        "plain": false
+      }
+    },
+    {
+      "task": "spider-dev-63",
+      "db_id": "pets_1",
+      "outcomes": {
+        "self_sketch": false,
+        "jev_sketch": true,
+        "strong_sketch": false,
+        "plain": false,
+        "all_recipes": false
+      }
+    },
+    {
+      "task": "spider-dev-896",
+      "db_id": "network_1",
+      "outcomes": {
+        "jev_sketch": true,
+        "strong_sketch": true,
+        "plain": false,
+        "all_recipes": false,
+        "self_sketch": false
+      }
+    },
+    {
+      "task": "spider-dev-677",
+      "db_id": "poker_player",
+      "outcomes": {
+        "strong_sketch": true,
+        "plain": true,
+        "all_recipes": true,
+        "self_sketch": false,
+        "jev_sketch": true
+      }
+    },
+    {
+      "task": "spider-dev-407",
+      "db_id": "course_teach",
+      "outcomes": {
+        "plain": false,
+        "all_recipes": true,
+        "self_sketch": false,
+        "jev_sketch": true,
+        "strong_sketch": true
+      }
+    },
+    {
+      "task": "spider-dev-315",
+      "db_id": "cre_Doc_Template_Mgt",
+      "outcomes": {
+        "all_recipes": true,
+        "self_sketch": true,
+        "jev_sketch": true,
+        "strong_sketch": true,
+        "plain": true
+      }
+    },
+    {
+      "task": "spider-dev-81",
+      "db_id": "pets_1",
+      "outcomes": {
+        "self_sketch": true,
+        "jev_sketch": true,
+        "strong_sketch": true,
+        "plain": true,
+        "all_recipes": true
+      }
+    },
+    {
+      "task": "spider-dev-888",
+      "db_id": "network_1",
+      "outcomes": {
+        "jev_sketch": true,
+        "strong_sketch": true,
+        "plain": false,
+        "all_recipes": false,
+        "self_sketch": true
+      }
+    },
+    {
+      "task": "spider-dev-333",
+      "db_id": "cre_Doc_Template_Mgt",
+      "outcomes": {
+        "strong_sketch": false,
+        "plain": false,
+        "all_recipes": false,
+        "self_sketch": false,
+        "jev_sketch": true
+      }
+    },
+    {
+      "task": "spider-dev-900",
+      "db_id": "network_1",
+      "outcomes": {
+        "plain": false,
+        "all_recipes": false,
+        "self_sketch": false,
+        "jev_sketch": false,
+        "strong_sketch": false
+      }
+    },
+    {
+      "task": "spider-dev-377",
+      "db_id": "cre_Doc_Template_Mgt",
+      "outcomes": {
+        "all_recipes": false,
+        "self_sketch": false,
+        "jev_sketch": false,
+        "strong_sketch": false,
+        "plain": false
+      }
+    }
+  ],
+  "development_gate_passed": true,
+  "provider_errors": 0,
+  "interpretation_errors": 0,
+  "actual_usage": {
+    "qwen": {
+      "input": 83108,
+      "output": 3967,
+      "cache_hit": 0,
+      "seconds": 35.05122060002759,
+      "calls": 72
+    },
+    "deepseek": {
+      "input": 38712,
+      "output": 1368,
+      "cache_hit": 0,
+      "seconds": 13.549222300003748,
+      "calls": 12
+    },
+    "jev": {
+      "input": 53653,
+      "output": 19135,
+      "cache_hit": 0,
+      "seconds": 2.6036995999747887,
+      "calls": 12
+    }
+  },
+  "deployed_usage": {
+    "plain": {
+      "qwen": {
+        "input": 7251,
+        "output": 504,
+        "cache_hit": 0,
+        "seconds": 3.729149700026028,
+        "calls": 12
+      },
+      "deepseek": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      },
+      "jev": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      }
+    },
+    "all_recipes": {
+      "qwen": {
+        "input": 10975,
+        "output": 531,
+        "cache_hit": 0,
+        "seconds": 4.3600325000006706,
+        "calls": 12
+      },
+      "deepseek": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      },
+      "jev": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      }
+    },
+    "self_sketch": {
+      "qwen": {
+        "input": 46197,
+        "output": 1989,
+        "cache_hit": 0,
+        "seconds": 19.751740400097333,
+        "calls": 24
+      },
+      "deepseek": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      },
+      "jev": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      }
+    },
+    "jev_sketch": {
+      "qwen": {
+        "input": 9339,
+        "output": 502,
+        "cache_hit": 0,
+        "seconds": 3.8076477000140585,
+        "calls": 12
+      },
+      "deepseek": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      },
+      "jev": {
+        "input": 53653,
+        "output": 19135,
+        "cache_hit": 0,
+        "seconds": 2.6036995999747887,
+        "calls": 12
+      }
+    },
+    "strong_sketch": {
+      "qwen": {
+        "input": 9346,
+        "output": 441,
+        "cache_hit": 0,
+        "seconds": 3.402650299889501,
+        "calls": 12
+      },
+      "deepseek": {
+        "input": 38712,
+        "output": 1368,
+        "cache_hit": 0,
+        "seconds": 13.549222300003748,
+        "calls": 12
+      },
+      "jev": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      }
+    }
+  },
+  "timing": {
+    "plain": {
+      "median_serial_seconds": 0.2824677000171505,
+      "sum_serial_seconds": 3.729149700026028
+    },
+    "all_recipes": {
+      "median_serial_seconds": 0.368464649975067,
+      "sum_serial_seconds": 4.3600325000006706
+    },
+    "self_sketch": {
+      "median_serial_seconds": 1.6424916999822017,
+      "sum_serial_seconds": 19.751740400097333
+    },
+    "jev_sketch": {
+      "median_serial_seconds": 0.5114216000074521,
+      "sum_serial_seconds": 6.411347299988847
+    },
+    "strong_sketch": {
+      "median_serial_seconds": 1.3951834499603137,
+      "sum_serial_seconds": 16.95187259989325
+    }
+  },
+  "interpreter_median_seconds": {
+    "qwen": 1.2942966500122566,
+    "deepseek": 1.1297613499918953,
+    "jev": 0.18036470000515692
+  },
+  "recomputed_queries": 60,
+  "source_hashes_match": true,
+  "matched_inputs_and_resolved_sketches_verified": true,
+  "metric": "column-ordered row-multiset agreement on original publicDB; not official Spider accuracy",
+  "statistics_warning": "Paired sign tests descriptive: tiny clusteredDB sample and multiple comparisons; no general significance claim."
+}

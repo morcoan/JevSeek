@@ -1,0 +1,471 @@
+{
+  "phase": "development",
+  "variant": "corrective_guidance",
+  "tasks": 12,
+  "scores": {
+    "direct": 4,
+    "plain": 4,
+    "all_hints": 4,
+    "self_guided": 4,
+    "jev_guided": 4,
+    "strong_guided": 4
+  },
+  "paired": {
+    "jev_vs_direct": {
+      "rescues": 0,
+      "regressions": 0
+    },
+    "jev_vs_plain": {
+      "rescues": 0,
+      "regressions": 0
+    },
+    "jev_vs_all_hints": {
+      "rescues": 0,
+      "regressions": 0
+    },
+    "jev_vs_self_guided": {
+      "rescues": 0,
+      "regressions": 0
+    },
+    "jev_vs_strong_guided": {
+      "rescues": 0,
+      "regressions": 0
+    }
+  },
+  "by_database": {
+    "cre_Doc_Template_Mgt": {
+      "tasks": 4,
+      "direct": 1,
+      "plain": 1,
+      "all_hints": 1,
+      "self_guided": 1,
+      "jev_guided": 1,
+      "strong_guided": 1
+    },
+    "employee_hire_evaluation": {
+      "tasks": 1,
+      "direct": 1,
+      "plain": 1,
+      "all_hints": 1,
+      "self_guided": 1,
+      "jev_guided": 1,
+      "strong_guided": 1
+    },
+    "pets_1": {
+      "tasks": 2,
+      "direct": 1,
+      "plain": 1,
+      "all_hints": 1,
+      "self_guided": 1,
+      "jev_guided": 1,
+      "strong_guided": 1
+    },
+    "network_1": {
+      "tasks": 3,
+      "direct": 0,
+      "plain": 0,
+      "all_hints": 0,
+      "self_guided": 0,
+      "jev_guided": 0,
+      "strong_guided": 0
+    },
+    "poker_player": {
+      "tasks": 1,
+      "direct": 1,
+      "plain": 1,
+      "all_hints": 1,
+      "self_guided": 1,
+      "jev_guided": 1,
+      "strong_guided": 1
+    },
+    "course_teach": {
+      "tasks": 1,
+      "direct": 0,
+      "plain": 0,
+      "all_hints": 0,
+      "self_guided": 0,
+      "jev_guided": 0,
+      "strong_guided": 0
+    }
+  },
+  "rows": [
+    {
+      "task": "spider-dev-345",
+      "db_id": "cre_Doc_Template_Mgt",
+      "outcomes": {
+        "direct": false,
+        "plain": false,
+        "all_hints": false,
+        "self_guided": false,
+        "jev_guided": false,
+        "strong_guided": false
+      }
+    },
+    {
+      "task": "spider-dev-265",
+      "db_id": "employee_hire_evaluation",
+      "outcomes": {
+        "direct": true,
+        "all_hints": true,
+        "self_guided": true,
+        "jev_guided": true,
+        "strong_guided": true,
+        "plain": true
+      }
+    },
+    {
+      "task": "spider-dev-63",
+      "db_id": "pets_1",
+      "outcomes": {
+        "direct": false,
+        "self_guided": false,
+        "jev_guided": false,
+        "strong_guided": false,
+        "plain": false,
+        "all_hints": false
+      }
+    },
+    {
+      "task": "spider-dev-896",
+      "db_id": "network_1",
+      "outcomes": {
+        "direct": false,
+        "jev_guided": false,
+        "strong_guided": false,
+        "plain": false,
+        "all_hints": false,
+        "self_guided": false
+      }
+    },
+    {
+      "task": "spider-dev-677",
+      "db_id": "poker_player",
+      "outcomes": {
+        "direct": true,
+        "strong_guided": true,
+        "plain": true,
+        "all_hints": true,
+        "self_guided": true,
+        "jev_guided": true
+      }
+    },
+    {
+      "task": "spider-dev-407",
+      "db_id": "course_teach",
+      "outcomes": {
+        "direct": false,
+        "plain": false,
+        "all_hints": false,
+        "self_guided": false,
+        "jev_guided": false,
+        "strong_guided": false
+      }
+    },
+    {
+      "task": "spider-dev-315",
+      "db_id": "cre_Doc_Template_Mgt",
+      "outcomes": {
+        "direct": true,
+        "all_hints": true,
+        "self_guided": true,
+        "jev_guided": true,
+        "strong_guided": true,
+        "plain": true
+      }
+    },
+    {
+      "task": "spider-dev-81",
+      "db_id": "pets_1",
+      "outcomes": {
+        "direct": true,
+        "self_guided": true,
+        "jev_guided": true,
+        "strong_guided": true,
+        "plain": true,
+        "all_hints": true
+      }
+    },
+    {
+      "task": "spider-dev-888",
+      "db_id": "network_1",
+      "outcomes": {
+        "direct": false,
+        "jev_guided": false,
+        "strong_guided": false,
+        "plain": false,
+        "all_hints": false,
+        "self_guided": false
+      }
+    },
+    {
+      "task": "spider-dev-333",
+      "db_id": "cre_Doc_Template_Mgt",
+      "outcomes": {
+        "direct": false,
+        "strong_guided": false,
+        "plain": false,
+        "all_hints": false,
+        "self_guided": false,
+        "jev_guided": false
+      }
+    },
+    {
+      "task": "spider-dev-900",
+      "db_id": "network_1",
+      "outcomes": {
+        "direct": false,
+        "plain": false,
+        "all_hints": false,
+        "self_guided": false,
+        "jev_guided": false,
+        "strong_guided": false
+      }
+    },
+    {
+      "task": "spider-dev-377",
+      "db_id": "cre_Doc_Template_Mgt",
+      "outcomes": {
+        "direct": false,
+        "all_hints": false,
+        "self_guided": false,
+        "jev_guided": false,
+        "strong_guided": false,
+        "plain": false
+      }
+    }
+  ],
+  "development_gate_passed": false,
+  "fix_labels": {
+    "qwen": {
+      "relationships": 0,
+      "quantifiers": 0,
+      "aggregation": 0,
+      "predicates": 0,
+      "projection": 0,
+      "ranking": 0,
+      "set_combination": 0,
+      "null_empty": 0
+    },
+    "jev": {
+      "relationships": 7,
+      "quantifiers": 5,
+      "aggregation": 6,
+      "predicates": 7,
+      "projection": 3,
+      "ranking": 0,
+      "set_combination": 6,
+      "null_empty": 1
+    },
+    "deepseek": {
+      "relationships": 6,
+      "quantifiers": 5,
+      "aggregation": 3,
+      "predicates": 6,
+      "projection": 2,
+      "ranking": 0,
+      "set_combination": 2,
+      "null_empty": 2
+    }
+  },
+  "jev_self_label_disagreements": 40,
+  "provider_errors": 0,
+  "critic_errors": 0,
+  "actual_usage": {
+    "qwen": {
+      "input": 73806,
+      "output": 3090,
+      "cache_hit": 0,
+      "seconds": 27.81737920019077,
+      "calls": 72
+    },
+    "deepseek": {
+      "input": 13205,
+      "output": 516,
+      "cache_hit": 0,
+      "seconds": 11.068169000092894,
+      "calls": 12
+    },
+    "jev": {
+      "input": 33970,
+      "output": 3589,
+      "cache_hit": 0,
+      "seconds": 2.109958299959544,
+      "calls": 12
+    }
+  },
+  "deployed_usage": {
+    "direct": {
+      "qwen": {
+        "input": 6511,
+        "output": 523,
+        "cache_hit": 0,
+        "seconds": 4.349596599931829,
+        "calls": 12
+      },
+      "deepseek": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      },
+      "jev": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      }
+    },
+    "plain": {
+      "qwen": {
+        "input": 14817,
+        "output": 1032,
+        "cache_hit": 0,
+        "seconds": 8.353575199958868,
+        "calls": 24
+      },
+      "deepseek": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      },
+      "jev": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      }
+    },
+    "all_hints": {
+      "qwen": {
+        "input": 18933,
+        "output": 1036,
+        "cache_hit": 0,
+        "seconds": 8.91358399996534,
+        "calls": 24
+      },
+      "deepseek": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      },
+      "jev": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      }
+    },
+    "self_guided": {
+      "qwen": {
+        "input": 32824,
+        "output": 1551,
+        "cache_hit": 0,
+        "seconds": 14.932543800096028,
+        "calls": 36
+      },
+      "deepseek": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      },
+      "jev": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      }
+    },
+    "jev_guided": {
+      "qwen": {
+        "input": 19894,
+        "output": 1042,
+        "cache_hit": 0,
+        "seconds": 8.653248299844563,
+        "calls": 24
+      },
+      "deepseek": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      },
+      "jev": {
+        "input": 33970,
+        "output": 3589,
+        "cache_hit": 0,
+        "seconds": 2.109958299959544,
+        "calls": 12
+      }
+    },
+    "strong_guided": {
+      "qwen": {
+        "input": 19893,
+        "output": 1044,
+        "cache_hit": 0,
+        "seconds": 8.712410899985116,
+        "calls": 24
+      },
+      "deepseek": {
+        "input": 13205,
+        "output": 516,
+        "cache_hit": 0,
+        "seconds": 11.068169000092894,
+        "calls": 12
+      },
+      "jev": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      }
+    }
+  },
+  "timing": {
+    "direct": {
+      "median_serial_seconds": 0.3375705999787897,
+      "sum_serial_seconds": 4.349596599931829
+    },
+    "plain": {
+      "median_serial_seconds": 0.674743200012017,
+      "sum_serial_seconds": 8.353575199958868
+    },
+    "all_hints": {
+      "median_serial_seconds": 0.6925813499838114,
+      "sum_serial_seconds": 8.91358399996534
+    },
+    "self_guided": {
+      "median_serial_seconds": 1.2347754000220448,
+      "sum_serial_seconds": 14.932543800096028
+    },
+    "jev_guided": {
+      "median_serial_seconds": 0.9366892499965616,
+      "sum_serial_seconds": 10.763206599804107
+    },
+    "strong_guided": {
+      "median_serial_seconds": 1.5922248499991838,
+      "sum_serial_seconds": 19.78057990007801
+    }
+  },
+  "critic_median_seconds": {
+    "qwen": 0.4864390000293497,
+    "deepseek": 0.9274966000230052,
+    "jev": 0.15291399997659028
+  },
+  "recomputed_queries": 72,
+  "source_hashes_match": true,
+  "matched_payloads_verified": true,
+  "metric": "column-ordered row-multiset agreement on original publicDB, not official Spider score"
+}

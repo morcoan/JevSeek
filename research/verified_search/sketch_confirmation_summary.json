@@ -1,0 +1,633 @@
+{
+  "phase": "confirmation",
+  "variant": "typed_sketch",
+  "tasks": 28,
+  "scores": {
+    "plain": 5,
+    "all_recipes": 6,
+    "self_sketch": 1,
+    "jev_sketch": 8,
+    "strong_sketch": 8
+  },
+  "paired": {
+    "jev_vs_plain": {
+      "rescues": 6,
+      "regressions": 3,
+      "two_sided_sign_p_descriptive_only": 0.5078125
+    },
+    "jev_vs_all_recipes": {
+      "rescues": 3,
+      "regressions": 1,
+      "two_sided_sign_p_descriptive_only": 0.625
+    },
+    "jev_vs_self_sketch": {
+      "rescues": 7,
+      "regressions": 0,
+      "two_sided_sign_p_descriptive_only": 0.015625
+    },
+    "jev_vs_strong_sketch": {
+      "rescues": 1,
+      "regressions": 1,
+      "two_sided_sign_p_descriptive_only": 1.0
+    }
+  },
+  "by_database": {
+    "museum_visit": {
+      "tasks": 2,
+      "plain": 1,
+      "all_recipes": 0,
+      "self_sketch": 0,
+      "jev_sketch": 0,
+      "strong_sketch": 1
+    },
+    "battle_death": {
+      "tasks": 3,
+      "plain": 0,
+      "all_recipes": 0,
+      "self_sketch": 0,
+      "jev_sketch": 0,
+      "strong_sketch": 0
+    },
+    "tvshow": {
+      "tasks": 3,
+      "plain": 0,
+      "all_recipes": 0,
+      "self_sketch": 0,
+      "jev_sketch": 0,
+      "strong_sketch": 0
+    },
+    "singer": {
+      "tasks": 2,
+      "plain": 1,
+      "all_recipes": 1,
+      "self_sketch": 0,
+      "jev_sketch": 1,
+      "strong_sketch": 1
+    },
+    "student_transcripts_tracking": {
+      "tasks": 2,
+      "plain": 0,
+      "all_recipes": 0,
+      "self_sketch": 0,
+      "jev_sketch": 0,
+      "strong_sketch": 0
+    },
+    "car_1": {
+      "tasks": 2,
+      "plain": 0,
+      "all_recipes": 1,
+      "self_sketch": 0,
+      "jev_sketch": 1,
+      "strong_sketch": 1
+    },
+    "real_estate_properties": {
+      "tasks": 1,
+      "plain": 0,
+      "all_recipes": 0,
+      "self_sketch": 0,
+      "jev_sketch": 0,
+      "strong_sketch": 0
+    },
+    "dog_kennels": {
+      "tasks": 2,
+      "plain": 0,
+      "all_recipes": 1,
+      "self_sketch": 0,
+      "jev_sketch": 1,
+      "strong_sketch": 1
+    },
+    "orchestra": {
+      "tasks": 1,
+      "plain": 1,
+      "all_recipes": 1,
+      "self_sketch": 0,
+      "jev_sketch": 0,
+      "strong_sketch": 0
+    },
+    "flight_2": {
+      "tasks": 2,
+      "plain": 0,
+      "all_recipes": 1,
+      "self_sketch": 0,
+      "jev_sketch": 2,
+      "strong_sketch": 1
+    },
+    "world_1": {
+      "tasks": 2,
+      "plain": 0,
+      "all_recipes": 0,
+      "self_sketch": 0,
+      "jev_sketch": 0,
+      "strong_sketch": 0
+    },
+    "concert_singer": {
+      "tasks": 2,
+      "plain": 1,
+      "all_recipes": 0,
+      "self_sketch": 0,
+      "jev_sketch": 0,
+      "strong_sketch": 0
+    },
+    "wta_1": {
+      "tasks": 2,
+      "plain": 0,
+      "all_recipes": 0,
+      "self_sketch": 0,
+      "jev_sketch": 1,
+      "strong_sketch": 1
+    },
+    "voter_1": {
+      "tasks": 2,
+      "plain": 1,
+      "all_recipes": 1,
+      "self_sketch": 1,
+      "jev_sketch": 2,
+      "strong_sketch": 2
+    }
+  },
+  "rows": [
+    {
+      "task": "spider-dev-426",
+      "db_id": "museum_visit",
+      "outcomes": {
+        "plain": false,
+        "all_recipes": false,
+        "self_sketch": false,
+        "jev_sketch": false,
+        "strong_sketch": false
+      }
+    },
+    {
+      "task": "spider-dev-499",
+      "db_id": "battle_death",
+      "outcomes": {
+        "all_recipes": false,
+        "self_sketch": false,
+        "jev_sketch": false,
+        "strong_sketch": false,
+        "plain": false
+      }
+    },
+    {
+      "task": "spider-dev-643",
+      "db_id": "tvshow",
+      "outcomes": {
+        "self_sketch": false,
+        "jev_sketch": false,
+        "strong_sketch": false,
+        "plain": false,
+        "all_recipes": false
+      }
+    },
+    {
+      "task": "spider-dev-1028",
+      "db_id": "singer",
+      "outcomes": {
+        "jev_sketch": false,
+        "strong_sketch": false,
+        "plain": false,
+        "all_recipes": false,
+        "self_sketch": false
+      }
+    },
+    {
+      "task": "spider-dev-575",
+      "db_id": "student_transcripts_tracking",
+      "outcomes": {
+        "strong_sketch": false,
+        "plain": false,
+        "all_recipes": false,
+        "self_sketch": false,
+        "jev_sketch": false
+      }
+    },
+    {
+      "task": "spider-dev-161",
+      "db_id": "car_1",
+      "outcomes": {
+        "plain": false,
+        "all_recipes": false,
+        "self_sketch": false,
+        "jev_sketch": false,
+        "strong_sketch": false
+      }
+    },
+    {
+      "task": "spider-dev-1033",
+      "db_id": "real_estate_properties",
+      "outcomes": {
+        "all_recipes": false,
+        "self_sketch": false,
+        "jev_sketch": false,
+        "strong_sketch": false,
+        "plain": false
+      }
+    },
+    {
+      "task": "spider-dev-942",
+      "db_id": "dog_kennels",
+      "outcomes": {
+        "self_sketch": false,
+        "jev_sketch": true,
+        "strong_sketch": true,
+        "plain": false,
+        "all_recipes": true
+      }
+    },
+    {
+      "task": "spider-dev-856",
+      "db_id": "orchestra",
+      "outcomes": {
+        "jev_sketch": false,
+        "strong_sketch": false,
+        "plain": true,
+        "all_recipes": true,
+        "self_sketch": false
+      }
+    },
+    {
+      "task": "spider-dev-241",
+      "db_id": "flight_2",
+      "outcomes": {
+        "strong_sketch": false,
+        "plain": false,
+        "all_recipes": true,
+        "self_sketch": false,
+        "jev_sketch": true
+      }
+    },
+    {
+      "task": "spider-dev-796",
+      "db_id": "world_1",
+      "outcomes": {
+        "plain": false,
+        "all_recipes": false,
+        "self_sketch": false,
+        "jev_sketch": false,
+        "strong_sketch": false
+      }
+    },
+    {
+      "task": "spider-dev-31",
+      "db_id": "concert_singer",
+      "outcomes": {
+        "all_recipes": false,
+        "self_sketch": false,
+        "jev_sketch": false,
+        "strong_sketch": false,
+        "plain": true
+      }
+    },
+    {
+      "task": "spider-dev-477",
+      "db_id": "wta_1",
+      "outcomes": {
+        "self_sketch": false,
+        "jev_sketch": true,
+        "strong_sketch": true,
+        "plain": false,
+        "all_recipes": false
+      }
+    },
+    {
+      "task": "spider-dev-700",
+      "db_id": "voter_1",
+      "outcomes": {
+        "jev_sketch": true,
+        "strong_sketch": true,
+        "plain": false,
+        "all_recipes": false,
+        "self_sketch": false
+      }
+    },
+    {
+      "task": "spider-dev-419",
+      "db_id": "museum_visit",
+      "outcomes": {
+        "strong_sketch": true,
+        "plain": true,
+        "all_recipes": false,
+        "self_sketch": false,
+        "jev_sketch": false
+      }
+    },
+    {
+      "task": "spider-dev-505",
+      "db_id": "battle_death",
+      "outcomes": {
+        "plain": false,
+        "all_recipes": false,
+        "self_sketch": false,
+        "jev_sketch": false,
+        "strong_sketch": false
+      }
+    },
+    {
+      "task": "spider-dev-637",
+      "db_id": "tvshow",
+      "outcomes": {
+        "all_recipes": false,
+        "self_sketch": false,
+        "jev_sketch": false,
+        "strong_sketch": false,
+        "plain": false
+      }
+    },
+    {
+      "task": "spider-dev-1022",
+      "db_id": "singer",
+      "outcomes": {
+        "self_sketch": false,
+        "jev_sketch": true,
+        "strong_sketch": true,
+        "plain": true,
+        "all_recipes": true
+      }
+    },
+    {
+      "task": "spider-dev-551",
+      "db_id": "student_transcripts_tracking",
+      "outcomes": {
+        "jev_sketch": false,
+        "strong_sketch": false,
+        "plain": false,
+        "all_recipes": false,
+        "self_sketch": false
+      }
+    },
+    {
+      "task": "spider-dev-173",
+      "db_id": "car_1",
+      "outcomes": {
+        "strong_sketch": true,
+        "plain": false,
+        "all_recipes": true,
+        "self_sketch": false,
+        "jev_sketch": true
+      }
+    },
+    {
+      "task": "spider-dev-922",
+      "db_id": "dog_kennels",
+      "outcomes": {
+        "plain": false,
+        "all_recipes": false,
+        "self_sketch": false,
+        "jev_sketch": false,
+        "strong_sketch": false
+      }
+    },
+    {
+      "task": "spider-dev-243",
+      "db_id": "flight_2",
+      "outcomes": {
+        "all_recipes": false,
+        "self_sketch": false,
+        "jev_sketch": true,
+        "strong_sketch": true,
+        "plain": false
+      }
+    },
+    {
+      "task": "spider-dev-755",
+      "db_id": "world_1",
+      "outcomes": {
+        "self_sketch": false,
+        "jev_sketch": false,
+        "strong_sketch": false,
+        "plain": false,
+        "all_recipes": false
+      }
+    },
+    {
+      "task": "spider-dev-41",
+      "db_id": "concert_singer",
+      "outcomes": {
+        "jev_sketch": false,
+        "strong_sketch": false,
+        "plain": false,
+        "all_recipes": false,
+        "self_sketch": false
+      }
+    },
+    {
+      "task": "spider-dev-445",
+      "db_id": "wta_1",
+      "outcomes": {
+        "strong_sketch": false,
+        "plain": false,
+        "all_recipes": false,
+        "self_sketch": false,
+        "jev_sketch": false
+      }
+    },
+    {
+      "task": "spider-dev-694",
+      "db_id": "voter_1",
+      "outcomes": {
+        "plain": true,
+        "all_recipes": true,
+        "self_sketch": true,
+        "jev_sketch": true,
+        "strong_sketch": true
+      }
+    },
+    {
+      "task": "spider-dev-504",
+      "db_id": "battle_death",
+      "outcomes": {
+        "all_recipes": false,
+        "self_sketch": false,
+        "jev_sketch": false,
+        "strong_sketch": false,
+        "plain": false
+      }
+    },
+    {
+      "task": "spider-dev-635",
+      "db_id": "tvshow",
+      "outcomes": {
+        "self_sketch": false,
+        "jev_sketch": false,
+        "strong_sketch": false,
+        "plain": false,
+        "all_recipes": false
+      }
+    }
+  ],
+  "development_gate_passed": true,
+  "provider_errors": 0,
+  "interpretation_errors": 0,
+  "actual_usage": {
+    "qwen": {
+      "input": 282122,
+      "output": 11720,
+      "cache_hit": 0,
+      "seconds": 194.00182719994336,
+      "calls": 168
+    },
+    "deepseek": {
+      "input": 123924,
+      "output": 3401,
+      "cache_hit": 0,
+      "seconds": 33.26091989973793,
+      "calls": 28
+    },
+    "jev": {
+      "input": 174679,
+      "output": 63839,
+      "cache_hit": 0,
+      "seconds": 9.710533399891574,
+      "calls": 28
+    }
+  },
+  "deployed_usage": {
+    "plain": {
+      "qwen": {
+        "input": 27486,
+        "output": 1496,
+        "cache_hit": 0,
+        "seconds": 22.936400099890307,
+        "calls": 28
+      },
+      "deepseek": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      },
+      "jev": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      }
+    },
+    "all_recipes": {
+      "qwen": {
+        "input": 36182,
+        "output": 2649,
+        "cache_hit": 0,
+        "seconds": 36.03633679985069,
+        "calls": 28
+      },
+      "deepseek": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      },
+      "jev": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      }
+    },
+    "self_sketch": {
+      "qwen": {
+        "input": 153909,
+        "output": 4843,
+        "cache_hit": 0,
+        "seconds": 97.81197760021314,
+        "calls": 56
+      },
+      "deepseek": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      },
+      "jev": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      }
+    },
+    "jev_sketch": {
+      "qwen": {
+        "input": 32141,
+        "output": 1339,
+        "cache_hit": 0,
+        "seconds": 18.235580900101922,
+        "calls": 28
+      },
+      "deepseek": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      },
+      "jev": {
+        "input": 174679,
+        "output": 63839,
+        "cache_hit": 0,
+        "seconds": 9.710533399891574,
+        "calls": 28
+      }
+    },
+    "strong_sketch": {
+      "qwen": {
+        "input": 32404,
+        "output": 1393,
+        "cache_hit": 0,
+        "seconds": 18.981531799887307,
+        "calls": 28
+      },
+      "deepseek": {
+        "input": 123924,
+        "output": 3401,
+        "cache_hit": 0,
+        "seconds": 33.26091989973793,
+        "calls": 28
+      },
+      "jev": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      }
+    }
+  },
+  "timing": {
+    "plain": {
+      "median_serial_seconds": 0.6934072499861941,
+      "sum_serial_seconds": 22.936400099890307
+    },
+    "all_recipes": {
+      "median_serial_seconds": 0.7284198499983177,
+      "sum_serial_seconds": 36.03633679985069
+    },
+    "self_sketch": {
+      "median_serial_seconds": 3.285224500024924,
+      "sum_serial_seconds": 97.81197760021314
+    },
+    "jev_sketch": {
+      "median_serial_seconds": 0.8310785999929067,
+      "sum_serial_seconds": 27.946114299993496
+    },
+    "strong_sketch": {
+      "median_serial_seconds": 1.7763141500181518,
+      "sum_serial_seconds": 52.242451699625235
+    }
+  },
+  "interpreter_median_seconds": {
+    "qwen": 2.683528949972242,
+    "deepseek": 1.1661037499725353,
+    "jev": 0.3302883500000462
+  },
+  "recomputed_queries": 140,
+  "source_hashes_match": true,
+  "matched_inputs_and_resolved_sketches_verified": true,
+  "metric": "column-ordered row-multiset agreement on original publicDB; not official Spider accuracy",
+  "statistics_warning": "Paired sign tests descriptive: tiny clusteredDB sample and multiple comparisons; no general significance claim."
+}

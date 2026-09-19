@@ -1,0 +1,38 @@
+{
+  "kind": "known_case_diagnostic_NOT_holdout",
+  "tasks": 12,
+  "stats": {
+    "historical": {
+      "optimal": 10,
+      "feasible": 10,
+      "correct_edges": 351,
+      "false_positive": 8,
+      "false_negative": 1,
+      "unknown": 0,
+      "regressions": 0
+    },
+    "focused": {
+      "optimal": 12,
+      "feasible": 12,
+      "correct_edges": 357,
+      "false_positive": 3,
+      "false_negative": 0,
+      "unknown": 0,
+      "regressions": 0
+    },
+    "dual": {
+      "optimal": 12,
+      "feasible": 12,
+      "correct_edges": 352,
+      "false_positive": 2,
+      "false_negative": 2,
+      "unknown": 6,
+      "regressions": 0
+    }
+  },
+  "selected_policy": "focused",
+  "new_jev_calls": 24,
+  "errors": 0,
+  "source_hashes_match": true,
+  "assignments_recomputed": 36
+}

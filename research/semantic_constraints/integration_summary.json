@@ -1,0 +1,11 @@
+{
+  "kind": "cached_Jev_native_tool_replay_NOT_new_quality_sample",
+  "tasks": 24,
+  "tool_called": 24,
+  "final_matches_tool": 24,
+  "optimal": 22,
+  "errors": 0,
+  "local_calls": 48,
+  "new_remote_calls": 0,
+  "owned_server_exited": true
+}

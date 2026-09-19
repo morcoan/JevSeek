@@ -1,0 +1,174 @@
+{
+  "tasks": 16,
+  "hidden_cases": 71,
+  "scores": {
+    "direct": 15,
+    "ds_program": 0,
+    "jev_program": 0,
+    "compiler_fallback": 0
+  },
+  "paired": {
+    "jev_program_vs_direct": {
+      "rescues": 0,
+      "regressions": 15
+    },
+    "jev_program_vs_ds_program": {
+      "rescues": 0,
+      "regressions": 0
+    },
+    "ds_program_vs_direct": {
+      "rescues": 0,
+      "regressions": 15
+    },
+    "jev_program_vs_compiler_fallback": {
+      "rescues": 0,
+      "regressions": 0
+    }
+  },
+  "valid_graphs": 3,
+  "valid_graph_subset_scores": {
+    "direct": 3,
+    "ds_program": 0,
+    "jev_program": 0,
+    "compiler_fallback": 0
+  },
+  "compiled_nodes": 23,
+  "unknown_answers": {
+    "direct": 0,
+    "ds_program": 23,
+    "jev_program": 23,
+    "compiler_fallback": 0
+  },
+  "node_evaluations": {
+    "direct": 0,
+    "ds_program": 23,
+    "jev_program": 23,
+    "compiler_fallback": 0
+  },
+  "median_nodes_valid_graph": 8,
+  "relevant_reads": {
+    "direct": 16,
+    "ds_program": 0,
+    "jev_program": 0
+  },
+  "arm_errors": {
+    "direct": 0,
+    "ds_program": 13,
+    "jev_program": 13,
+    "compiler_fallback": 13
+  },
+  "timing": {
+    "direct": {
+      "sum_serial_seconds": 23.424397099908674,
+      "median_serial_seconds": 1.4362497000111034
+    },
+    "ds_program": {
+      "sum_serial_seconds": 100.9126588999352,
+      "median_serial_seconds": 4.644884450011887
+    },
+    "jev_program": {
+      "sum_serial_seconds": 98.29185670000152,
+      "median_serial_seconds": 4.3475988500140375
+    },
+    "compiler_fallback": {
+      "sum_serial_seconds": 96.36733199996524,
+      "median_serial_seconds": 4.24672300000384
+    }
+  },
+  "deployed_arm_usage": {
+    "direct": {
+      "deepseek": {
+        "input": 13162,
+        "output": 192,
+        "cache_hit": 0,
+        "seconds": 23.424397099908674,
+        "calls": 32
+      },
+      "jev": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      }
+    },
+    "ds_program": {
+      "deepseek": {
+        "input": 14622,
+        "output": 16096,
+        "cache_hit": 3840,
+        "seconds": 100.9126588999352,
+        "calls": 22
+      },
+      "jev": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      }
+    },
+    "jev_program": {
+      "deepseek": {
+        "input": 10249,
+        "output": 15922,
+        "cache_hit": 3840,
+        "seconds": 96.36733199996524,
+        "calls": 16
+      },
+      "jev": {
+        "input": 8436,
+        "output": 868,
+        "cache_hit": 0,
+        "seconds": 1.9245247000362724,
+        "calls": 6
+      }
+    },
+    "compiler_fallback": {
+      "deepseek": {
+        "input": 10249,
+        "output": 15922,
+        "cache_hit": 3840,
+        "seconds": 96.36733199996524,
+        "calls": 16
+      },
+      "jev": {
+        "input": 0,
+        "output": 0,
+        "cache_hit": 0,
+        "seconds": 0,
+        "calls": 0
+      }
+    }
+  },
+  "actual_research_usage": {
+    "deepseek": {
+      "input": 27784,
+      "output": 16288,
+      "cache_hit": 3840,
+      "seconds": 124.33705599984387,
+      "calls": 54
+    },
+    "jev": {
+      "input": 8436,
+      "output": 868,
+      "cache_hit": 0,
+      "seconds": 1.9245247000362724,
+      "calls": 6
+    }
+  },
+  "stage_median_seconds": {
+    "compile": 4.24672300000384,
+    "direct_patch": 0.7218798999965657,
+    "direct_read": 0.7280654500063974,
+    "ds_evaluate_patch": 0.8009452999976929,
+    "ds_evaluate_read": 0.7708602999919094,
+    "jev_evaluate_patch": 0.14245760001358576,
+    "jev_evaluate_read": 0.3495305000105873
+  },
+  "api_errors": 0,
+  "recomputed_repairs": 25,
+  "source_hashes_match": true,
+  "tool_observations_and_policy_votes_verified": true,
+  "scope": "Small closed-world owned patch-selection pilot; not open-ended coding or a weak-model test. Compilation included; failed programs counted. No retries."
+}

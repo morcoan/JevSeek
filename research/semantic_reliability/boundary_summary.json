@@ -1,0 +1,1744 @@
+{
+  "new_provider_calls": 0,
+  "transport_replay": {
+    "status": "completed",
+    "phase": "replay",
+    "not_fresh_quality_sample": true,
+    "arms": {
+      "jev_compiler": {
+        "correct": 8,
+        "total": 8,
+        "usage": {
+          "calls": 40,
+          "input_tokens": 614103,
+          "output_tokens": 139492,
+          "cache_hit_input_tokens": 0,
+          "reasoning_tokens_reported": 0,
+          "reasoning_usage_available_calls": 0,
+          "seconds": 10.448141100059729,
+          "errors": 0
+        },
+        "median_call_plus_solver_seconds": 1.260945800022455
+      }
+    },
+    "per_case_labels": [
+      {
+        "id": "seven-103",
+        "gold": "B",
+        "predictions": {
+          "jev_compiler": "B"
+        }
+      },
+      {
+        "id": "seven-45",
+        "gold": "B",
+        "predictions": {
+          "jev_compiler": "B"
+        }
+      },
+      {
+        "id": "seven-13",
+        "gold": "F",
+        "predictions": {
+          "jev_compiler": "F"
+        }
+      },
+      {
+        "id": "seven-165",
+        "gold": "B",
+        "predictions": {
+          "jev_compiler": "B"
+        }
+      },
+      {
+        "id": "seven-96",
+        "gold": "G",
+        "predictions": {
+          "jev_compiler": "G"
+        }
+      },
+      {
+        "id": "seven-139",
+        "gold": "E",
+        "predictions": {
+          "jev_compiler": "E"
+        }
+      },
+      {
+        "id": "seven-147",
+        "gold": "F",
+        "predictions": {
+          "jev_compiler": "F"
+        }
+      },
+      {
+        "id": "seven-81",
+        "gold": "D",
+        "predictions": {
+          "jev_compiler": "D"
+        }
+      }
+    ],
+    "source_sha256": {
+      "bounded.py": "b02e1ee4dcabe84b3a929a8adf9a0ee4c273215c0c6efd608e5163edc3a0d79e",
+      "transport.py": "4f37ba87b90d6330811d04ff708e2856bd31b39b89d0002625d9fae950f83cf2",
+      "TRANSPORT_PROTOCOL.md": "35035d830b9932de876eb16619d1329605332c2c9ad4210bb6eab24683409d1c",
+      "ordering.py": "7b4b7f39901171cc6468ecfcca1360eaf6c1599e07ebbd63bd15b6ec51d95aa9"
+    },
+    "original_results_sha256": "def5f420ca7de6c7ae062f735c56584c3fd0189dfd106d85864d8d06dddedad3",
+    "original_calls_sha256": "4af239cf509ef8912419fea0e7a31d9c5418e3fbc6a6ed61e8c5aa3b6f629cce",
+    "provider_calls": {
+      "jev": 40
+    }
+  },
+  "transport_fresh": {
+    "status": "completed",
+    "phase": "fresh",
+    "not_fresh_quality_sample": false,
+    "arms": {
+      "qwen_direct": {
+        "correct": 8,
+        "total": 20,
+        "usage": {
+          "calls": 20,
+          "input_tokens": 4885,
+          "output_tokens": 120,
+          "cache_hit_input_tokens": 0,
+          "reasoning_tokens_reported": 0,
+          "reasoning_usage_available_calls": 0,
+          "seconds": 4.69847679999657,
+          "errors": 0
+        },
+        "median_call_plus_solver_seconds": 0.2696791999915149
+      },
+      "jev_direct": {
+        "correct": 20,
+        "total": 20,
+        "usage": {
+          "calls": 20,
+          "input_tokens": 12527,
+          "output_tokens": 1320,
+          "cache_hit_input_tokens": 0,
+          "reasoning_tokens_reported": 0,
+          "reasoning_usage_available_calls": 0,
+          "seconds": 3.5732378998654895,
+          "errors": 0
+        },
+        "median_call_plus_solver_seconds": 0.17649894996429794
+      },
+      "jev_compiler": {
+        "correct": 20,
+        "total": 20,
+        "usage": {
+          "calls": 100,
+          "input_tokens": 1493974,
+          "output_tokens": 343458,
+          "cache_hit_input_tokens": 0,
+          "reasoning_tokens_reported": 0,
+          "reasoning_usage_available_calls": 0,
+          "seconds": 23.20996439998271,
+          "errors": 0
+        },
+        "median_call_plus_solver_seconds": 1.1567312499682885
+      },
+      "ds_compiler": {
+        "correct": 14,
+        "total": 20,
+        "usage": {
+          "calls": 20,
+          "input_tokens": 1096319,
+          "output_tokens": 1646,
+          "cache_hit_input_tokens": 102016,
+          "reasoning_tokens_reported": 0,
+          "reasoning_usage_available_calls": 0,
+          "seconds": 40.235281600034796,
+          "errors": 0
+        },
+        "median_call_plus_solver_seconds": 2.0429460000013933
+      }
+    },
+    "per_case_labels": [
+      {
+        "id": "seven-221",
+        "gold": "B",
+        "predictions": {
+          "qwen_direct": "B",
+          "jev_direct": "B",
+          "jev_compiler": "B",
+          "ds_compiler": "B"
+        }
+      },
+      {
+        "id": "seven-118",
+        "gold": "G",
+        "predictions": {
+          "jev_direct": "G",
+          "jev_compiler": "G",
+          "ds_compiler": "G",
+          "qwen_direct": "B"
+        }
+      },
+      {
+        "id": "seven-162",
+        "gold": "F",
+        "predictions": {
+          "jev_compiler": "F",
+          "ds_compiler": null,
+          "qwen_direct": "B",
+          "jev_direct": "F"
+        }
+      },
+      {
+        "id": "seven-14",
+        "gold": "A",
+        "predictions": {
+          "ds_compiler": "A",
+          "qwen_direct": "A",
+          "jev_direct": "A",
+          "jev_compiler": "A"
+        }
+      },
+      {
+        "id": "seven-177",
+        "gold": "F",
+        "predictions": {
+          "qwen_direct": "F",
+          "jev_direct": "F",
+          "jev_compiler": "F",
+          "ds_compiler": "F"
+        }
+      },
+      {
+        "id": "seven-89",
+        "gold": "D",
+        "predictions": {
+          "jev_direct": "D",
+          "jev_compiler": "D",
+          "ds_compiler": "D",
+          "qwen_direct": "A"
+        }
+      },
+      {
+        "id": "seven-28",
+        "gold": "B",
+        "predictions": {
+          "jev_compiler": "B",
+          "ds_compiler": null,
+          "qwen_direct": "E",
+          "jev_direct": "B"
+        }
+      },
+      {
+        "id": "seven-15",
+        "gold": "E",
+        "predictions": {
+          "ds_compiler": "E",
+          "qwen_direct": "F",
+          "jev_direct": "E",
+          "jev_compiler": "E"
+        }
+      },
+      {
+        "id": "seven-202",
+        "gold": "B",
+        "predictions": {
+          "qwen_direct": "B",
+          "jev_direct": "B",
+          "jev_compiler": "B",
+          "ds_compiler": "B"
+        }
+      },
+      {
+        "id": "seven-234",
+        "gold": "B",
+        "predictions": {
+          "jev_direct": "B",
+          "jev_compiler": "B",
+          "ds_compiler": null,
+          "qwen_direct": "E"
+        }
+      },
+      {
+        "id": "seven-179",
+        "gold": "B",
+        "predictions": {
+          "jev_compiler": "B",
+          "ds_compiler": null,
+          "qwen_direct": "B",
+          "jev_direct": "B"
+        }
+      },
+      {
+        "id": "seven-6",
+        "gold": "E",
+        "predictions": {
+          "ds_compiler": "E",
+          "qwen_direct": "E",
+          "jev_direct": "E",
+          "jev_compiler": "E"
+        }
+      },
+      {
+        "id": "seven-117",
+        "gold": "D",
+        "predictions": {
+          "qwen_direct": "E",
+          "jev_direct": "D",
+          "jev_compiler": "D",
+          "ds_compiler": null
+        }
+      },
+      {
+        "id": "seven-59",
+        "gold": "D",
+        "predictions": {
+          "jev_direct": "D",
+          "jev_compiler": "D",
+          "ds_compiler": "D",
+          "qwen_direct": "D"
+        }
+      },
+      {
+        "id": "seven-68",
+        "gold": "F",
+        "predictions": {
+          "jev_compiler": "F",
+          "ds_compiler": null,
+          "qwen_direct": "E",
+          "jev_direct": "F"
+        }
+      },
+      {
+        "id": "seven-113",
+        "gold": "B",
+        "predictions": {
+          "ds_compiler": "B",
+          "qwen_direct": "E",
+          "jev_direct": "B",
+          "jev_compiler": "B"
+        }
+      },
+      {
+        "id": "seven-21",
+        "gold": "C",
+        "predictions": {
+          "qwen_direct": "E",
+          "jev_direct": "C",
+          "jev_compiler": "C",
+          "ds_compiler": "C"
+        }
+      },
+      {
+        "id": "seven-106",
+        "gold": "B",
+        "predictions": {
+          "jev_direct": "B",
+          "jev_compiler": "B",
+          "ds_compiler": "B",
+          "qwen_direct": "G"
+        }
+      },
+      {
+        "id": "seven-87",
+        "gold": "D",
+        "predictions": {
+          "jev_compiler": "D",
+          "ds_compiler": "D",
+          "qwen_direct": "D",
+          "jev_direct": "D"
+        }
+      },
+      {
+        "id": "seven-138",
+        "gold": "G",
+        "predictions": {
+          "ds_compiler": "G",
+          "qwen_direct": "F",
+          "jev_direct": "G",
+          "jev_compiler": "G"
+        }
+      }
+    ],
+    "source_sha256": {
+      "bounded.py": "b02e1ee4dcabe84b3a929a8adf9a0ee4c273215c0c6efd608e5163edc3a0d79e",
+      "transport.py": "4f37ba87b90d6330811d04ff708e2856bd31b39b89d0002625d9fae950f83cf2",
+      "TRANSPORT_PROTOCOL.md": "35035d830b9932de876eb16619d1329605332c2c9ad4210bb6eab24683409d1c",
+      "ordering.py": "7b4b7f39901171cc6468ecfcca1360eaf6c1599e07ebbd63bd15b6ec51d95aa9"
+    },
+    "original_results_sha256": "bdabd795fd7178c80cb8495bc21557797c584148fa39e51b6748105847e37131",
+    "original_calls_sha256": "c901e30bb82056661388155e8a3da8b7cc75e0121b8439065e6fdf2f7c157958",
+    "provider_calls": {
+      "qwen": 20,
+      "jev": 120,
+      "deepseek": 20
+    }
+  },
+  "contract_nli": {
+    "status": "completed_boundary_probe_not_production_grounding",
+    "splits": {
+      "dev": {
+        "standard": {
+          "correct": 53,
+          "total": 68,
+          "false_entailments": 7,
+          "abstentions": 0,
+          "usage": {
+            "calls": 4,
+            "input_tokens": 21423,
+            "output_tokens": 3032,
+            "cache_hit_input_tokens": 0,
+            "reasoning_tokens_reported": 0,
+            "reasoning_usage_available_calls": 0,
+            "seconds": 1.052305800083559,
+            "errors": 0
+          }
+        },
+        "generic": {
+          "correct": 53,
+          "total": 68,
+          "false_entailments": 8,
+          "abstentions": 0,
+          "usage": {
+            "calls": 4,
+            "input_tokens": 27747,
+            "output_tokens": 3113,
+            "cache_hit_input_tokens": 0,
+            "reasoning_tokens_reported": 0,
+            "reasoning_usage_available_calls": 0,
+            "seconds": 0.7813311999198049,
+            "errors": 0
+          }
+        },
+        "dual": {
+          "correct": 52,
+          "total": 68,
+          "false_entailments": 7,
+          "abstentions": 2,
+          "usage": {
+            "calls": 8,
+            "input_tokens": 55998,
+            "output_tokens": 6318,
+            "cache_hit_input_tokens": 0,
+            "reasoning_tokens_reported": 0,
+            "reasoning_usage_available_calls": 0,
+            "seconds": 1.558797399920877,
+            "errors": 0
+          }
+        },
+        "deepseek": {
+          "correct": 55,
+          "total": 68,
+          "false_entailments": 7,
+          "abstentions": 0,
+          "usage": {
+            "calls": 4,
+            "input_tokens": 10797,
+            "output_tokens": 586,
+            "cache_hit_input_tokens": 0,
+            "reasoning_tokens_reported": 0,
+            "reasoning_usage_available_calls": 0,
+            "seconds": 5.402961200103164,
+            "errors": 0
+          }
+        }
+      },
+      "test": {
+        "standard": {
+          "correct": 105,
+          "total": 136,
+          "false_entailments": 9,
+          "abstentions": 0,
+          "usage": {
+            "calls": 8,
+            "input_tokens": 38389,
+            "output_tokens": 6064,
+            "cache_hit_input_tokens": 0,
+            "reasoning_tokens_reported": 0,
+            "reasoning_usage_available_calls": 0,
+            "seconds": 1.499122699839063,
+            "errors": 0
+          }
+        },
+        "generic": {
+          "correct": 107,
+          "total": 136,
+          "false_entailments": 7,
+          "abstentions": 0,
+          "usage": {
+            "calls": 8,
+            "input_tokens": 51037,
+            "output_tokens": 6227,
+            "cache_hit_input_tokens": 0,
+            "reasoning_tokens_reported": 0,
+            "reasoning_usage_available_calls": 0,
+            "seconds": 1.712559100065846,
+            "errors": 0
+          }
+        },
+        "dual": {
+          "correct": 101,
+          "total": 136,
+          "false_entailments": 7,
+          "abstentions": 12,
+          "usage": {
+            "calls": 16,
+            "input_tokens": 103082,
+            "output_tokens": 12625,
+            "cache_hit_input_tokens": 0,
+            "reasoning_tokens_reported": 0,
+            "reasoning_usage_available_calls": 0,
+            "seconds": 3.011970800056588,
+            "errors": 0
+          }
+        },
+        "deepseek": {
+          "correct": 109,
+          "total": 136,
+          "false_entailments": 10,
+          "abstentions": 0,
+          "usage": {
+            "calls": 8,
+            "input_tokens": 17490,
+            "output_tokens": 1172,
+            "cache_hit_input_tokens": 0,
+            "reasoning_tokens_reported": 0,
+            "reasoning_usage_available_calls": 0,
+            "seconds": 10.07746420003241,
+            "errors": 0
+          }
+        }
+      }
+    },
+    "per_document_labels": [
+      {
+        "document_id": "dev-16",
+        "split": "dev",
+        "gold": {
+          "nda-11": "NotMentioned",
+          "nda-16": "Entailment",
+          "nda-15": "NotMentioned",
+          "nda-10": "NotMentioned",
+          "nda-2": "Contradiction",
+          "nda-1": "NotMentioned",
+          "nda-19": "Entailment",
+          "nda-12": "Entailment",
+          "nda-20": "NotMentioned",
+          "nda-3": "Entailment",
+          "nda-18": "NotMentioned",
+          "nda-7": "Entailment",
+          "nda-17": "Entailment",
+          "nda-8": "Entailment",
+          "nda-13": "Entailment",
+          "nda-5": "Entailment",
+          "nda-4": "NotMentioned"
+        },
+        "predictions": {
+          "standard": {
+            "nda-11": "NotMentioned",
+            "nda-16": "Entailment",
+            "nda-15": "Contradiction",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "Entailment",
+            "nda-12": "Entailment",
+            "nda-20": "Entailment",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "Contradiction",
+            "nda-17": "Entailment",
+            "nda-8": "Entailment",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "generic": {
+            "nda-11": "NotMentioned",
+            "nda-16": "Entailment",
+            "nda-15": "Contradiction",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "Entailment",
+            "nda-12": "Entailment",
+            "nda-20": "Entailment",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "Contradiction",
+            "nda-17": "Entailment",
+            "nda-8": "Entailment",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "dual": {
+            "nda-11": "NotMentioned",
+            "nda-16": "Entailment",
+            "nda-15": "Contradiction",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "Entailment",
+            "nda-12": "Entailment",
+            "nda-20": null,
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "Contradiction",
+            "nda-17": "Entailment",
+            "nda-8": "Entailment",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "deepseek": {
+            "nda-11": "NotMentioned",
+            "nda-16": "Entailment",
+            "nda-15": "NotMentioned",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "Entailment",
+            "nda-12": "Entailment",
+            "nda-20": "Entailment",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "NotMentioned",
+            "nda-17": "Entailment",
+            "nda-8": "Entailment",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          }
+        }
+      },
+      {
+        "document_id": "dev-12",
+        "split": "dev",
+        "gold": {
+          "nda-11": "NotMentioned",
+          "nda-16": "Entailment",
+          "nda-15": "NotMentioned",
+          "nda-10": "NotMentioned",
+          "nda-2": "Contradiction",
+          "nda-1": "NotMentioned",
+          "nda-19": "NotMentioned",
+          "nda-12": "Entailment",
+          "nda-20": "NotMentioned",
+          "nda-3": "NotMentioned",
+          "nda-18": "NotMentioned",
+          "nda-7": "Entailment",
+          "nda-17": "NotMentioned",
+          "nda-8": "Entailment",
+          "nda-13": "Entailment",
+          "nda-5": "Entailment",
+          "nda-4": "NotMentioned"
+        },
+        "predictions": {
+          "generic": {
+            "nda-11": "NotMentioned",
+            "nda-16": "Entailment",
+            "nda-15": "Contradiction",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "NotMentioned",
+            "nda-19": "Entailment",
+            "nda-12": "Entailment",
+            "nda-20": "Entailment",
+            "nda-3": "NotMentioned",
+            "nda-18": "NotMentioned",
+            "nda-7": "Entailment",
+            "nda-17": "Entailment",
+            "nda-8": "Entailment",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "NotMentioned"
+          },
+          "dual": {
+            "nda-11": "NotMentioned",
+            "nda-16": "Entailment",
+            "nda-15": "Contradiction",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": null,
+            "nda-19": "Entailment",
+            "nda-12": "Entailment",
+            "nda-20": "Entailment",
+            "nda-3": "NotMentioned",
+            "nda-18": "NotMentioned",
+            "nda-7": "Entailment",
+            "nda-17": "Entailment",
+            "nda-8": "Entailment",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "NotMentioned"
+          },
+          "deepseek": {
+            "nda-11": "NotMentioned",
+            "nda-16": "Entailment",
+            "nda-15": "NotMentioned",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "Entailment",
+            "nda-12": "Entailment",
+            "nda-20": "Entailment",
+            "nda-3": "NotMentioned",
+            "nda-18": "NotMentioned",
+            "nda-7": "Entailment",
+            "nda-17": "NotMentioned",
+            "nda-8": "Entailment",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "NotMentioned"
+          },
+          "standard": {
+            "nda-11": "NotMentioned",
+            "nda-16": "Entailment",
+            "nda-15": "Contradiction",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "NotMentioned",
+            "nda-19": "Entailment",
+            "nda-12": "Entailment",
+            "nda-20": "Entailment",
+            "nda-3": "NotMentioned",
+            "nda-18": "NotMentioned",
+            "nda-7": "Entailment",
+            "nda-17": "Entailment",
+            "nda-8": "Entailment",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "NotMentioned"
+          }
+        }
+      },
+      {
+        "document_id": "dev-440",
+        "split": "dev",
+        "gold": {
+          "nda-11": "Entailment",
+          "nda-16": "NotMentioned",
+          "nda-15": "Entailment",
+          "nda-10": "Entailment",
+          "nda-2": "Contradiction",
+          "nda-1": "Contradiction",
+          "nda-19": "NotMentioned",
+          "nda-12": "Entailment",
+          "nda-20": "Contradiction",
+          "nda-3": "Entailment",
+          "nda-18": "NotMentioned",
+          "nda-7": "Entailment",
+          "nda-17": "Contradiction",
+          "nda-8": "Entailment",
+          "nda-13": "Entailment",
+          "nda-5": "Entailment",
+          "nda-4": "Entailment"
+        },
+        "predictions": {
+          "dual": {
+            "nda-11": "Entailment",
+            "nda-16": "NotMentioned",
+            "nda-15": "Entailment",
+            "nda-10": "Entailment",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "NotMentioned",
+            "nda-12": "Entailment",
+            "nda-20": "Contradiction",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "Entailment",
+            "nda-17": "Entailment",
+            "nda-8": "Entailment",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "deepseek": {
+            "nda-11": "Entailment",
+            "nda-16": "Entailment",
+            "nda-15": "Entailment",
+            "nda-10": "Entailment",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "NotMentioned",
+            "nda-12": "Entailment",
+            "nda-20": "NotMentioned",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "Entailment",
+            "nda-17": "Entailment",
+            "nda-8": "Entailment",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "standard": {
+            "nda-11": "Entailment",
+            "nda-16": "NotMentioned",
+            "nda-15": "Entailment",
+            "nda-10": "Entailment",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "NotMentioned",
+            "nda-12": "Entailment",
+            "nda-20": "Contradiction",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "Entailment",
+            "nda-17": "Contradiction",
+            "nda-8": "Entailment",
+            "nda-13": "NotMentioned",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "generic": {
+            "nda-11": "Entailment",
+            "nda-16": "NotMentioned",
+            "nda-15": "Entailment",
+            "nda-10": "Entailment",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "NotMentioned",
+            "nda-12": "Entailment",
+            "nda-20": "Contradiction",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "Entailment",
+            "nda-17": "Entailment",
+            "nda-8": "Entailment",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          }
+        }
+      },
+      {
+        "document_id": "dev-9",
+        "split": "dev",
+        "gold": {
+          "nda-11": "NotMentioned",
+          "nda-16": "Entailment",
+          "nda-15": "NotMentioned",
+          "nda-10": "NotMentioned",
+          "nda-2": "Entailment",
+          "nda-1": "NotMentioned",
+          "nda-19": "Entailment",
+          "nda-12": "NotMentioned",
+          "nda-20": "NotMentioned",
+          "nda-3": "NotMentioned",
+          "nda-18": "NotMentioned",
+          "nda-7": "Contradiction",
+          "nda-17": "NotMentioned",
+          "nda-8": "Entailment",
+          "nda-13": "NotMentioned",
+          "nda-5": "Contradiction",
+          "nda-4": "Entailment"
+        },
+        "predictions": {
+          "deepseek": {
+            "nda-11": "NotMentioned",
+            "nda-16": "Entailment",
+            "nda-15": "NotMentioned",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "NotMentioned",
+            "nda-19": "Entailment",
+            "nda-12": "NotMentioned",
+            "nda-20": "NotMentioned",
+            "nda-3": "NotMentioned",
+            "nda-18": "NotMentioned",
+            "nda-7": "NotMentioned",
+            "nda-17": "NotMentioned",
+            "nda-8": "Entailment",
+            "nda-13": "NotMentioned",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "standard": {
+            "nda-11": "NotMentioned",
+            "nda-16": "Entailment",
+            "nda-15": "Contradiction",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "NotMentioned",
+            "nda-19": "Entailment",
+            "nda-12": "NotMentioned",
+            "nda-20": "Contradiction",
+            "nda-3": "NotMentioned",
+            "nda-18": "NotMentioned",
+            "nda-7": "Contradiction",
+            "nda-17": "Entailment",
+            "nda-8": "Entailment",
+            "nda-13": "NotMentioned",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "generic": {
+            "nda-11": "NotMentioned",
+            "nda-16": "Entailment",
+            "nda-15": "Contradiction",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "NotMentioned",
+            "nda-19": "Entailment",
+            "nda-12": "NotMentioned",
+            "nda-20": "Contradiction",
+            "nda-3": "NotMentioned",
+            "nda-18": "NotMentioned",
+            "nda-7": "Contradiction",
+            "nda-17": "Entailment",
+            "nda-8": "Entailment",
+            "nda-13": "NotMentioned",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "dual": {
+            "nda-11": "NotMentioned",
+            "nda-16": "Entailment",
+            "nda-15": "Contradiction",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "NotMentioned",
+            "nda-19": "Entailment",
+            "nda-12": "NotMentioned",
+            "nda-20": "Contradiction",
+            "nda-3": "NotMentioned",
+            "nda-18": "NotMentioned",
+            "nda-7": "Contradiction",
+            "nda-17": "Entailment",
+            "nda-8": "Entailment",
+            "nda-13": "NotMentioned",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          }
+        }
+      },
+      {
+        "document_id": "test-555",
+        "split": "test",
+        "gold": {
+          "nda-11": "Entailment",
+          "nda-16": "NotMentioned",
+          "nda-15": "Entailment",
+          "nda-10": "Entailment",
+          "nda-2": "Contradiction",
+          "nda-1": "Entailment",
+          "nda-19": "Contradiction",
+          "nda-12": "Entailment",
+          "nda-20": "Entailment",
+          "nda-3": "Entailment",
+          "nda-18": "Entailment",
+          "nda-7": "Entailment",
+          "nda-17": "Contradiction",
+          "nda-8": "Entailment",
+          "nda-13": "Entailment",
+          "nda-5": "Entailment",
+          "nda-4": "Entailment"
+        },
+        "predictions": {
+          "standard": {
+            "nda-11": "Entailment",
+            "nda-16": "NotMentioned",
+            "nda-15": "Contradiction",
+            "nda-10": "Entailment",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "Entailment",
+            "nda-12": "Entailment",
+            "nda-20": "Entailment",
+            "nda-3": "Entailment",
+            "nda-18": "Entailment",
+            "nda-7": "Entailment",
+            "nda-17": "Contradiction",
+            "nda-8": "NotMentioned",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "generic": {
+            "nda-11": "Entailment",
+            "nda-16": "NotMentioned",
+            "nda-15": "Contradiction",
+            "nda-10": "Entailment",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "Entailment",
+            "nda-12": "Entailment",
+            "nda-20": "Entailment",
+            "nda-3": "Entailment",
+            "nda-18": "Entailment",
+            "nda-7": "Entailment",
+            "nda-17": "Contradiction",
+            "nda-8": "NotMentioned",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "dual": {
+            "nda-11": "Entailment",
+            "nda-16": "NotMentioned",
+            "nda-15": null,
+            "nda-10": "Entailment",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "Entailment",
+            "nda-12": "Entailment",
+            "nda-20": "Entailment",
+            "nda-3": "Entailment",
+            "nda-18": "Entailment",
+            "nda-7": "Entailment",
+            "nda-17": "Contradiction",
+            "nda-8": null,
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "deepseek": {
+            "nda-11": "Entailment",
+            "nda-16": "Entailment",
+            "nda-15": "Entailment",
+            "nda-10": "Entailment",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "NotMentioned",
+            "nda-12": "Entailment",
+            "nda-20": "Entailment",
+            "nda-3": "Entailment",
+            "nda-18": "Entailment",
+            "nda-7": "Entailment",
+            "nda-17": "Entailment",
+            "nda-8": "NotMentioned",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          }
+        }
+      },
+      {
+        "document_id": "test-129",
+        "split": "test",
+        "gold": {
+          "nda-11": "NotMentioned",
+          "nda-16": "NotMentioned",
+          "nda-15": "Entailment",
+          "nda-10": "NotMentioned",
+          "nda-2": "Contradiction",
+          "nda-1": "NotMentioned",
+          "nda-19": "Entailment",
+          "nda-12": "Entailment",
+          "nda-20": "NotMentioned",
+          "nda-3": "NotMentioned",
+          "nda-18": "NotMentioned",
+          "nda-7": "Entailment",
+          "nda-17": "Contradiction",
+          "nda-8": "Entailment",
+          "nda-13": "Entailment",
+          "nda-5": "Entailment",
+          "nda-4": "Entailment"
+        },
+        "predictions": {
+          "generic": {
+            "nda-11": "NotMentioned",
+            "nda-16": "NotMentioned",
+            "nda-15": "Contradiction",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "NotMentioned",
+            "nda-19": "Entailment",
+            "nda-12": "Entailment",
+            "nda-20": "NotMentioned",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "Contradiction",
+            "nda-17": "Entailment",
+            "nda-8": "Entailment",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "dual": {
+            "nda-11": "NotMentioned",
+            "nda-16": "NotMentioned",
+            "nda-15": "Contradiction",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "NotMentioned",
+            "nda-19": null,
+            "nda-12": "Entailment",
+            "nda-20": "NotMentioned",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": null,
+            "nda-17": "Entailment",
+            "nda-8": "Entailment",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "deepseek": {
+            "nda-11": "NotMentioned",
+            "nda-16": "NotMentioned",
+            "nda-15": "Entailment",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "Entailment",
+            "nda-12": "Entailment",
+            "nda-20": "NotMentioned",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "Entailment",
+            "nda-17": "Entailment",
+            "nda-8": "Entailment",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "standard": {
+            "nda-11": "NotMentioned",
+            "nda-16": "NotMentioned",
+            "nda-15": "Contradiction",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "NotMentioned",
+            "nda-19": "NotMentioned",
+            "nda-12": "Entailment",
+            "nda-20": "NotMentioned",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "Contradiction",
+            "nda-17": "Entailment",
+            "nda-8": "Entailment",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          }
+        }
+      },
+      {
+        "document_id": "test-40",
+        "split": "test",
+        "gold": {
+          "nda-11": "NotMentioned",
+          "nda-16": "NotMentioned",
+          "nda-15": "NotMentioned",
+          "nda-10": "NotMentioned",
+          "nda-2": "Contradiction",
+          "nda-1": "Contradiction",
+          "nda-19": "NotMentioned",
+          "nda-12": "NotMentioned",
+          "nda-20": "NotMentioned",
+          "nda-3": "NotMentioned",
+          "nda-18": "NotMentioned",
+          "nda-7": "Entailment",
+          "nda-17": "NotMentioned",
+          "nda-8": "NotMentioned",
+          "nda-13": "NotMentioned",
+          "nda-5": "Entailment",
+          "nda-4": "Entailment"
+        },
+        "predictions": {
+          "dual": {
+            "nda-11": "NotMentioned",
+            "nda-16": "NotMentioned",
+            "nda-15": "Contradiction",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "NotMentioned",
+            "nda-12": "NotMentioned",
+            "nda-20": "Contradiction",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": null,
+            "nda-17": "Entailment",
+            "nda-8": "NotMentioned",
+            "nda-13": "NotMentioned",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "deepseek": {
+            "nda-11": "NotMentioned",
+            "nda-16": "NotMentioned",
+            "nda-15": "NotMentioned",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "NotMentioned",
+            "nda-12": "NotMentioned",
+            "nda-20": "NotMentioned",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "NotMentioned",
+            "nda-17": "NotMentioned",
+            "nda-8": "NotMentioned",
+            "nda-13": "NotMentioned",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "standard": {
+            "nda-11": "NotMentioned",
+            "nda-16": "NotMentioned",
+            "nda-15": "Contradiction",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "NotMentioned",
+            "nda-12": "NotMentioned",
+            "nda-20": "Contradiction",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "NotMentioned",
+            "nda-17": "Entailment",
+            "nda-8": "NotMentioned",
+            "nda-13": "NotMentioned",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "generic": {
+            "nda-11": "NotMentioned",
+            "nda-16": "NotMentioned",
+            "nda-15": "Contradiction",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "NotMentioned",
+            "nda-12": "NotMentioned",
+            "nda-20": "Contradiction",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "NotMentioned",
+            "nda-17": "Entailment",
+            "nda-8": "NotMentioned",
+            "nda-13": "NotMentioned",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          }
+        }
+      },
+      {
+        "document_id": "test-51",
+        "split": "test",
+        "gold": {
+          "nda-11": "NotMentioned",
+          "nda-16": "NotMentioned",
+          "nda-15": "Entailment",
+          "nda-10": "Entailment",
+          "nda-2": "NotMentioned",
+          "nda-1": "NotMentioned",
+          "nda-19": "Entailment",
+          "nda-12": "Entailment",
+          "nda-20": "NotMentioned",
+          "nda-3": "Entailment",
+          "nda-18": "NotMentioned",
+          "nda-7": "Entailment",
+          "nda-17": "NotMentioned",
+          "nda-8": "NotMentioned",
+          "nda-13": "Entailment",
+          "nda-5": "Entailment",
+          "nda-4": "Entailment"
+        },
+        "predictions": {
+          "deepseek": {
+            "nda-11": "NotMentioned",
+            "nda-16": "NotMentioned",
+            "nda-15": "Entailment",
+            "nda-10": "Entailment",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "Entailment",
+            "nda-12": "Entailment",
+            "nda-20": "NotMentioned",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "Entailment",
+            "nda-17": "NotMentioned",
+            "nda-8": "NotMentioned",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "standard": {
+            "nda-11": "NotMentioned",
+            "nda-16": "NotMentioned",
+            "nda-15": "Entailment",
+            "nda-10": "Entailment",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "Entailment",
+            "nda-12": "Entailment",
+            "nda-20": "NotMentioned",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "Entailment",
+            "nda-17": "NotMentioned",
+            "nda-8": "NotMentioned",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "generic": {
+            "nda-11": "NotMentioned",
+            "nda-16": "NotMentioned",
+            "nda-15": "Entailment",
+            "nda-10": "Entailment",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "Entailment",
+            "nda-12": "Entailment",
+            "nda-20": "NotMentioned",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "Entailment",
+            "nda-17": "NotMentioned",
+            "nda-8": "NotMentioned",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "dual": {
+            "nda-11": "NotMentioned",
+            "nda-16": "NotMentioned",
+            "nda-15": "Entailment",
+            "nda-10": "Entailment",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "Entailment",
+            "nda-12": "Entailment",
+            "nda-20": "NotMentioned",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "Entailment",
+            "nda-17": "NotMentioned",
+            "nda-8": "NotMentioned",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          }
+        }
+      },
+      {
+        "document_id": "test-49",
+        "split": "test",
+        "gold": {
+          "nda-11": "NotMentioned",
+          "nda-16": "NotMentioned",
+          "nda-15": "Entailment",
+          "nda-10": "Entailment",
+          "nda-2": "Contradiction",
+          "nda-1": "NotMentioned",
+          "nda-19": "NotMentioned",
+          "nda-12": "NotMentioned",
+          "nda-20": "Entailment",
+          "nda-3": "NotMentioned",
+          "nda-18": "NotMentioned",
+          "nda-7": "Entailment",
+          "nda-17": "Entailment",
+          "nda-8": "Entailment",
+          "nda-13": "Entailment",
+          "nda-5": "Entailment",
+          "nda-4": "Entailment"
+        },
+        "predictions": {
+          "standard": {
+            "nda-11": "NotMentioned",
+            "nda-16": "NotMentioned",
+            "nda-15": "Contradiction",
+            "nda-10": "Entailment",
+            "nda-2": "Contradiction",
+            "nda-1": "NotMentioned",
+            "nda-19": "Entailment",
+            "nda-12": "NotMentioned",
+            "nda-20": "Entailment",
+            "nda-3": "NotMentioned",
+            "nda-18": "NotMentioned",
+            "nda-7": "Entailment",
+            "nda-17": "Entailment",
+            "nda-8": "Entailment",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "generic": {
+            "nda-11": "NotMentioned",
+            "nda-16": "NotMentioned",
+            "nda-15": "Contradiction",
+            "nda-10": "Entailment",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "Entailment",
+            "nda-12": "NotMentioned",
+            "nda-20": "Entailment",
+            "nda-3": "NotMentioned",
+            "nda-18": "NotMentioned",
+            "nda-7": "Entailment",
+            "nda-17": "Entailment",
+            "nda-8": "Entailment",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "dual": {
+            "nda-11": "NotMentioned",
+            "nda-16": null,
+            "nda-15": null,
+            "nda-10": "Entailment",
+            "nda-2": "Contradiction",
+            "nda-1": null,
+            "nda-19": "Entailment",
+            "nda-12": "NotMentioned",
+            "nda-20": "Entailment",
+            "nda-3": "NotMentioned",
+            "nda-18": "NotMentioned",
+            "nda-7": "Entailment",
+            "nda-17": "Entailment",
+            "nda-8": "Entailment",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "deepseek": {
+            "nda-11": "NotMentioned",
+            "nda-16": "Entailment",
+            "nda-15": "Entailment",
+            "nda-10": "Entailment",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "Entailment",
+            "nda-12": "NotMentioned",
+            "nda-20": "Entailment",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "Entailment",
+            "nda-17": "Entailment",
+            "nda-8": "Entailment",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          }
+        }
+      },
+      {
+        "document_id": "test-4",
+        "split": "test",
+        "gold": {
+          "nda-11": "NotMentioned",
+          "nda-16": "NotMentioned",
+          "nda-15": "Entailment",
+          "nda-10": "NotMentioned",
+          "nda-2": "NotMentioned",
+          "nda-1": "Contradiction",
+          "nda-19": "Entailment",
+          "nda-12": "NotMentioned",
+          "nda-20": "Contradiction",
+          "nda-3": "Entailment",
+          "nda-18": "NotMentioned",
+          "nda-7": "NotMentioned",
+          "nda-17": "NotMentioned",
+          "nda-8": "NotMentioned",
+          "nda-13": "NotMentioned",
+          "nda-5": "NotMentioned",
+          "nda-4": "Entailment"
+        },
+        "predictions": {
+          "generic": {
+            "nda-11": "NotMentioned",
+            "nda-16": "NotMentioned",
+            "nda-15": "Contradiction",
+            "nda-10": "NotMentioned",
+            "nda-2": "NotMentioned",
+            "nda-1": "NotMentioned",
+            "nda-19": "Entailment",
+            "nda-12": "NotMentioned",
+            "nda-20": "Contradiction",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "Contradiction",
+            "nda-17": "Entailment",
+            "nda-8": "NotMentioned",
+            "nda-13": "NotMentioned",
+            "nda-5": "Contradiction",
+            "nda-4": "Entailment"
+          },
+          "dual": {
+            "nda-11": "NotMentioned",
+            "nda-16": null,
+            "nda-15": "Contradiction",
+            "nda-10": "NotMentioned",
+            "nda-2": "NotMentioned",
+            "nda-1": "NotMentioned",
+            "nda-19": "Entailment",
+            "nda-12": "NotMentioned",
+            "nda-20": "Contradiction",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "Contradiction",
+            "nda-17": "Entailment",
+            "nda-8": null,
+            "nda-13": "NotMentioned",
+            "nda-5": "Contradiction",
+            "nda-4": "Entailment"
+          },
+          "deepseek": {
+            "nda-11": "NotMentioned",
+            "nda-16": "Contradiction",
+            "nda-15": "Contradiction",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "Entailment",
+            "nda-12": "NotMentioned",
+            "nda-20": "Contradiction",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "Contradiction",
+            "nda-17": "Entailment",
+            "nda-8": "NotMentioned",
+            "nda-13": "NotMentioned",
+            "nda-5": "Contradiction",
+            "nda-4": "Entailment"
+          },
+          "standard": {
+            "nda-11": "NotMentioned",
+            "nda-16": "Entailment",
+            "nda-15": "Contradiction",
+            "nda-10": "NotMentioned",
+            "nda-2": "NotMentioned",
+            "nda-1": "NotMentioned",
+            "nda-19": "Entailment",
+            "nda-12": "NotMentioned",
+            "nda-20": "Contradiction",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "Contradiction",
+            "nda-17": "Entailment",
+            "nda-8": "NotMentioned",
+            "nda-13": "NotMentioned",
+            "nda-5": "Contradiction",
+            "nda-4": "Entailment"
+          }
+        }
+      },
+      {
+        "document_id": "test-59",
+        "split": "test",
+        "gold": {
+          "nda-11": "NotMentioned",
+          "nda-16": "NotMentioned",
+          "nda-15": "NotMentioned",
+          "nda-10": "NotMentioned",
+          "nda-2": "NotMentioned",
+          "nda-1": "NotMentioned",
+          "nda-19": "Entailment",
+          "nda-12": "NotMentioned",
+          "nda-20": "NotMentioned",
+          "nda-3": "NotMentioned",
+          "nda-18": "NotMentioned",
+          "nda-7": "NotMentioned",
+          "nda-17": "NotMentioned",
+          "nda-8": "NotMentioned",
+          "nda-13": "NotMentioned",
+          "nda-5": "NotMentioned",
+          "nda-4": "Entailment"
+        },
+        "predictions": {
+          "dual": {
+            "nda-11": "NotMentioned",
+            "nda-16": "NotMentioned",
+            "nda-15": "Contradiction",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": null,
+            "nda-19": "Entailment",
+            "nda-12": "NotMentioned",
+            "nda-20": "NotMentioned",
+            "nda-3": "NotMentioned",
+            "nda-18": "NotMentioned",
+            "nda-7": "Contradiction",
+            "nda-17": "NotMentioned",
+            "nda-8": "NotMentioned",
+            "nda-13": "NotMentioned",
+            "nda-5": "Contradiction",
+            "nda-4": "Entailment"
+          },
+          "deepseek": {
+            "nda-11": "NotMentioned",
+            "nda-16": "NotMentioned",
+            "nda-15": "NotMentioned",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "Entailment",
+            "nda-12": "NotMentioned",
+            "nda-20": "NotMentioned",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "NotMentioned",
+            "nda-17": "NotMentioned",
+            "nda-8": "NotMentioned",
+            "nda-13": "NotMentioned",
+            "nda-5": "NotMentioned",
+            "nda-4": "Entailment"
+          },
+          "standard": {
+            "nda-11": "NotMentioned",
+            "nda-16": "NotMentioned",
+            "nda-15": "Contradiction",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "NotMentioned",
+            "nda-19": "Entailment",
+            "nda-12": "NotMentioned",
+            "nda-20": "NotMentioned",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "Contradiction",
+            "nda-17": "NotMentioned",
+            "nda-8": "NotMentioned",
+            "nda-13": "NotMentioned",
+            "nda-5": "NotMentioned",
+            "nda-4": "Entailment"
+          },
+          "generic": {
+            "nda-11": "NotMentioned",
+            "nda-16": "NotMentioned",
+            "nda-15": "Contradiction",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "NotMentioned",
+            "nda-19": "Entailment",
+            "nda-12": "NotMentioned",
+            "nda-20": "NotMentioned",
+            "nda-3": "NotMentioned",
+            "nda-18": "NotMentioned",
+            "nda-7": "Contradiction",
+            "nda-17": "NotMentioned",
+            "nda-8": "NotMentioned",
+            "nda-13": "NotMentioned",
+            "nda-5": "Contradiction",
+            "nda-4": "Entailment"
+          }
+        }
+      },
+      {
+        "document_id": "test-6",
+        "split": "test",
+        "gold": {
+          "nda-11": "NotMentioned",
+          "nda-16": "Entailment",
+          "nda-15": "Entailment",
+          "nda-10": "NotMentioned",
+          "nda-2": "Contradiction",
+          "nda-1": "NotMentioned",
+          "nda-19": "Entailment",
+          "nda-12": "Entailment",
+          "nda-20": "NotMentioned",
+          "nda-3": "Entailment",
+          "nda-18": "NotMentioned",
+          "nda-7": "Entailment",
+          "nda-17": "Entailment",
+          "nda-8": "NotMentioned",
+          "nda-13": "Entailment",
+          "nda-5": "Entailment",
+          "nda-4": "Entailment"
+        },
+        "predictions": {
+          "deepseek": {
+            "nda-11": "NotMentioned",
+            "nda-16": "Entailment",
+            "nda-15": "Entailment",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "Contradiction",
+            "nda-19": "Entailment",
+            "nda-12": "Entailment",
+            "nda-20": "NotMentioned",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "Entailment",
+            "nda-17": "Entailment",
+            "nda-8": "NotMentioned",
+            "nda-13": "Entailment",
+            "nda-5": "NotMentioned",
+            "nda-4": "Entailment"
+          },
+          "standard": {
+            "nda-11": "NotMentioned",
+            "nda-16": "Entailment",
+            "nda-15": "Contradiction",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "NotMentioned",
+            "nda-19": "Entailment",
+            "nda-12": "Entailment",
+            "nda-20": "Contradiction",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "Contradiction",
+            "nda-17": "Entailment",
+            "nda-8": "NotMentioned",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "generic": {
+            "nda-11": "NotMentioned",
+            "nda-16": "Entailment",
+            "nda-15": "Contradiction",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": "NotMentioned",
+            "nda-19": "Entailment",
+            "nda-12": "Entailment",
+            "nda-20": "Contradiction",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "Entailment",
+            "nda-17": "Entailment",
+            "nda-8": "NotMentioned",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          },
+          "dual": {
+            "nda-11": "NotMentioned",
+            "nda-16": "Entailment",
+            "nda-15": "Contradiction",
+            "nda-10": "NotMentioned",
+            "nda-2": "Contradiction",
+            "nda-1": null,
+            "nda-19": "Entailment",
+            "nda-12": "Entailment",
+            "nda-20": "Contradiction",
+            "nda-3": "Entailment",
+            "nda-18": "NotMentioned",
+            "nda-7": "Entailment",
+            "nda-17": "Entailment",
+            "nda-8": "NotMentioned",
+            "nda-13": "Entailment",
+            "nda-5": "Entailment",
+            "nda-4": "Entailment"
+          }
+        }
+      }
+    ],
+    "source_sha256": {
+      "runtime.py": "c3c369e373c4003db39fcb87b4f360ae19bf9f3359e0f2862b8ea99a2b8d652f",
+      "bounded.py": "b02e1ee4dcabe84b3a929a8adf9a0ee4c273215c0c6efd608e5163edc3a0d79e",
+      "nli.py": "540d7e4371474d89acd7decc8daf2b6f7a91c3f4db6b55ff383eac23b4a75eb3",
+      "NLI_PROTOCOL.md": "cf7a9fa416efbe4e6be8a954d4c82c9e247ecd106e846333cd2efa985b9af31c"
+    },
+    "dataset_hashes": {
+      "contract-dev.json": "310af7d661d2ab50ee3700169cef524c75f39fb296bbf5a515c229eb0f42e68e",
+      "contract-test.json": "460267b56052a2dc5aead98eb35eadef9e6734d5723d37b4a9790e410f812387"
+    },
+    "original_results_sha256": "77cbc388439ea52212e91669e4766a866557f150779fbb6de9c4efabc5f0d22d",
+    "original_calls_sha256": "811c6eed76d1565279855081e3b9b1cfa1cbd3e80e92815149a856b3d7939ee9",
+    "provider_calls": {
+      "jev": 48,
+      "deepseek": 12
+    },
+    "attribution": "ContractNLI, Koreeda and Manning (2021), CC BY4.0; https://github.com/stanfordnlp/contract-nli; no full contract text republished here."
+  }
+}

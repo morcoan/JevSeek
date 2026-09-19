@@ -1,0 +1,98 @@
+{
+  "cases": 48,
+  "optimal": {
+    "legacy": 43,
+    "revised_global": 39,
+    "focused": 47
+  },
+  "feasible": {
+    "legacy": 43,
+    "revised_global": 43,
+    "focused": 48
+  },
+  "by_domain": {
+    "deployment": {
+      "legacy": 14,
+      "revised_global": 11,
+      "focused": 16
+    },
+    "test_runners": {
+      "legacy": 14,
+      "revised_global": 13,
+      "focused": 16
+    },
+    "document_processors": {
+      "legacy": 15,
+      "revised_global": 15,
+      "focused": 15
+    }
+  },
+  "edges": {
+    "legacy": {
+      "correct": 1406,
+      "fp": 27,
+      "fn": 7,
+      "unknown": 0,
+      "total": 1440
+    },
+    "revised_global": {
+      "correct": 1404,
+      "fp": 16,
+      "fn": 20,
+      "unknown": 0,
+      "total": 1440
+    },
+    "focused": {
+      "correct": 1434,
+      "fp": 0,
+      "fn": 6,
+      "unknown": 5,
+      "total": 1440
+    }
+  },
+  "paired": {
+    "focused_vs_legacy": {
+      "rescues": 5,
+      "regressions": 1,
+      "descriptive_sign_p": 0.21875
+    },
+    "focused_vs_revised_global": {
+      "rescues": 9,
+      "regressions": 1,
+      "descriptive_sign_p": 0.021484375
+    }
+  },
+  "usage": {
+    "legacy": {
+      "input": 380628,
+      "output": 59364,
+      "cache_hit": 0,
+      "seconds": 10.87806690018624,
+      "calls": 48
+    },
+    "revised_global": {
+      "input": 473728,
+      "output": 68658,
+      "cache_hit": 0,
+      "seconds": 10.617193300218787,
+      "calls": 48
+    },
+    "focused": {
+      "input": 563024,
+      "output": 66740,
+      "cache_hit": 0,
+      "seconds": 10.463061400107108,
+      "calls": 48
+    }
+  },
+  "median_call_solver_seconds": {
+    "legacy": 0.19732929999008775,
+    "revised_global": 0.21582099999068305,
+    "focused": 0.21018014996661805
+  },
+  "calls": 144,
+  "errors": 0,
+  "assignments_recomputed": 144,
+  "hashes_and_fingerprints_verified": true,
+  "scope": "48fresh synthetic cases in3vocabularies, SAME Boolean/matching generator; not external real-world validation."
+}

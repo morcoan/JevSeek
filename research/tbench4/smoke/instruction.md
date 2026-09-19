@@ -1,0 +1,1 @@
+Create `/app/result.txt` containing exactly `bonsai_jev_only` followed by a newline. Use Bash to read the resulting file and verify its exact contents. Do not access evaluator files, external services or credentials.

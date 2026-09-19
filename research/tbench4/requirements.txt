@@ -1,0 +1,6 @@
+# Isolated research harness only. Do not install into the desktop build environment.
+harbor==0.23.0
+typesafe-sdk==0.6.0
+openai==2.26.0
+jsonschema==4.26.0
+filelock==3.32.3

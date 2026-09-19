@@ -1,6 +1,31 @@
 # Research notebook
 
-### Why JevSeek decides one action at a time
+### Current archive and the original one-action-at-a-time studies
+
+## September 2026 publication: all results, including dead ends
+
+**[Complete research ledger →](research/README.md)** covers selection/decoder control,
+SQL and question compilers, semantic constraints, evidence scoping, external
+ordering/ContractNLI, native Flash integration, all three agentic interventions,
+efficiency/cost offloading, the incomplete argument prototype, cancelled
+Terminal-Bench work and the Bend feasibility review.
+
+The useful new finding is **selective cheaper/faster semantic decision offload**,
+not demonstrated general intelligence superiority over thinking Flash. The
+finite-catalogue endpoint matched all providers on96/96authored decisions and
+ran at0.225s versus1.162splain/3.583sthinking Flash. Repricing its saved usage at
+verified public off-peak rates estimates34%/85%lower API cost. Those are endpoint
+results, not whole-agent guarantees. [Cost details and cache/fallback sensitivity →](research/cost_offload/README.md)
+
+For this publication, production adopts only the deterministic schema-determined
+argument bypass: no generation call when all argument values are fixed by the
+schema. The unvalidated general Jev argument adapter stays in research. Failed,
+regressing, ceilinged and cancelled studies are published rather than enabled.
+**No new paid studies, VM restart or EXE release accompanied publication.**
+
+---
+
+## Historical notebook: why JevSeek decides one action at a time
 
 [← JevSeek](README.md) · [Routing comparison](benchmarks/RESULTS.md) · [Deliberation study](benchmarks/DELIBERATION.md) · [Context validation](research/BACKEND_CONTEXT.md)
 
@@ -224,7 +249,10 @@ This is **integration evidence**, not another controlled performance comparison.
 
 Useful future work would include a broader task set, repeated runs, matched
 budgets, a Jev-vs-model-router ablation, and conditional/replanning baselines.
-**Those experiments have not been run.**
+**Those broader build-engine/whole-agent comparisons were not run in this original study.**
+Later bounded comparisons, including Flash-only and matched-tool controls, are
+listed in the [current archive](research/README.md); they do not retroactively
+remove the limits of these historical runs.
 
 ## Reproduce the experiments
 

@@ -1,0 +1,129 @@
+{
+  "kind": "posthoc_format_replay_NOT_new_inference",
+  "phase": "confirmation",
+  "scores": {
+    "allocation": {
+      "direct": 2,
+      "thinking": 8,
+      "self_tool": 6,
+      "jev_tool": 8
+    },
+    "ordering": {
+      "direct": 5,
+      "thinking": 8,
+      "self_tool": 6,
+      "jev_tool": 7
+    },
+    "grounding": {
+      "direct": 107,
+      "thinking": 114,
+      "self_tool": 107,
+      "jev_tool": 102
+    }
+  },
+  "changes": [
+    {
+      "task": "allocation-621003",
+      "arm": "direct",
+      "reason": "strict_json",
+      "old": {
+        "feasible": false,
+        "optimal": false,
+        "cost": 44,
+        "violated_services": [
+          "j2",
+          "j3"
+        ],
+        "correct": false,
+        "answered": true
+      },
+      "new": {
+        "feasible": false,
+        "optimal": false,
+        "cost": 44,
+        "violated_services": [
+          "j2",
+          "j3"
+        ],
+        "correct": false,
+        "answered": true
+      }
+    },
+    {
+      "task": "allocation-621006",
+      "arm": "direct",
+      "reason": "strict_json",
+      "old": {
+        "feasible": false,
+        "optimal": false,
+        "cost": 34,
+        "violated_services": [
+          "j1"
+        ],
+        "correct": false,
+        "answered": true
+      },
+      "new": {
+        "feasible": false,
+        "optimal": false,
+        "cost": 34,
+        "violated_services": [
+          "j1"
+        ],
+        "correct": false,
+        "answered": true
+      }
+    },
+    {
+      "task": "allocation-621007",
+      "arm": "jev_tool",
+      "reason": "unique_schema_valid_trailing_json",
+      "old": {
+        "feasible": false,
+        "optimal": false,
+        "error": "shape",
+        "correct": false,
+        "answered": false
+      },
+      "new": {
+        "feasible": true,
+        "optimal": true,
+        "cost": 36,
+        "violated_services": [],
+        "correct": true,
+        "answered": true
+      }
+    },
+    {
+      "task": "allocation-621009",
+      "arm": "direct",
+      "reason": "strict_json",
+      "old": {
+        "feasible": false,
+        "optimal": false,
+        "cost": 38,
+        "violated_services": [
+          "j4"
+        ],
+        "correct": false,
+        "answered": true
+      },
+      "new": {
+        "feasible": false,
+        "optimal": false,
+        "cost": 38,
+        "violated_services": [
+          "j4"
+        ],
+        "correct": false,
+        "answered": true
+      }
+    }
+  ],
+  "codec_tests": {
+    "format_checks": 10,
+    "provider_calls": 0,
+    "all_pass": true
+  },
+  "new_provider_calls": 0
+}

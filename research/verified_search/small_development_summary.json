@@ -1,0 +1,579 @@
+{
+  "phase": "development",
+  "variant": "qwen3-1.7b",
+  "tasks": 12,
+  "scores": {
+    "direct": 4,
+    "first_executable": 4,
+    "majority": 4,
+    "self_pair": 4,
+    "jev_pair": 4,
+    "self_global": 4,
+    "jev_global": 4,
+    "oracle": 4,
+    "random_expected": 4.0,
+    "strong_pair": 4,
+    "strong_global": 4
+  },
+  "paired": {
+    "jev_vs_direct": {
+      "rescues": 0,
+      "regressions": 0
+    },
+    "jev_vs_first_executable": {
+      "rescues": 0,
+      "regressions": 0
+    },
+    "jev_vs_majority": {
+      "rescues": 0,
+      "regressions": 0
+    },
+    "jev_vs_self_pair": {
+      "rescues": 0,
+      "regressions": 0
+    },
+    "jev_vs_strong_pair": {
+      "rescues": 0,
+      "regressions": 0
+    }
+  },
+  "by_database": {
+    "cre_Doc_Template_Mgt": {
+      "tasks": 4,
+      "direct": 1,
+      "first_executable": 1,
+      "majority": 1,
+      "self_pair": 1,
+      "jev_pair": 1,
+      "self_global": 1,
+      "jev_global": 1,
+      "oracle": 1,
+      "random_expected": 1.0,
+      "strong_pair": 1,
+      "strong_global": 1
+    },
+    "employee_hire_evaluation": {
+      "tasks": 1,
+      "direct": 1,
+      "first_executable": 1,
+      "majority": 1,
+      "self_pair": 1,
+      "jev_pair": 1,
+      "self_global": 1,
+      "jev_global": 1,
+      "oracle": 1,
+      "random_expected": 1.0,
+      "strong_pair": 1,
+      "strong_global": 1
+    },
+    "pets_1": {
+      "tasks": 2,
+      "direct": 1,
+      "first_executable": 1,
+      "majority": 1,
+      "self_pair": 1,
+      "jev_pair": 1,
+      "self_global": 1,
+      "jev_global": 1,
+      "oracle": 1,
+      "random_expected": 1.0,
+      "strong_pair": 1,
+      "strong_global": 1
+    },
+    "network_1": {
+      "tasks": 3,
+      "direct": 0,
+      "first_executable": 0,
+      "majority": 0,
+      "self_pair": 0,
+      "jev_pair": 0,
+      "self_global": 0,
+      "jev_global": 0,
+      "oracle": 0,
+      "random_expected": 0.0,
+      "strong_pair": 0,
+      "strong_global": 0
+    },
+    "poker_player": {
+      "tasks": 1,
+      "direct": 1,
+      "first_executable": 1,
+      "majority": 1,
+      "self_pair": 1,
+      "jev_pair": 1,
+      "self_global": 1,
+      "jev_global": 1,
+      "oracle": 1,
+      "random_expected": 1.0,
+      "strong_pair": 1,
+      "strong_global": 1
+    },
+    "course_teach": {
+      "tasks": 1,
+      "direct": 0,
+      "first_executable": 0,
+      "majority": 0,
+      "self_pair": 0,
+      "jev_pair": 0,
+      "self_global": 0,
+      "jev_global": 0,
+      "oracle": 0,
+      "random_expected": 0.0,
+      "strong_pair": 0,
+      "strong_global": 0
+    }
+  },
+  "rows": [
+    {
+      "task": "spider-dev-345",
+      "db_id": "cre_Doc_Template_Mgt",
+      "outcomes": {
+        "direct": false,
+        "first_executable": false,
+        "majority": false,
+        "self_pair": false,
+        "jev_pair": false,
+        "self_global": false,
+        "jev_global": false,
+        "strong_pair": false,
+        "strong_global": false,
+        "oracle": false,
+        "random_expected": 0.0
+      },
+      "pool_pass": [
+        false,
+        false,
+        false
+      ],
+      "choices": {
+        "direct": 0,
+        "first_executable": 0,
+        "majority": 0,
+        "self_pair": 0,
+        "jev_pair": 0,
+        "self_global": 0,
+        "jev_global": 0,
+        "strong_pair": 0,
+        "strong_global": 0
+      }
+    },
+    {
+      "task": "spider-dev-265",
+      "db_id": "employee_hire_evaluation",
+      "outcomes": {
+        "direct": true,
+        "first_executable": true,
+        "majority": true,
+        "self_pair": true,
+        "jev_pair": true,
+        "self_global": true,
+        "jev_global": true,
+        "strong_pair": true,
+        "strong_global": true,
+        "oracle": true,
+        "random_expected": 1.0
+      },
+      "pool_pass": [
+        true,
+        true,
+        true
+      ],
+      "choices": {
+        "direct": 0,
+        "first_executable": 0,
+        "majority": 0,
+        "self_pair": 0,
+        "jev_pair": 0,
+        "self_global": 0,
+        "jev_global": 0,
+        "strong_pair": 0,
+        "strong_global": 0
+      }
+    },
+    {
+      "task": "spider-dev-63",
+      "db_id": "pets_1",
+      "outcomes": {
+        "direct": false,
+        "first_executable": false,
+        "majority": false,
+        "self_pair": false,
+        "jev_pair": false,
+        "self_global": false,
+        "jev_global": false,
+        "strong_pair": false,
+        "strong_global": false,
+        "oracle": false,
+        "random_expected": 0.0
+      },
+      "pool_pass": [
+        false,
+        false,
+        false
+      ],
+      "choices": {
+        "direct": 0,
+        "first_executable": 0,
+        "majority": 0,
+        "self_pair": 0,
+        "jev_pair": 0,
+        "self_global": 0,
+        "jev_global": 0,
+        "strong_pair": 0,
+        "strong_global": 0
+      }
+    },
+    {
+      "task": "spider-dev-896",
+      "db_id": "network_1",
+      "outcomes": {
+        "direct": false,
+        "first_executable": false,
+        "majority": false,
+        "self_pair": false,
+        "jev_pair": false,
+        "self_global": false,
+        "jev_global": false,
+        "strong_pair": false,
+        "strong_global": false,
+        "oracle": false,
+        "random_expected": 0.0
+      },
+      "pool_pass": [
+        false,
+        false,
+        false
+      ],
+      "choices": {
+        "direct": 0,
+        "first_executable": 0,
+        "majority": 1,
+        "self_pair": 0,
+        "jev_pair": 0,
+        "self_global": 1,
+        "jev_global": 0,
+        "strong_pair": 1,
+        "strong_global": 1
+      }
+    },
+    {
+      "task": "spider-dev-677",
+      "db_id": "poker_player",
+      "outcomes": {
+        "direct": true,
+        "first_executable": true,
+        "majority": true,
+        "self_pair": true,
+        "jev_pair": true,
+        "self_global": true,
+        "jev_global": true,
+        "strong_pair": true,
+        "strong_global": true,
+        "oracle": true,
+        "random_expected": 1.0
+      },
+      "pool_pass": [
+        true,
+        true,
+        true
+      ],
+      "choices": {
+        "direct": 0,
+        "first_executable": 0,
+        "majority": 0,
+        "self_pair": 0,
+        "jev_pair": 0,
+        "self_global": 0,
+        "jev_global": 0,
+        "strong_pair": 0,
+        "strong_global": 0
+      }
+    },
+    {
+      "task": "spider-dev-407",
+      "db_id": "course_teach",
+      "outcomes": {
+        "direct": false,
+        "first_executable": false,
+        "majority": false,
+        "self_pair": false,
+        "jev_pair": false,
+        "self_global": false,
+        "jev_global": false,
+        "strong_pair": false,
+        "strong_global": false,
+        "oracle": false,
+        "random_expected": 0.0
+      },
+      "pool_pass": [
+        false,
+        false,
+        false
+      ],
+      "choices": {
+        "direct": 0,
+        "first_executable": 0,
+        "majority": 0,
+        "self_pair": 0,
+        "jev_pair": 0,
+        "self_global": 0,
+        "jev_global": 0,
+        "strong_pair": 0,
+        "strong_global": 0
+      }
+    },
+    {
+      "task": "spider-dev-315",
+      "db_id": "cre_Doc_Template_Mgt",
+      "outcomes": {
+        "direct": true,
+        "first_executable": true,
+        "majority": true,
+        "self_pair": true,
+        "jev_pair": true,
+        "self_global": true,
+        "jev_global": true,
+        "strong_pair": true,
+        "strong_global": true,
+        "oracle": true,
+        "random_expected": 1.0
+      },
+      "pool_pass": [
+        true,
+        true,
+        true
+      ],
+      "choices": {
+        "direct": 0,
+        "first_executable": 0,
+        "majority": 0,
+        "self_pair": 0,
+        "jev_pair": 0,
+        "self_global": 0,
+        "jev_global": 0,
+        "strong_pair": 0,
+        "strong_global": 0
+      }
+    },
+    {
+      "task": "spider-dev-81",
+      "db_id": "pets_1",
+      "outcomes": {
+        "direct": true,
+        "first_executable": true,
+        "majority": true,
+        "self_pair": true,
+        "jev_pair": true,
+        "self_global": true,
+        "jev_global": true,
+        "strong_pair": true,
+        "strong_global": true,
+        "oracle": true,
+        "random_expected": 1.0
+      },
+      "pool_pass": [
+        true,
+        true,
+        true
+      ],
+      "choices": {
+        "direct": 0,
+        "first_executable": 0,
+        "majority": 0,
+        "self_pair": 0,
+        "jev_pair": 0,
+        "self_global": 0,
+        "jev_global": 0,
+        "strong_pair": 0,
+        "strong_global": 0
+      }
+    },
+    {
+      "task": "spider-dev-888",
+      "db_id": "network_1",
+      "outcomes": {
+        "direct": false,
+        "first_executable": false,
+        "majority": false,
+        "self_pair": false,
+        "jev_pair": false,
+        "self_global": false,
+        "jev_global": false,
+        "strong_pair": false,
+        "strong_global": false,
+        "oracle": false,
+        "random_expected": 0.0
+      },
+      "pool_pass": [
+        false,
+        false,
+        false
+      ],
+      "choices": {
+        "direct": 0,
+        "first_executable": 1,
+        "majority": 1,
+        "self_pair": 1,
+        "jev_pair": 1,
+        "self_global": 1,
+        "jev_global": 1,
+        "strong_pair": 1,
+        "strong_global": 1
+      }
+    },
+    {
+      "task": "spider-dev-333",
+      "db_id": "cre_Doc_Template_Mgt",
+      "outcomes": {
+        "direct": false,
+        "first_executable": false,
+        "majority": false,
+        "self_pair": false,
+        "jev_pair": false,
+        "self_global": false,
+        "jev_global": false,
+        "strong_pair": false,
+        "strong_global": false,
+        "oracle": false,
+        "random_expected": 0.0
+      },
+      "pool_pass": [
+        false,
+        false,
+        false
+      ],
+      "choices": {
+        "direct": 0,
+        "first_executable": 0,
+        "majority": 0,
+        "self_pair": 0,
+        "jev_pair": 0,
+        "self_global": 1,
+        "jev_global": 1,
+        "strong_pair": 0,
+        "strong_global": 1
+      }
+    },
+    {
+      "task": "spider-dev-900",
+      "db_id": "network_1",
+      "outcomes": {
+        "direct": false,
+        "first_executable": false,
+        "majority": false,
+        "self_pair": false,
+        "jev_pair": false,
+        "self_global": false,
+        "jev_global": false,
+        "strong_pair": false,
+        "strong_global": false,
+        "oracle": false,
+        "random_expected": 0.0
+      },
+      "pool_pass": [
+        false,
+        false,
+        false
+      ],
+      "choices": {
+        "direct": 0,
+        "first_executable": 0,
+        "majority": 0,
+        "self_pair": 0,
+        "jev_pair": 0,
+        "self_global": 0,
+        "jev_global": 0,
+        "strong_pair": 0,
+        "strong_global": 0
+      }
+    },
+    {
+      "task": "spider-dev-377",
+      "db_id": "cre_Doc_Template_Mgt",
+      "outcomes": {
+        "direct": false,
+        "first_executable": false,
+        "majority": false,
+        "self_pair": false,
+        "jev_pair": false,
+        "self_global": false,
+        "jev_global": false,
+        "strong_pair": false,
+        "strong_global": false,
+        "oracle": false,
+        "random_expected": 0.0
+      },
+      "pool_pass": [
+        false,
+        false,
+        false
+      ],
+      "choices": {
+        "direct": 0,
+        "first_executable": 0,
+        "majority": 0,
+        "self_pair": 0,
+        "jev_pair": 0,
+        "self_global": 0,
+        "jev_global": 0,
+        "strong_pair": 0,
+        "strong_global": 0
+      }
+    }
+  ],
+  "development_gate_passed": false,
+  "total_unique_executable_queries": 16,
+  "tasks_judged": 3,
+  "provider_errors": 0,
+  "judge_errors": 0,
+  "actual_usage": {
+    "qwen": {
+      "input": 22704,
+      "output": 1638,
+      "cache_hit": 0,
+      "seconds": 11.684268100128975,
+      "calls": 39
+    },
+    "deepseek": {
+      "input": 3269,
+      "output": 54,
+      "cache_hit": 1024,
+      "seconds": 2.982865000027232,
+      "calls": 3
+    },
+    "jev": {
+      "input": 4294,
+      "output": 290,
+      "cache_hit": 0,
+      "seconds": 0.6681433999910951,
+      "calls": 3
+    }
+  },
+  "nonexecuting_candidates": 3,
+  "timing": {
+    "direct": {
+      "median_serial_seconds": 0.3375705999787897,
+      "sum_serial_seconds": 4.349596599931829
+    },
+    "majority": {
+      "median_serial_seconds": 0.9141168000060134,
+      "sum_serial_seconds": 10.796683900116477
+    },
+    "self_pair": {
+      "median_serial_seconds": 1.0367267500550952,
+      "sum_serial_seconds": 11.684268100128975
+    },
+    "jev_pair": {
+      "median_serial_seconds": 1.009471650031628,
+      "sum_serial_seconds": 11.464827300107572
+    }
+  },
+  "judge_median_seconds": {
+    "qwen": 0.28267619997495785,
+    "deepseek": 1.0652244000229985,
+    "jev": 0.24196640000445768
+  },
+  "recomputed_candidates": 36,
+  "source_hashes_match": true,
+  "metric": "row-multiset agreement on originalDB, not official Spider accuracy/test-suite"
+}

@@ -11,3 +11,7 @@
 *.png binary
 *.woff binary
 *.woff2 binary
+
+# Research protocols/manifests hash exact historical bytes, including some CRLF.
+# Do not normalize frozen evidence/source on add or on Windows/Linux checkout.
+research/** -text !eol whitespace=trailing-space,space-before-tab,cr-at-eol

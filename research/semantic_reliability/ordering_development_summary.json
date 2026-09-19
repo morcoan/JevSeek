@@ -1,0 +1,80 @@
+{
+  "phase": "development",
+  "tasks": 12,
+  "scores": {
+    "qwen_direct": 7,
+    "jev_direct": 12,
+    "jev_compiler": 12,
+    "ds_compiler": 12
+  },
+  "abstentions": {
+    "qwen_direct": 0,
+    "jev_direct": 0,
+    "jev_compiler": 0,
+    "ds_compiler": 0
+  },
+  "by_size": {
+    "3": {
+      "tasks": 6,
+      "qwen_direct": 4,
+      "jev_direct": 6,
+      "jev_compiler": 6,
+      "ds_compiler": 6
+    },
+    "5": {
+      "tasks": 6,
+      "qwen_direct": 3,
+      "jev_direct": 6,
+      "jev_compiler": 6,
+      "ds_compiler": 6
+    }
+  },
+  "paired": {
+    "jev_compiler_vs_qwen_direct": {
+      "rescues": 5,
+      "regressions": 0
+    },
+    "jev_compiler_vs_jev_direct": {
+      "rescues": 0,
+      "regressions": 0
+    },
+    "jev_compiler_vs_ds_compiler": {
+      "rescues": 0,
+      "regressions": 0
+    }
+  },
+  "development_gate_passed": true,
+  "actual_usage": {
+    "qwen": {
+      "input": 1956,
+      "output": 72,
+      "cache_hit": 0,
+      "seconds": 1.609030099993106,
+      "calls": 12
+    },
+    "jev": {
+      "input": 199063,
+      "output": 42287,
+      "cache_hit": 0,
+      "seconds": 5.155050199886318,
+      "calls": 24
+    },
+    "deepseek": {
+      "input": 145704,
+      "output": 552,
+      "cache_hit": 8832,
+      "seconds": 13.493093199795112,
+      "calls": 12
+    }
+  },
+  "arm_median_call_solver_seconds": {
+    "qwen_direct": 0.09441719998721965,
+    "jev_direct": 0.17316044998005964,
+    "jev_compiler": 0.25736529999994673,
+    "ds_compiler": 1.1143586999678519
+  },
+  "errors": 0,
+  "conditional_certificates_recomputed": 24,
+  "inputs_hashes_verified": true,
+  "scope": "External public synthetic BBH ordering; conditional proof assumes correct semantic translation, not a general language-proof guarantee."
+}

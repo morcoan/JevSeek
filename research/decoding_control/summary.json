@@ -1,0 +1,366 @@
+{
+  "pilot": {
+    "tasks": 12,
+    "scores": {
+      "direct": 9,
+      "paused": 9,
+      "self": 8,
+      "jev": 6,
+      "jev_veto": 9,
+      "random_expected": 9.666666666666666,
+      "oracle": 11
+    },
+    "calls": {
+      "deepseek": 108,
+      "jev": 12
+    },
+    "call_errors": 0,
+    "usage": {
+      "deepseek": {
+        "completion_tokens": 6419,
+        "prompt_tokens": 40534,
+        "total_tokens": 46953,
+        "prompt_cache_hit_tokens": 13824,
+        "prompt_cache_miss_tokens": 26710
+      },
+      "jev": {
+        "input_tokens": 12787,
+        "output_tokens": 1291
+      }
+    },
+    "call_seconds_sum": 100.95453389993054,
+    "stem_finished": 0,
+    "early_finished_candidates": 0,
+    "whitespace_duplicate_pools": 9,
+    "jev_changes_first": 7,
+    "veto_triggers": 0,
+    "comparisons": {
+      "jev_vs_direct": {
+        "rescues": 1,
+        "regressions": 4
+      },
+      "jev_vs_paused": {
+        "rescues": 2,
+        "regressions": 5
+      },
+      "jev_vs_self": {
+        "rescues": 1,
+        "regressions": 3
+      },
+      "jev_veto_vs_direct": {
+        "rescues": 2,
+        "regressions": 2
+      },
+      "jev_veto_vs_paused": {
+        "rescues": 0,
+        "regressions": 0
+      },
+      "jev_veto_vs_self": {
+        "rescues": 2,
+        "regressions": 1
+      },
+      "self_vs_direct": {
+        "rescues": 1,
+        "regressions": 2
+      },
+      "self_vs_paused": {
+        "rescues": 1,
+        "regressions": 2
+      }
+    },
+    "policy_usage": {
+      "direct": {
+        "deepseek": {
+          "completion_tokens": 1584,
+          "prompt_tokens": 4020,
+          "total_tokens": 5604,
+          "prompt_cache_hit_tokens": 1408,
+          "prompt_cache_miss_tokens": 2612
+        },
+        "jev": {}
+      },
+      "paused": {
+        "deepseek": {
+          "completion_tokens": 1677,
+          "prompt_tokens": 12636,
+          "total_tokens": 14313,
+          "prompt_cache_hit_tokens": 4608,
+          "prompt_cache_miss_tokens": 8028
+        },
+        "jev": {}
+      },
+      "self": {
+        "deepseek": {
+          "completion_tokens": 2240,
+          "prompt_tokens": 26860,
+          "total_tokens": 29100,
+          "prompt_cache_hit_tokens": 9088,
+          "prompt_cache_miss_tokens": 17772
+        },
+        "jev": {}
+      },
+      "jev": {
+        "deepseek": {
+          "completion_tokens": 1696,
+          "prompt_tokens": 19102,
+          "total_tokens": 20798,
+          "prompt_cache_hit_tokens": 7040,
+          "prompt_cache_miss_tokens": 12062
+        },
+        "jev": {
+          "input_tokens": 12787,
+          "output_tokens": 1291
+        }
+      },
+      "jev_veto": {
+        "deepseek": {
+          "completion_tokens": 2253,
+          "prompt_tokens": 20964,
+          "total_tokens": 23217,
+          "prompt_cache_hit_tokens": 7680,
+          "prompt_cache_miss_tokens": 13284
+        },
+        "jev": {
+          "input_tokens": 12787,
+          "output_tokens": 1291
+        }
+      }
+    },
+    "policy_serial_seconds": {
+      "direct": {
+        "sum": 14.001668399956543,
+        "median": 1.1777068999945186,
+        "max": 1.766950299992459
+      },
+      "paused": {
+        "sum": 31.471814699936658,
+        "median": 2.615148599987151,
+        "max": 3.1174193999904674
+      },
+      "self": {
+        "sum": 57.34574559991597,
+        "median": 4.871780950008542,
+        "max": 5.42481819994282
+      },
+      "jev": {
+        "sum": 49.23143909999635,
+        "median": 4.186573250030051,
+        "max": 4.8775411999667995
+      },
+      "jev_veto": {
+        "sum": 54.77863479993539,
+        "median": 4.563393699994776,
+        "max": 4.97572519996902
+      }
+    },
+    "recomputed_queries": 48,
+    "selection_before_suffix_verified": true,
+    "exact_prefix_retention_verified": true,
+    "canonical_duplicate_outcome_counts": {
+      "self": 7,
+      "jev": 6,
+      "jev_veto": 9
+    },
+    "identical_prefix_changed_suffix_outcomes": 1,
+    "all_identical_pools": 5,
+    "abstentions": {
+      "self": 2,
+      "jev": 5
+    },
+    "candidate_passes": 29,
+    "stage_seconds": {
+      "block": {
+        "median": 0.785808000000543,
+        "sum": 28.719036399939796
+      },
+      "direct": {
+        "median": 1.1777068999945186,
+        "sum": 14.001668399956543
+      },
+      "jev_select": {
+        "median": 0.32048275000124704,
+        "sum": 4.038494900072692
+      },
+      "self_select": {
+        "median": 0.7471315500006313,
+        "sum": 8.887879999994766
+      },
+      "stem": {
+        "median": 0.8036498000001302,
+        "sum": 9.934659499966074
+      },
+      "suffix": {
+        "median": 0.982305350000388,
+        "sum": 35.37279470000067
+      }
+    },
+    "task_scores": [
+      {
+        "task": "fanout_totals",
+        "direct": true,
+        "paused": true,
+        "random_expected": 1.0,
+        "oracle": true,
+        "self": true,
+        "jev": false,
+        "jev_veto": true
+      },
+      {
+        "task": "all_orders_funded",
+        "direct": true,
+        "paused": true,
+        "random_expected": 1.0,
+        "oracle": true,
+        "self": true,
+        "jev": true,
+        "jev_veto": true
+      },
+      {
+        "task": "exact_categories",
+        "direct": true,
+        "paused": false,
+        "random_expected": 0.6666666666666666,
+        "oracle": true,
+        "self": true,
+        "jev": true,
+        "jev_veto": false
+      },
+      {
+        "task": "running_net",
+        "direct": true,
+        "paused": false,
+        "random_expected": 0.3333333333333333,
+        "oracle": true,
+        "self": false,
+        "jev": true,
+        "jev_veto": false
+      },
+      {
+        "task": "threshold_first",
+        "direct": true,
+        "paused": true,
+        "random_expected": 1.0,
+        "oracle": true,
+        "self": true,
+        "jev": true,
+        "jev_veto": true
+      },
+      {
+        "task": "status_asof",
+        "direct": true,
+        "paused": true,
+        "random_expected": 1.0,
+        "oracle": true,
+        "self": true,
+        "jev": false,
+        "jev_veto": true
+      },
+      {
+        "task": "first_payment_day",
+        "direct": true,
+        "paused": true,
+        "random_expected": 1.0,
+        "oracle": true,
+        "self": true,
+        "jev": false,
+        "jev_veto": true
+      },
+      {
+        "task": "team_fraction",
+        "direct": true,
+        "paused": true,
+        "random_expected": 1.0,
+        "oracle": true,
+        "self": true,
+        "jev": true,
+        "jev_veto": true
+      },
+      {
+        "task": "largest_payment_day",
+        "direct": true,
+        "paused": true,
+        "random_expected": 1.0,
+        "oracle": true,
+        "self": false,
+        "jev": false,
+        "jev_veto": true
+      },
+      {
+        "task": "ordered_sequence",
+        "direct": false,
+        "paused": false,
+        "random_expected": 0.0,
+        "oracle": false,
+        "self": false,
+        "jev": false,
+        "jev_veto": false
+      },
+      {
+        "task": "rolling_distinct",
+        "direct": false,
+        "paused": true,
+        "random_expected": 1.0,
+        "oracle": true,
+        "self": true,
+        "jev": true,
+        "jev_veto": true
+      },
+      {
+        "task": "cohort_retention",
+        "direct": false,
+        "paused": true,
+        "random_expected": 0.6666666666666666,
+        "oracle": true,
+        "self": false,
+        "jev": false,
+        "jev_veto": true
+      }
+    ]
+  },
+  "diagnostic": {
+    "status": "EXPLORATORY_POSTHOC_CACHED_ROLLOUTS_NOT_NEW_END_TO_END_RUN",
+    "calls": 17,
+    "errors": 0,
+    "usage": {
+      "input_tokens": 16906,
+      "output_tokens": 824
+    },
+    "seconds_sum": 2.9764324999705423,
+    "seconds_median": 0.16523189999861643,
+    "horizons": {
+      "short": {
+        "scores": {
+          "first": 9,
+          "jev": 9,
+          "literal": 10,
+          "random_expected": 9.666666666666666,
+          "oracle": 11
+        },
+        "selected_changes": 0,
+        "visible_complete_candidates": 0,
+        "rescues_vs_first": 0,
+        "regressions_vs_first": 0
+      },
+      "lookahead": {
+        "scores": {
+          "first": 9,
+          "jev": 10,
+          "literal": 10,
+          "random_expected": 9.666666666666666,
+          "oracle": 11
+        },
+        "selected_changes": 1,
+        "visible_complete_candidates": 3,
+        "rescues_vs_first": 1,
+        "regressions_vs_first": 0
+      }
+    }
+  },
+  "source_sha256": {
+    "experiment.py": "5d87cd06d050b4027e247a1c2a500e55b70cdd05f6f32317588ba70566c7ae73",
+    "providers.py": "8479677694c7a829f280b3371f58e2e2f27062f1585ef6a8d9a68b1790f4fe03",
+    "tasks.py": "43fbb1be555dcea28164073749dd3ce69d40d70cf9812a49fd58028efa2fe4fa",
+    "PROTOCOL.md": "3d96e2af6f9c60e2cab515fb34d6269f9a89c94163f212d4caad9dd3619f8c1b"
+  },
+  "interpretation": "No proven Jev-specific performance uplift. Generic prefix selection regressed. A post-hoc narrow-constraint/lookahead signal matched a simple literal baseline; no deployment warranted."
+}

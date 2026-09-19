@@ -9,6 +9,8 @@ import httpx
 from openai import OpenAI
 from typesafe_sdk import Choice, TypeSafeClient
 
+from . import argument_offload
+
 from .context import encoded, size
 
 ROUTER_QUESTION = ('Select the next single tool using user_intent and actual completed execution, not model plans. '
@@ -46,6 +48,11 @@ class Settings:
     # This is a configurable policy threshold, NOT a calibrated probability of correctness.
     confidence_floor: float = 0.35
     output_tokens: int = 16384
+    argument_offload: str = 'deterministic'
+
+    def __post_init__(self):
+        if self.argument_offload not in {'off','deterministic'}:
+            raise ValueError('JEV_ARGUMENT_OFFLOAD must be off or deterministic; semantic argument offload remains research-only')
 
     @classmethod
     def environment(cls):
@@ -54,7 +61,8 @@ class Settings:
             raise ValueError('Set LLM_MODEL=deepseek-flash; this backend uses plain non-thinking Flash 4.1')
         floor=float(os.getenv('JEV_CONFIDENCE_FLOOR','0.35'))
         if not 0<=floor<=1: raise ValueError('JEV_CONFIDENCE_FLOOR must be between 0 and 1')
-        return cls(model=model, jev_model=os.getenv('JEV_MODEL','jev-1.13.0'),confidence_floor=floor)
+        return cls(model=model, jev_model=os.getenv('JEV_MODEL','jev-1.13.0'),confidence_floor=floor,
+                   argument_offload=os.getenv('JEV_ARGUMENT_OFFLOAD','deterministic'))
 
 
 def deepseek_options(settings, summary=False):
@@ -128,6 +136,18 @@ class Models:
         return size([ARGUMENT_SYSTEM,instructions,schema])+1024
 
     def arguments(self, state, name, schema, instructions):
+        if self.cancel is not None and self.cancel.is_set(): raise KeyboardInterrupt()
+        mode=self.settings.argument_offload
+        if mode!='off':
+            args=argument_offload.unique_arguments(schema)
+            if args is not None:
+                self.session.append('argument_offload', backend='code', tool=name, accepted=True,
+                                    policy=argument_offload.VERSION, generation_call_skipped=True,
+                                    generator=self.provider, flash_call_skipped=self.provider=='deepseek')
+                return args
+            # No speculative Jev argument call: unsupported/free/optional fields
+            # go straight to the original generator, with its original inputs.
+        if self.cancel is not None and self.cancel.is_set(): raise KeyboardInterrupt()
         return self.generate('arguments',[
             {'role':'system','content':ARGUMENT_SYSTEM+'\n'+instructions+'\nCall the provided function selected_action exactly ONCE. If several files need reading, choose just ONE for this invocation. Its arguments are the selected tool payload, not a tool wrapper or schema.'},
             {'role':'user','content':encoded(state)},

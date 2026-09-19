@@ -1,0 +1,7 @@
+# Confirmation amendment — frozen before confirmation inference
+
+Pilot6cases completed. All12native tool invocations/report loops worked; source/result replay valid. Pilot outcomes retained: allocation direct0/thinking2/self-tool2/Jev-tool1 of2; ordering all2/2; document labels direct21/self27/Jev26 of34. Both thinking document calls consumed8192reasoning tokens and returned no final answer (finish=length), NOT two demonstrated failures of document understanding.
+
+One budget-only correction, determined from development before seeing ANY confirmation provider outcomes: thinking-enabled direct Flash gets32768completion tokens on grounding documents, not8192. Other families retain8192. Primary nonthinking arms, prompts, sources, schemas, tools, label policy, interpretation and solver stay EXACTLY unchanged. Maximum HTTPtimeout stays180seconds. Record remaining caps/timeouts; no retry or claim against unconstrained thinking. No new dev inference or replacement of original pilot results.
+
+Run the original24confirmation cases via confirmation.py, whose BudgetedFlash delegates to the frozen Flash client and changes only that argument. Source manifests include the original frozen code and this amendment/wrapper. Same request budget<=168Flash+48Jev. Maximum thinking-completion budget is now393216tokens (16structured cases*8192 +8docs*32768), not a promise of actual usage; actual usage is logged. No other experiments or sample expansion.

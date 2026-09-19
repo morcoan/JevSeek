@@ -1,0 +1,17 @@
+{
+  "cases": 32,
+  "mode": {
+    "focused": {
+      "correct": 32,
+      "false_accept": 0,
+      "abstentions": 0,
+      "failures": []
+    },
+    "dual": {
+      "correct": 32,
+      "false_accept": 0,
+      "abstentions": 0,
+      "failures": []
+    }
+  }
+}
